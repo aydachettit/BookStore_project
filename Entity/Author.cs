@@ -14,7 +14,6 @@ namespace Entity
         [Required]
         public string? Name { get; set; }
         [Required,MaxLength(50)]
-        public string? Publisher_country { get; set; }
-        public ICollection<String>? book_name { get; set; }
+        public DateTime DOB { get; set; }
     }
 }
