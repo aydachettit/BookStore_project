@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IPZq6/lobaMsPfQxkk3wWxVq1zT0nJnG8mfcI+yDqEUX9Ds8dmKTvqAWXDtENnbVfzWcBdinVNiLurcoRCueSA==",
+  "dgSpecHash": "Ka5G0J0NSPrKXBGSXhieuIMDnV5WJovTHEsSYUajjav8KaJ84iMbFj5ndIaI9v+mhW5v5Ba1VIQJ4gqhfpIQRw==",
   "success": true,
-  "projectFilePath": "D:\\BookStore_project\\Entity\\Entity.csproj",
+  "projectFilePath": "E:\\c#-workspace\\BookStore_Management\\Entity\\Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

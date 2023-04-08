@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1oJpVU9DpNhGMwwjT7nvbsdZwjA7mdCiSo5PiL52jE49AhZ2E+qovCoTnuclncrmvm1gKkd3LsLzYENLtw1nxw==",
+  "dgSpecHash": "K+wG1YWZjMSoIDWI5MDjqXqUjhF0f5ZKtyA8qIsgdjFXRkJ5vQNui5XSF557h6pGu0YXvU3C3y38SqnU4xPloQ==",
   "success": true,
-  "projectFilePath": "D:\\BookStore_project\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "E:\\c#-workspace\\BookStore_Management\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
