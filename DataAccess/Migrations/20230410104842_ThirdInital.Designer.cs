@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230410055233_FirstInital")]
-    partial class FirstInital
+    [Migration("20230410104842_ThirdInital")]
+    partial class ThirdInital
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,37 +47,40 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entity.Book", b =>
                 {
-                    b.Property<int>("BookID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookAuthorID")
+                    b.Property<int>("AuthorID")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookCategoryID")
+                    b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<string>("BookName")
+                    b.Property<string>("Image_URL")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("PublicDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("PublicDate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("PublisherID")
                         .HasColumnType("int");
 
-                    b.HasKey("BookID");
+                    b.HasKey("ID");
 
-                    b.HasIndex("BookAuthorID");
+                    b.HasIndex("AuthorID");
 
-                    b.HasIndex("BookCategoryID");
+                    b.HasIndex("CategoryID");
 
                     b.HasIndex("PublisherID");
 
@@ -86,15 +89,15 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entity.Category", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("CategoryName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("CategoryID");
+                    b.HasKey("ID");
 
                     b.ToTable("Categories");
                 });
@@ -123,13 +126,13 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("Entity.Author", "Author")
                         .WithMany()
-                        .HasForeignKey("BookAuthorID")
+                        .HasForeignKey("AuthorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Entity.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("BookCategoryID")
+                        .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

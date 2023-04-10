@@ -1361,6 +1361,7 @@
         "dependencies": {
           "Entity": "1.0.0",
           "Microsoft.AspNet.Mvc": "5.2.9",
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "MySql.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
@@ -1375,6 +1376,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "5.2.9",
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "MySql.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
@@ -1391,6 +1393,7 @@
           "DataAccess": "1.0.0",
           "Entity": "1.0.0",
           "Microsoft.AspNet.Mvc": "5.2.9",
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "MySql.EntityFrameworkCore": "7.0.0"
         },
         "compile": {

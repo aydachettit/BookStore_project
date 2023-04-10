@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Or/1TdScWNCDhI/pPgVAmM86Xzy23ZGXJ84kPclLW5B+MS7mgyHo+XJsVnjPClVHheCDnh620edMoTOcGNH93Q==",
+  "dgSpecHash": "XVsE3jQyCtfyBvu72F1+EXJpkFD2HF/BMKAPobeZ5gXGzIvKwLIfer3intYxazSWw721UDgb1bGYiEknusEl3Q==",
   "success": true,
   "projectFilePath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.9\\microsoft.aspnet.mvc.5.2.9.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.9\\microsoft.aspnet.razor.3.2.9.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.9\\microsoft.aspnet.webpages.3.2.9.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.10\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.4\\microsoft.entityframeworkcore.7.0.4.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.4\\microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.4\\microsoft.entityframeworkcore.analyzers.7.0.4.nupkg.sha512",

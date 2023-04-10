@@ -43,7 +43,7 @@ namespace Service.implementation
 
         public Book GetByID(int id)
         {
-            return _context.Books.Where(c => c.BookID == id).FirstOrDefault();
+            return _context.Books.Where(c => c.ID == id).FirstOrDefault();
         }
 
         public async Task UpdateAsSync(Book updateBook)

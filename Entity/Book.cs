@@ -8,26 +8,27 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
+    
     public class Book
     {
         [Key]
-        public int BookID {get; set; }
-        public string BookName { get; set; }
-        public DateOnly PublicDate { get; set; }
+        public int ID {get; set; }
+        public string Name { get; set; }
+        public DateTime PublicDate { get; set; }
         public int Amount { get; set; }
         public int Price { get; set; }
 
         public string? Image_URL { get; set; }
 
         [ForeignKey("Author")]
-        public int BookAuthorID { get; set; }
+        public int AuthorID { get; set; }
         public Author Author { get; set; }
 
         [ForeignKey("Publisher")]
         public int PublisherID { get; set; }
         public Publisher Publisher { get; set; }
         [ForeignKey("Category")]
-        public int BookCategoryID {get; set; }
+        public int CategoryID {get; set; }
         public Category Category { get; set; }
 
     }

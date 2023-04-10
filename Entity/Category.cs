@@ -10,8 +10,8 @@ namespace Entity
     public class Category
     {
         [Key]
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
 
     }
 }

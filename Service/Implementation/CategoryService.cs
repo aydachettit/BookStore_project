@@ -41,7 +41,7 @@ namespace Service.implementation
 
         public Category GetByID(int id)
         {
-            return _context.Categories.Where(c => c.CategoryID == id).FirstOrDefault();
+            return _context.Categories.Where(c => c.ID == id).FirstOrDefault();
 
         }
 
