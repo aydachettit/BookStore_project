@@ -11,7 +11,7 @@ namespace Service.implementation
     public class CategoryService : ICategoryService
     {
         private ApplicationDbContext _context;
-        public BookService(ApplicationDbContext context)
+        public CategoryService(ApplicationDbContext context)
         {
             _context = context;
         }

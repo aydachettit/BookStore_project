@@ -228,3 +228,4 @@ E:\c#-workspace\BookStoreManagement\BookStore_project\obj\Debug\net6.0\refint\Bo
 E:\c#-workspace\BookStoreManagement\BookStore_project\obj\Debug\net6.0\BookStore_project.pdb
 E:\c#-workspace\BookStoreManagement\BookStore_project\obj\Debug\net6.0\BookStore_project.genruntimeconfig.cache
 E:\c#-workspace\BookStoreManagement\BookStore_project\obj\Debug\net6.0\ref\BookStore_project.dll
+E:\c#-workspace\BookStoreManagement\BookStore_project\bin\Debug\net6.0\libman.json
