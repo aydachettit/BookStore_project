@@ -15,5 +15,6 @@ namespace Entity
         public string? Name { get; set; }
         [Required,MaxLength(50)]
         public DateTime DOB { get; set; }
+        public string img_url { get; set; }
     }
 }
