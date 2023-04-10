@@ -2,23 +2,25 @@ using BookStore_project.Data;
 using DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ApplicationDbContext = DataAccess.ApplicationDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-/*
-builder.Services.AddDbContext<ApplicationDBContext>(opt =>
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//builder.Services.AddDbContext<DataAccess.ApplicationDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+
+builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionMySQL"));
 });
-*/
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<DataAccess.ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -1,0 +1,14 @@
+E:\c#-workspace\BookStore_Management\Entity\bin\Debug\net6.0\Entity.deps.json
+E:\c#-workspace\BookStore_Management\Entity\bin\Debug\net6.0\Entity.runtimeconfig.json
+E:\c#-workspace\BookStore_Management\Entity\bin\Debug\net6.0\Entity.dll
+E:\c#-workspace\BookStore_Management\Entity\bin\Debug\net6.0\Entity.pdb
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.csproj.AssemblyReference.cache
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.AssemblyInfoInputs.cache
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.AssemblyInfo.cs
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.csproj.CoreCompileInputs.cache
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.dll
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\refint\Entity.dll
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.pdb
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
+E:\c#-workspace\BookStore_Management\Entity\obj\Debug\net6.0\ref\Entity.dll
