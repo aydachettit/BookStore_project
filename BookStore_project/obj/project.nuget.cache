@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ua6eSPJSwVnYgr234rsJjzoix1y2guXyS+RpWgSxCCOUaLK8sgfUYCsrHPeAkPiYMYJ1fxm6GY2lSHmiIzdWIg==",
+  "dgSpecHash": "GcaUOefAk9DXCnCNl3WLwj/iBaUF/heXNtqNPhVrBbDZ3e/bC2OvHQKfPwNWGScSWtHkSG1TuNtP6YYQNSgIyg==",
   "success": true,
-  "projectFilePath": "E:\\c#-workspace\\BookStore_Management\\BookStore_project\\BookStore_project.csproj",
+  "projectFilePath": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

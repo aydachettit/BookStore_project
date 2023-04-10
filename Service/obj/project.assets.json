@@ -2693,11 +2693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\c#-workspace\\BookStore_Management\\Service\\Service.csproj",
+      "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "E:\\c#-workspace\\BookStore_Management\\Service\\Service.csproj",
+      "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "E:\\c#-workspace\\BookStore_Management\\Service\\obj\\",
+      "outputPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
@@ -2719,11 +2719,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\c#-workspace\\BookStore_Management\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "E:\\c#-workspace\\BookStore_Management\\DataAccess\\DataAccess.csproj"
+            "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj"
             },
-            "E:\\c#-workspace\\BookStore_Management\\Entity\\Entity.csproj": {
-              "projectPath": "E:\\c#-workspace\\BookStore_Management\\Entity\\Entity.csproj"
+            "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
+              "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
             }
           }
         }

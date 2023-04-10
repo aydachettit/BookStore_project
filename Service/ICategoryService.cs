@@ -10,6 +10,10 @@ namespace Service
     public interface ICategoryService
     {
         Task CreateAsSync(Category newCategory);
+
+        Task UpdateAsSync(Category updateCategory);
+
+        Task DeleteAsSync(Category deleteCategory);
         Task UpdateByID(int id);
         Task DeleteByID(int id);
         Category GetByID(int id);

@@ -2652,11 +2652,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\c#-workspace\\BookStore_Management\\Entity\\Entity.csproj",
+      "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "E:\\c#-workspace\\BookStore_Management\\Entity\\Entity.csproj",
+      "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "E:\\c#-workspace\\BookStore_Management\\Entity\\obj\\",
+      "outputPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
