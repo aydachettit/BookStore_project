@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj": {}
+    "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {}
   },
   "projects": {
-    "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj": {
+    "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
         "projectName": "BookStore_project",
-        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,21 +22,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj"
+              "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
               },
-              "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
-                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
+              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
               },
-              "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj": {
-                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj"
+              "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj"
               }
             }
           }
@@ -105,25 +100,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
+    "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -131,15 +122,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
-                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
+              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
               }
             }
           }
@@ -189,25 +179,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
+    "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\Entity\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -215,7 +201,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -269,25 +254,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj": {
+    "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\Service\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -295,18 +276,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj"
+              "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
               },
-              "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
-                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
+              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
               }
             }
           }
@@ -356,7 +336,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

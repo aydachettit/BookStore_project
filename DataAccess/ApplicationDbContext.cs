@@ -20,6 +20,8 @@ namespace DataAccess
 
         public DbSet<Author> Authors{ get; set; }
         public DbSet<Publisher> Publishers{ get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Shipment> Shipments { get; set; }
 
 
     }
