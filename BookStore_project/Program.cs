@@ -1,4 +1,3 @@
-using BookStore_project.Data;
 using DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionMySQL"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionNam"));
 });
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

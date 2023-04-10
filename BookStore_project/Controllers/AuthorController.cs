@@ -108,7 +108,7 @@ namespace BookStore_project.Controllers
             model.Name = author.Name;
             model.DOB = author.DOB;
             model.Img_url = author.img_url;
-       
+
             return View(model);
         }
         [HttpPost]
@@ -129,4 +129,5 @@ namespace BookStore_project.Controllers
             }
             return View();
         }
+    }
 }
