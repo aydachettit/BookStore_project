@@ -10,6 +10,7 @@ namespace Service
     public interface IBookService
     {
         Task CreateAsSync(Book newBook);
+        List<Book> getBookByAuthorID(int id);
         Task UpdateAsSync(Book updateBook);
         Task DeleteAsSync(Book deleteBook);
         Task UpdateByID(int id);

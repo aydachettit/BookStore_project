@@ -1,18 +1,24 @@
 ﻿using BookStore_project.Models.Author;
 using Entity;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Service;
+using Service.implementation;
 
 namespace BookStore_project.Controllers
 {
     public class AuthorController : Controller
     {
         private IAuthorService _authorService;
+        private ICategoryService _categoryService;
+        private IBookService _bookService;
         private IWebHostEnvironment _hostingEnvironment;
-        public AuthorController(IAuthorService authorService, IWebHostEnvironment hostingEnvironment)
+        public AuthorController(IAuthorService authorService, IBookService bookService, ICategoryService categoryService, IWebHostEnvironment hostingEnvironment)
         {
             _authorService = authorService;
+            _bookService = bookService;
+            _categoryService = categoryService;
             _hostingEnvironment = hostingEnvironment;
         }
         public IActionResult Index()
@@ -35,11 +41,18 @@ namespace BookStore_project.Controllers
                 return NotFound();
             }
             var author = _authorService.GetById(id);
+            var author_book = _bookService.getBookByAuthorID(id);
             var model = new AuthorDetailViewModel();
             model.ID = author.ID;
             model.Name = author.Name;
             model.DOB = author.DOB;
             model.Img_url = author.img_url;
+            model.lob = author_book;
+            foreach(var items in model.lob)
+            {
+                var cate = _categoryService.GetByID(items.CategoryID);
+                items.Category = cate;
+            }
             return View(model);
         }
         [HttpGet]
