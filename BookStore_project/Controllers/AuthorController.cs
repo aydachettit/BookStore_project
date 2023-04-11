@@ -63,8 +63,8 @@ namespace BookStore_project.Controllers
         {
             if (ModelState.IsValid)
             {
-                var employee = _authorService.GetById(model.ID);
-                await _authorService.DeleteAsSync(employee);
+                var author = _authorService.GetById(model.ID);
+                await _authorService.DeleteAsSync(author);
                 return RedirectToAction("Index");
             }
 
@@ -125,7 +125,7 @@ namespace BookStore_project.Controllers
                     img_url = model.Img_url
                 };
                 await _authorService.UpdateAsSync(author);
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View();
         }
