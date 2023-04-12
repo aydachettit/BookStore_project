@@ -79,7 +79,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[6.0.10, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
@@ -166,7 +166,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[6.0.10, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
@@ -246,7 +246,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[6.0.10, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
@@ -333,7 +333,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[6.0.10, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
