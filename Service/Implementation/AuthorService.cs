@@ -62,5 +62,8 @@ namespace Service.Implementation
         {
             throw new NotImplementedException();
         }
+        public List<Book> getBookByAuthorID(int id) { 
+            return _context.Books.Where(c => c.AuthorID == id).ToList(); 
+        }
     }
 }
