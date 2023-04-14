@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DataAccess"
+    "\\DataAccess",
+    "\\Entity"
   ],
   "SelectedNode": "\\BookStore_project.sln",
   "PreviewInSolutionExplorer": false

@@ -1,0 +1,50 @@
+﻿@model BookStore_project.Models.Employee.EmployeeCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EmployeeCreateViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="employeeID" class="control-label"></label>
+                <input asp-for="employeeID" class="form-control" />
+                <span asp-validation-for="employeeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="employeeName" class="control-label"></label>
+                <input asp-for="employeeName" class="form-control" />
+                <span asp-validation-for="employeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="employeeGender" class="control-label"></label>
+                <input asp-for="employeeGender" class="form-control" />
+                <span asp-validation-for="employeeGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="employeeDate_Join" class="control-label"></label>
+                <input asp-for="employeeDate_Join" class="form-control" />
+                <span asp-validation-for="employeeDate_Join" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="employeePhone_Number" class="control-label"></label>
+                <input asp-for="employeePhone_Number" class="form-control" />
+                <span asp-validation-for="employeePhone_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

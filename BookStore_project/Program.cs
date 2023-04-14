@@ -1,19 +1,33 @@
-using BookStore_project.Data;
+using DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Service;
+using Service.implementation;
+using Service.Implementation;
+using ApplicationDbContext = DataAccess.ApplicationDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//builder.Services.AddDbContext<DataAccess.ApplicationDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+
+builder.Services.AddDbContext<ApplicationDbContext>(opt =>
+{
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLoi"));
+});
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<DataAccess.ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IPublisherService, PublisherService>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

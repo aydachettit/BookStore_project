@@ -20,6 +20,34 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Book/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
