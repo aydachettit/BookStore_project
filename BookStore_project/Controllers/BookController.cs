@@ -35,21 +35,6 @@ namespace BookStore_project.Controllers
         {
             //var listCategory = _categoryService.GetAll().Select(c => c.CategoryID).ToList();
 
-            //var model = _bookService.GetAll().Select(book => new BookIndexViewModel
-            //{
-            //    BookID = book.BookID,
-            //    BookName = book.BookName,
-            //    PublicDate = book.PublicDate,
-            //    Amount = book.Amount,
-            //    Price = book.Price,
-            //    Image_URL = book.Image_URL,
-            //    AuthorID = book.BookAuthorID,
-            //    CategoryID = book.BookCategoryID,
-            //    PublisherID = book.PublisherID
-            //}).ToList();
-            //var model = _context.Books
-            //    .FromSql($"SELECT * FROM [Books], [Categories], [Authors], [Publishers] WHERE Books.AuthorID = Authors.ID and Books.CategoryID = Categories.ID and Books.PublisherID = Publishers.ID")
-            //    .ToList();
 
             var model = _bookService.GetAll().Select(c => new BookIndexViewModel
             {

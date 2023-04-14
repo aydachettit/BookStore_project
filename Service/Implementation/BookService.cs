@@ -41,11 +41,6 @@ namespace Service.implementation
             return _context.Books.ToList();
         }
 
-        public List<Book> getBookByAuthorID(int id)
-        {
-            return _context.Books.Where(c => c.AuthorID == id).ToList();
-        }
-
         public Book GetByID(int id)
         {
             return _context.Books.Where(c => c.ID == id).FirstOrDefault();
