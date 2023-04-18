@@ -40,3 +40,17 @@ D:\F\C#\BookStore_project\Entity\obj\Debug\net6.0\refint\Entity.dll
 D:\F\C#\BookStore_project\Entity\obj\Debug\net6.0\Entity.pdb
 D:\F\C#\BookStore_project\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
 D:\F\C#\BookStore_project\Entity\obj\Debug\net6.0\ref\Entity.dll
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\bin\Debug\net6.0\Entity.deps.json
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\bin\Debug\net6.0\Entity.runtimeconfig.json
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\bin\Debug\net6.0\Entity.dll
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\bin\Debug\net6.0\Entity.pdb
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.csproj.AssemblyReference.cache
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.AssemblyInfoInputs.cache
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.AssemblyInfo.cs
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.dll
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\refint\Entity.dll
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.pdb
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\Entity\obj\Debug\net6.0\ref\Entity.dll

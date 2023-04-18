@@ -25,7 +25,7 @@ namespace Service.implementation
 
         public async Task DeleteAsSync(Book deleteBook)
         {
-            _context.Books.Update(deleteBook);
+            _context.Books.Remove(deleteBook);
             await _context.SaveChangesAsync();
         }
 
@@ -39,11 +39,6 @@ namespace Service.implementation
         public IEnumerable<Book> GetAll()
         {
             return _context.Books.ToList();
-        }
-
-        public List<Book> getBookByAuthorID(int id)
-        {
-            return _context.Books.Where(c => c.AuthorID == id).ToList();
         }
 
         public Book GetByID(int id)

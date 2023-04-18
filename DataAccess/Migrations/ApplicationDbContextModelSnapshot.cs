@@ -16,7 +16,7 @@ namespace DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.4")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Entity.Author", b =>
@@ -40,6 +40,32 @@ namespace DataAccess.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Authors");
+                });
+
+            modelBuilder.Entity("Entity.Bill", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Bill_status_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Customer_ID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Employee_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Total_money")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Bills");
                 });
 
             modelBuilder.Entity("Entity.Book", b =>
@@ -99,6 +125,52 @@ namespace DataAccess.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Entity.Customer", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("Entity.Employee", b =>
+                {
+                    b.Property<int>("employeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("employeeDate_Join")
+                        .HasColumnType("int");
+
+                    b.Property<string>("employeeGender")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("employeeName")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("employeeID");
+
+                    b.ToTable("Employee");
+                });
+
             modelBuilder.Entity("Entity.Publisher", b =>
                 {
                     b.Property<int>("ID")
@@ -117,6 +189,41 @@ namespace DataAccess.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Publishers");
+                });
+
+            modelBuilder.Entity("Entity.Shipment", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("BillID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Shipment_Status_ID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Shipments");
+                });
+
+            modelBuilder.Entity("Entity.Status", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("Entity.Book", b =>

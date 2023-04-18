@@ -23,6 +23,9 @@ namespace DataAccess
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
 
+        public DbSet<Bill> Bills { get; set; }
+        public DbSet<Status> Status { get; set; }
+        public DbSet<Employee> Employee { get; set; }
 
     }
 }

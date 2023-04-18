@@ -39,7 +39,7 @@ namespace BookStore_project.Controllers
                 return NotFound();
             }
             var author = _authorService.GetById(id);
-            var author_book = _bookService.getBookByAuthorID(id);
+            var author_book = _authorService.getBookByAuthorID(id);
             var model = new AuthorDetailViewModel();
             model.ID = author.ID;
             model.Name = author.Name;

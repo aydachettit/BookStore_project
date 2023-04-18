@@ -1,0 +1,35 @@
+﻿@model BookStore_project.Models.Book.BookDetailViewModel
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detail</h1>
+
+<div class="col-md-12 grid-margin grid-margin-md-0">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Book List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Book Details</li>
+                </ol>
+            </nav><br /><br />
+            <div class="wrap d-flex justify-content-md-start justify-content-sm-center flex-wrap">
+                <img class="rounded-circle shadow-lg" style="width:250px; height:300px" src="@Url.Content(Model.Image_URL).ToString()" alt="" />
+                <div class="wrap align-content-center ml-10">
+                    <p class="font-weight-normal"> Book Name: @Model.Name </p>
+                    <p class="font-weight-normal"> Public Date: @Model.PublicDate.ToString("dd/MM/yyyy")</p>
+                    <p class="font-weight-normal"> Amout: @Model.Amount </p>
+                    <p class="font-weight-normal"> Price: @Model.Price </p>
+                    <p class="font-weight-normal"> Book Author: @Model.Authors </p>
+                    <p class="font-weight-normal"> Book Category: @Model.Categories </p>
+                    <p class="font-weight-normal"> Book Publisher: @Model.Publishers </p>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

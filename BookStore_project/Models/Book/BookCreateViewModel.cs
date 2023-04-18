@@ -9,21 +9,26 @@ namespace BookStore_project.Models.Book
     {
         public int ID { get; set; }
         [Required(ErrorMessage = "Book Name is required"), StringLength(100, MinimumLength = 2)]
-        [RegularExpression(@"^[A-Z][a-zA-Z""'\s-]*$"), Display(Name = "Book Name")]
+        [RegularExpression(@"^[A-Za-zÀ-ỹ0-9""'\s-]*$"), Display(Name = "Book Name")]
         public string Name { get; set; }
         [DataType(DataType.Date), Display(Name = "Public Date")]
         public DateTime PublicDate { get; set; }
+        [Required(ErrorMessage = "Amount Book is required")]
         public int Amount { get; set; }
+        [Required(ErrorMessage = "Price Book is required")]
         public int Price { get; set; }
         [Display(Name = "Book Image")]
         public IFormFile Image_URL { get; set; }
 
         public int AuthorID { get; set; }
-        public IEnumerable<SelectListItem> Author { get; set; }
+
+        public IEnumerable<SelectListItem> Authors;
 
         public int PublisherID { get; set; }
-        public IEnumerable<SelectListItem> Publisher { get; set; }
+        
+        public IEnumerable<SelectListItem> Publishers;
         public int CategoryID { get; set; }
-        public IEnumerable<SelectListItem> Category { get; set; }
+        
+        public IEnumerable<SelectListItem> Categories;
     }
 }

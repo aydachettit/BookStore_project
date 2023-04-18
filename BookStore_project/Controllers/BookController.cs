@@ -1,5 +1,6 @@
 ﻿using BookStore_project.Models.Author;
 using BookStore_project.Models.Book;
+using BookStore_project.Models.Employee;
 using DataAccess;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
@@ -63,30 +64,29 @@ namespace BookStore_project.Controllers
         {
             var model = new BookCreateViewModel();
 
-            List<SelectListItem> authorList = _authorService.GetAll().
+            IEnumerable<SelectListItem> authorList = _authorService.GetAll().
                 Select(c => new SelectListItem
                 {
                     Value = c.ID.ToString(),
                     Text = c.Name,
                 }).ToList();
-            List<SelectListItem> categoryList = _categoryService.GetAll().
-                Select(c => new SelectListItem
-                {
-                    Value = c.ID.ToString(),
-                    Text = c.Name,
-                }).ToList();
-
-            List<SelectListItem> publisherList = _publisherService.GetAll().
+            IEnumerable<SelectListItem> categoryList = _categoryService.GetAll().
                 Select(c => new SelectListItem
                 {
                     Value = c.ID.ToString(),
                     Text = c.Name,
                 }).ToList();
 
+            IEnumerable<SelectListItem> publisherList = _publisherService.GetAll().
+                Select(c => new SelectListItem
+                {
+                    Value = c.ID.ToString(),
+                    Text = c.Name,
+                }).ToList();
 
-            model.Author = authorList;
-            model.Category = categoryList;
-            model.Publisher = publisherList;
+            model.Authors = authorList;
+            model.Categories = categoryList;
+            model.Publishers = publisherList;
             return View(model);
         }
 
@@ -96,6 +96,7 @@ namespace BookStore_project.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var book = new Book
                 {
                     ID = model.ID,
@@ -123,6 +124,140 @@ namespace BookStore_project.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var book = _bookService.GetByID(id);
+            var model = new BookEditViewModel();
+            model.ID = book.ID;
+            model.Name = book.Name;
+            model.PublicDate = book.PublicDate;
+            model.Amount = book.Amount;
+            model.Price = book.Price;
+
+            IEnumerable<SelectListItem> authorList = _authorService.GetAll().
+                Select(c => new SelectListItem
+                {
+                    Value = c.ID.ToString(),
+                    Text = c.Name,
+                }).ToList();
+            IEnumerable<SelectListItem> categoryList = _categoryService.GetAll().
+                Select(c => new SelectListItem
+                {
+                    Value = c.ID.ToString(),
+                    Text = c.Name,
+                }).ToList();
+
+            IEnumerable<SelectListItem> publisherList = _publisherService.GetAll().
+                Select(c => new SelectListItem
+                {
+                    Value = c.ID.ToString(),
+                    Text = c.Name,
+                }).ToList();
+
+            model.Authors = authorList;
+            model.Categories = categoryList;
+            model.Publishers = publisherList;
+
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(BookEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var book = new Book
+                {
+                    ID = model.ID,
+                    Name = model.Name,
+                    PublicDate = model.PublicDate,
+                    Amount = model.Amount,
+                    Price = model.Price,
+                    AuthorID = model.AuthorID,
+                    CategoryID = model.CategoryID,
+                    PublisherID = model.PublisherID,
+                };
+                if (model.Image_URL != null && model.Image_URL.Length > 0)
+                {
+                    var uploadDir = @"img/books";
+                    var fileName = Path.GetFileNameWithoutExtension(model.Image_URL.FileName);
+                    var extension = Path.GetExtension(model.Image_URL.FileName);
+                    var webrootPath = _hostingEnvironment.WebRootPath;
+                    fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
+                    var path = Path.Combine(webrootPath, uploadDir, fileName);
+                    await model.Image_URL.CopyToAsync(new FileStream(path, FileMode.Create));
+                    book.Image_URL = "/" + uploadDir + "/" + fileName;
+                }
+                await _bookService.UpdateAsSync(book);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var book = _bookService.GetByID(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+            var model = new BookDeleteViewModel
+            {
+                ID = book.ID,
+                Name = book.Name,
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(BookDeleteViewModel model)
+        {
+            var book = _bookService.GetByID(model.ID);
+            if (book == null)
+            {
+                return NotFound();
+            }
+            _bookService.DeleteByID(model.ID);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var book = _bookService.GetByID(id);
+            var authorName = _authorService.GetById(book.AuthorID).Name;
+            var categoryName = _categoryService.GetByID(book.CategoryID).Name;
+            var publisherName = _publisherService.GetById(book.PublisherID).Name;
+
+            var model = new BookDetailViewModel();
+            model.ID = book.ID;
+            model.Name = book.Name;
+            model.PublicDate = book.PublicDate;
+            model.Image_URL = book.Image_URL;
+            model.Amount = book.Amount;
+            model.Price = book.Price;
+            model.Authors = authorName;
+            model.Categories = categoryName;
+            model.Publishers = publisherName;
+            
+
+            return View(model);
         }
     }
 }
