@@ -39,6 +39,11 @@ namespace Service.implementation
             return _context.Categories.ToList();
         }
 
+        public List<Book> GetBookByCategoryID(int id)
+        {
+            return _context.Books.Where(c => c.CategoryID == id).ToList();
+        }
+
         public Category GetByID(int id)
         {
             return _context.Categories.Where(c => c.ID == id).FirstOrDefault();

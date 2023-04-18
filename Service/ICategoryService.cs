@@ -18,5 +18,7 @@ namespace Service
         Task DeleteByID(int id);
         Category GetByID(int id);
         IEnumerable<Category> GetAll();
+
+        List<Book> GetBookByCategoryID(int id);
     }
 }
