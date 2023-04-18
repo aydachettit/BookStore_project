@@ -57,10 +57,6 @@ namespace BookStore_project.Controllers
                     employeeGender = model.employeeGender,
                     employeePhone_Number= model.employeePhone_Number
 
-
-
-
-
                 };
 
                 await _employeeService.CreateAsAsync(employee);
@@ -123,16 +119,16 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete (EmployeeDeleteViewModel model)
+        public async Task<IActionResult> Delete (EmployeeDeleteViewModel model,int id)
         {
             if (ModelState.IsValid)
             {
-                var employee = new Employee
-                {
-                    employeeID = model.employeeID,
-                    employeeName = model.employeeName
-                };
+                
+                var employee = _employeeService.GetByID (id);
+
                 await _employeeService.DeleteAsAsync(employee);
+                return RedirectToAction("Index");
+
             }
             return View();
         }
