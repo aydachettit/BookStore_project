@@ -9,73 +9,145 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookStore_project
 build_property.RootNamespace = BookStore_project
-build_property.ProjectDir = C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\BookStore_project\
+build_property.ProjectDir = C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_1\BookStore_2\BookStore_project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\BookStore_project\BookStore_project
+build_property.MSBuildProjectDirectory = C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_1\BookStore_2\BookStore_project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Create.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Author/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Delete.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Author/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Detail.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Author/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Edit.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Author/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Author/Index.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Author/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Book/Index.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Book/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Book/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Book/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Book/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Book/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/employee/Create.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Category/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/employee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Home/Index.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/employee/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/employee/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZW1wbG95ZWVcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Home/Privacy.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Shared/Error.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Publisher/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Publisher/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Publisher/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Publisher/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Publisher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/_ViewImports.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/_ViewStart.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/BookStore_project/BookStore_project/Views/Shared/_Layout.cshtml]
+[C:/Users/DuyHuynh/Documents/Studying/nam-3-ky-2/xd-mo-hinh-phan-lop/do-an/pull_1/BookStore_2/BookStore_project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2gqofyvrqm

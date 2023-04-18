@@ -14,11 +14,15 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<DataAccess.ApplicationDbContext>(options =>
 //    options.UseSqlServer(connectionString));
 
+//builder.Services.AddDbContext<ApplicationDbContext>(opt =>
+//{
+//    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLuong"));
+//});
+
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLuong"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionDuy"));
 });
-
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -28,6 +32,7 @@ builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IPublisherService, PublisherService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

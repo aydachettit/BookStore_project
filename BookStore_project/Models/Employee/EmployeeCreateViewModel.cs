@@ -10,7 +10,7 @@ namespace BookStore_project.Models.Employee
         public string? employeeGender { get; set; }
         [DataType(DataType.Date), Display(Name = "Date Joined")]
 
-        public int? employeeDate_Join { get; set; }
-        public int? employeePhone_Number { get; }
+        public DateTime employeeDate_Join { get; set; }
+        public int? employeePhone_Number { get; set; }
     }
 }

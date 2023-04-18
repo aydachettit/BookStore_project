@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\employee\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

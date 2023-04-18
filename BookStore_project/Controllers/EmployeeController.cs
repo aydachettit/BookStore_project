@@ -25,7 +25,9 @@ namespace BookStore_project.Controllers
                 employeeID = employee.employeeID,
                 employeeName = employee.employeeName,
                 employeeDate_Join= employee.employeeDate_Join,
-                employeeGender= employee.employeeGender
+                employeeGender= employee.employeeGender,
+                employeePhone_Number= employee.employeePhone_Number,
+               
                 
 
             }).ToList() ;
@@ -52,7 +54,8 @@ namespace BookStore_project.Controllers
                     employeeID = model.employeeID,
                     employeeName = model.employeeName,
                     employeeDate_Join = model.employeeDate_Join,
-                    employeeGender = model.employeeGender
+                    employeeGender = model.employeeGender,
+                    employeePhone_Number= model.employeePhone_Number
 
 
 
@@ -80,7 +83,8 @@ namespace BookStore_project.Controllers
                 employeeID = employee.employeeID,
                 employeeName = employee.employeeName,
                 employeeDate_Join = employee.employeeDate_Join,
-                employeeGender = employee.employeeGender
+                employeeGender = employee.employeeGender,
+                employeePhone_Number = employee.employeePhone_Number
 
             };
 
@@ -147,6 +151,7 @@ namespace BookStore_project.Controllers
             model.employeeName = employee.employeeName;
             model.employeeGender = employee.employeeGender;
             model.employeeDate_Join = employee.employeeDate_Join;
+            model.employeePhone_Number = employee.employeePhone_Number;
 
 
             return View(model);
@@ -158,9 +163,11 @@ namespace BookStore_project.Controllers
             {
                 var employee = _employeeService.GetByID (model.employeeID);
 
+                employee.employeeID = model.employeeID;
                 employee.employeeGender = model.employeeGender;
                 employee.employeeName = model.employeeName;
                 employee.employeeDate_Join = model.employeeDate_Join;
+                employee.employeePhone_Number= model.employeePhone_Number;
 
 
                 await _employeeService.CreateAsAsync(employee);
