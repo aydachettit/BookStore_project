@@ -1,0 +1,79 @@
+﻿@model BookStore_project.Models.Book.BookCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create Book</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <fieldset>
+                    <label asp-for="@Model.Name" class="control-label"></label>
+                    <input class="form-control" asp-for="@Model.Name" class="form-control" />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PublicDate" class="control-label"></label>
+                <input asp-for="@Model.PublicDate" class="form-control" />
+                <span asp-validation-for="@Model.PublicDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Image_URL" class="control-label"></label>
+                <input asp-for="@Model.Image_URL" class="form-control" />
+                <span asp-validation-for="@Model.Image_URL" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Amount" class="control-label"></label>
+                <input asp-for="@Model.Amount" class="form-control" />
+                <span asp-validation-for="@Model.Amount" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="@Model.Price" class="control-label"></label>
+                <input asp-for="@Model.Price" class="form-control" />
+                <span asp-validation-for="@Model.Price" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+               <label asp-for="@Model.Author" class="control-label"></label>
+                <select asp-for="@Model.AuthorID" class="form-control" asp-items="@Model.Author">
+                <option value=""> Chọn Tác Giả </option>
+                </select>
+                <span asp-validation-for="AuthorID" class="text-danger"></span>
+            </div>           
+            <div class="form-group">
+                <label asp-for="@Model.Category" class="control-label"></label>
+                <select asp-for="CategoryID" class="form-control" asp-items="@Model.Category">
+                <option value=""> Chọn Thể Loại </option>
+                </select>
+                <span asp-validation-for="CategoryID" class="text-danger"></span>
+            </div>            
+            <div class="form-group">
+                <label asp-for="@Model.Publisher" class="control-label"></label>
+                <select asp-for="PublisherID" class="form-control" asp-items="@Model.Publisher">
+                <option value=""> Chọn Nhà Xuất Bản </option>
+                </select>
+                <span asp-validation-for="PublisherID" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
