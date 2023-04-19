@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zczTPYGxugIqP61rVwrWDOL4oe7YAORK6ykfSx13y1BSokh7tw4FPFlSyBjpvP3IWN1XmqA68ZAu6lGPrzJVyQ==",
+  "dgSpecHash": "2R2OwyLqULGDOhqv5ltOfhhKrnRmw6T7vj6EOL4o5CWOigjil8Bjcivc9qXOMibmIi5gZAxAKQir1tMtPRH6dg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_1\\BookStore_2\\Service\\Service.csproj",
+  "projectFilePath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_2\\BookStore_project\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

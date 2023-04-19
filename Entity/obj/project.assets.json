@@ -10304,11 +10304,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_1\\BookStore_2\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_2\\BookStore_project\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_1\\BookStore_2\\Entity\\Entity.csproj",
+      "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_2\\BookStore_project\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_1\\BookStore_2\\Entity\\obj\\",
+      "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_2\\BookStore_project\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
