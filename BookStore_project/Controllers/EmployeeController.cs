@@ -119,12 +119,12 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete (EmployeeDeleteViewModel model,int id)
+        public async Task<IActionResult> Delete (EmployeeDeleteViewModel model)
         {
             if (ModelState.IsValid)
             {
                 
-                var employee = _employeeService.GetByID (id);
+                var employee = _employeeService.GetByID (model.employeeID);
 
                 await _employeeService.DeleteAsAsync(employee);
                 return RedirectToAction("Index");
@@ -159,14 +159,14 @@ namespace BookStore_project.Controllers
             {
                 var employee = _employeeService.GetByID (model.employeeID);
 
-                employee.employeeID = model.employeeID;
+                //employee.employeeID = model.employeeID;
                 employee.employeeGender = model.employeeGender;
                 employee.employeeName = model.employeeName;
                 employee.employeeDate_Join = model.employeeDate_Join;
                 employee.employeePhone_Number= model.employeePhone_Number;
 
 
-                await _employeeService.CreateAsAsync(employee);
+                await _employeeService.UpdateAsAsync(employee);
                 return RedirectToAction("Index");
             }
 

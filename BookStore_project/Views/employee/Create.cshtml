@@ -18,10 +18,14 @@
                 <input asp-for="employeeName" class="form-control" />
                 <span asp-validation-for="employeeName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="employeeGender" class="control-label"></label>
-                <input asp-for="employeeGender" class="form-control" />
-                <span asp-validation-for="employeeGender" class="text-danger"></span>
+                <select class="form-select" asp-for="@Model.employeeGender">
+                    <option selected>Choose Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
             </div>
             <div class="form-group">
                 <label asp-for="employeeDate_Join" class="control-label"></label>

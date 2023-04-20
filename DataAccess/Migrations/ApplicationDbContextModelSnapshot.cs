@@ -68,6 +68,29 @@ namespace DataAccess.Migrations
                     b.ToTable("Bills");
                 });
 
+            modelBuilder.Entity("Entity.BillDetail", b =>
+                {
+                    b.Property<int>("Bill_Detail_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Bill_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Book_ID")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("Bill_Detail_ID");
+
+                    b.ToTable("BillDetail");
+                });
+
             modelBuilder.Entity("Entity.Book", b =>
                 {
                     b.Property<int>("ID")
