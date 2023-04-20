@@ -7,13 +7,16 @@ namespace BookStore_project.Controllers
     public class BillDetailController :Controller
     {
         private IBillDetailService _billDetailService;
-        private IBookService _bookService;
-        private IBillService _billService;
-        public BillDetailController(IBillDetailService billDetailService, IBookService bookService, IBillService billService)
+        //private IBookService _bookService;
+        //private IBillService _billService;
+        public BillDetailController(IBillDetailService billDetailService
+            //, 
+            //IBookService bookService, IBillService billService
+            )
         {
             _billDetailService = billDetailService;
-            _bookService = bookService;
-            _billService = billService;
+            //_bookService = bookService;
+            //_billService = billService;
         }
 
         public ActionResult Index()
