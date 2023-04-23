@@ -1,5 +1,5 @@
-﻿@model IEnumerable<BookStore_project.Models.Author.AuthorIndexViewModel>
-
+﻿@model PagedList.IPagedList<BookStore_project.Models.Author.AuthorIndexViewModel>
+@using PagedList.Mvc
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,16 +14,16 @@
     <thead>
         <tr class="table-success">
             <th>
-                @Html.DisplayNameFor(model => model.ID)
+                ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                NAME
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DOB)
+                DOB
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.img_url)
+               URL
             </th>
             <th></th>
         </tr>
@@ -52,3 +52,9 @@
 }
     </tbody>
 </table>
+
+            Trang@(Model.PageCount < Model.PageNumber ?0: Model.PageNumber) / @Model.PageCount
+@for(int i = 1; i <=@Model.PageCount; i++)
+{
+    <a asp-action="Index" asp-route-page="@i">@i</a>
+}
