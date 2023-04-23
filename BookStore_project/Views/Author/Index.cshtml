@@ -60,7 +60,9 @@
     @if(Model.PageNumber==i){
         <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
     }
+    else{
         <a asp-action="Index" asp-route-page="@i">@i</a>
+    }
 }
 </div>
 <style>
