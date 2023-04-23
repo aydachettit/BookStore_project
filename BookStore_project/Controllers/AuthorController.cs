@@ -1,9 +1,11 @@
 ﻿using BookStore_project.Models.Author;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using PagedList;
 using Service;
 using Service.implementation;
+using Service.Implementation;
 
 namespace BookStore_project.Controllers
 {
@@ -142,6 +144,24 @@ namespace BookStore_project.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+        [HttpGet]
+        public IActionResult SearchPage()
+        {
+            var model = new AuthorSearchViewModel();
+            return View(model);
+        }
+        public IActionResult SearchByAuthorName(string name)
+        {
+            var model = _authorService.getAuthorbyName(name).Select(Author => new AuthorIndexViewModel
+            {
+                ID = Author.ID,
+                Name = Author.Name,
+                DOB = Author.DOB,
+                img_url = Author.img_url
+            }).ToList();
+            return View(model);
+
         }
     }
 }

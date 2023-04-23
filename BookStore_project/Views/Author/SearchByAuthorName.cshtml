@@ -1,22 +1,19 @@
-﻿@model PagedList.IPagedList<BookStore_project.Models.Author.AuthorIndexViewModel>
-@using PagedList.Mvc
+﻿@model IEnumerable<BookStore_project.Models.Author.AuthorIndexViewModel>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "SearchByAuthorName";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>SearchByAuthorName</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<p>
-    <a asp-action="SearchPage">Search page</a>
-</p>
-<table class="table table-hover">
+<table class="table">
     <thead>
-        <tr class="table-success">
-            <th>
+        <tr>
+             <th>
                 ID
             </th>
             <th>
@@ -41,32 +38,32 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @item.DOB.ToShortDateString()
+                @Html.DisplayFor(modelItem => item.DOB)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.img_url)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+                 <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
 }
     </tbody>
 </table>
-
-         
-<div class="pagination">
-@for(int i = 1; i <=@Model.PageCount; i++)
-{
-    @if(Model.PageNumber==i){
-        <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
+@*<div class="pagination">
+    @for (int i = 1; i <= @Model.PageCount; i++)
+    {
+        @if (Model.PageNumber == i)
+        {
+            <a asp-action="SearchByAuthorName" asp-route-page="@i" class="active">@i</a>
+        }
+        else
+        {
+            <a asp-action="SearchByAuthorName" asp-route-page="@i">@i</a>
+        }
     }
-    else{
-        <a asp-action="Index" asp-route-page="@i">@i</a>
-    }
-}
 </div>
 <style>
    .pagination {
@@ -90,4 +87,4 @@
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
-</style>
+</style>*@

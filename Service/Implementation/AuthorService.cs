@@ -59,12 +59,14 @@ namespace Service.Implementation
             await _context.SaveChangesAsync();
         }
 
-        public Task UpdateById(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
         public List<Book> getBookByAuthorID(int id) { 
             return _context.Books.Where(c => c.AuthorID == id).ToList(); 
+        }
+
+        public List<Author> getAuthorbyName(string name)
+        {
+            return _context.Authors.Where(x => x.Name.Contains(name)).ToList();
         }
     }
 }

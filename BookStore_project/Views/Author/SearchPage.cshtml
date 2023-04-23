@@ -1,0 +1,17 @@
+﻿@model BookStore_project.Models.Author.AuthorSearchViewModel
+
+<div class="form-group">
+    <form asp-action="SearchByAuthorName" >
+       <div class="form-group">
+                <fieldset>
+                    <label asp-for="@Model.Name" class="control-label"></label>
+                    <input class="form-control" asp-for="@Model.Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </fieldset>
+        </div>
+        <a asp-action="Index">Back to List</a>
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
