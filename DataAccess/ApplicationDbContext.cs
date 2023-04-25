@@ -19,6 +19,7 @@ namespace DataAccess
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Author> Authors{ get; set; }
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<Publisher> Publishers{ get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
@@ -27,6 +28,8 @@ namespace DataAccess
         public DbSet<Status> Status { get; set; }
         public DbSet<Employee> Employee { get; set; }
         public DbSet<BillDetail> BillDetail { get; set; }
+        public DbSet<Import> Imports { get; set; }
+        public DbSet<ImportDetail> ImportDetails { get; set; }
 
     }
 }

@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionDuy"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionNam"));
 });
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -34,6 +34,8 @@ builder.Services.AddScoped<IPublisherService, PublisherService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IBillDetailService, BillDetailService>();
+builder.Services.AddScoped<IImport, ImportService>();
+builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
