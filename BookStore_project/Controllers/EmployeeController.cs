@@ -63,6 +63,7 @@ namespace BookStore_project.Controllers
 
             if (!String.IsNullOrEmpty(SearchString))
             {
+                // dòng này dùng để tìm tên nhập trên input có tồn tại trong database không ?
                 model = model.Where(e => e.employeeName.ToUpper().Contains(SearchString.ToUpper()));
             }
 
