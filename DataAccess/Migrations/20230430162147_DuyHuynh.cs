@@ -32,6 +32,23 @@ namespace DataAccess.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "BillDetail",
+                columns: table => new
+                {
+                    Bill_Detail_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Book_ID = table.Column<int>(type: "int", nullable: false),
+                    Bill_ID = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<float>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BillDetail", x => x.Bill_Detail_ID);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Bills",
                 columns: table => new
                 {
@@ -94,6 +111,38 @@ namespace DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employee", x => x.employeeID);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "ImportDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    import_id = table.Column<int>(type: "int", nullable: false),
+                    book_name = table.Column<string>(type: "longtext", nullable: false),
+                    book_amount = table.Column<int>(type: "int", nullable: false),
+                    book_price = table.Column<double>(type: "double", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImportDetails", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Imports",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    date_import = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Total = table.Column<double>(type: "double", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Imports", x => x.id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -201,6 +250,9 @@ namespace DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "BillDetail");
+
+            migrationBuilder.DropTable(
                 name: "Bills");
 
             migrationBuilder.DropTable(
@@ -211,6 +263,12 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employee");
+
+            migrationBuilder.DropTable(
+                name: "ImportDetails");
+
+            migrationBuilder.DropTable(
+                name: "Imports");
 
             migrationBuilder.DropTable(
                 name: "Shipments");

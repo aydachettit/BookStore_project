@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230419003209_DuyHuynh")]
+    [Migration("20230430162147_DuyHuynh")]
     partial class DuyHuynh
     {
         /// <inheritdoc />
@@ -69,6 +69,29 @@ namespace DataAccess.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Bills");
+                });
+
+            modelBuilder.Entity("Entity.BillDetail", b =>
+                {
+                    b.Property<int>("Bill_Detail_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Bill_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Book_ID")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("Bill_Detail_ID");
+
+                    b.ToTable("BillDetail");
                 });
 
             modelBuilder.Entity("Entity.Book", b =>
@@ -175,6 +198,47 @@ namespace DataAccess.Migrations
                     b.HasKey("employeeID");
 
                     b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("Entity.Import", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("double");
+
+                    b.Property<DateTime>("date_import")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Imports");
+                });
+
+            modelBuilder.Entity("Entity.ImportDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("book_amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("book_name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("book_price")
+                        .HasColumnType("double");
+
+                    b.Property<int>("import_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ImportDetails");
                 });
 
             modelBuilder.Entity("Entity.Publisher", b =>

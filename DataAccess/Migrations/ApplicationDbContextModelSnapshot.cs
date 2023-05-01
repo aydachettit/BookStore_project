@@ -197,6 +197,47 @@ namespace DataAccess.Migrations
                     b.ToTable("Employee");
                 });
 
+            modelBuilder.Entity("Entity.Import", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("double");
+
+                    b.Property<DateTime>("date_import")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Imports");
+                });
+
+            modelBuilder.Entity("Entity.ImportDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("book_amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("book_name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("book_price")
+                        .HasColumnType("double");
+
+                    b.Property<int>("import_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ImportDetails");
+                });
+
             modelBuilder.Entity("Entity.Publisher", b =>
                 {
                     b.Property<int>("ID")

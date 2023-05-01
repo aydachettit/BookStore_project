@@ -1,6 +1,8 @@
 ﻿using BookStore_project.Models.Employee;
+using DataAccess;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Service;
 
 namespace BookStore_project.Controllers
@@ -9,29 +11,56 @@ namespace BookStore_project.Controllers
     {
 
         private IEmployeeService _employeeService;
+        private ApplicationDbContext _context;
 
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService, ApplicationDbContext context)
         {
             _employeeService = employeeService;
-
+            _context= context;
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    var model = _employeeService.GetAll().Select(employee => new EmployeeIndexViewModel
+        //    {
+
+        //        employeeID = employee.employeeID,
+        //        employeeName = employee.employeeName,
+        //        employeeDate_Join= employee.employeeDate_Join,
+        //        employeeGender= employee.employeeGender,
+        //        employeePhone_Number= employee.employeePhone_Number,
+               
+                
+
+        //    }).ToList() ;
+
+
+        //    return View(model);
+        //}
+        public async Task<IActionResult> Index (string SearchString)
         {
+            ViewData["CurrentFilter"] = SearchString;
+            //var employee = from e in _context.Employee
+            //               select e;
+
             var model = _employeeService.GetAll().Select(employee => new EmployeeIndexViewModel
             {
 
                 employeeID = employee.employeeID,
                 employeeName = employee.employeeName,
-                employeeDate_Join= employee.employeeDate_Join,
-                employeeGender= employee.employeeGender,
-                employeePhone_Number= employee.employeePhone_Number,
-               
-                
+                employeeDate_Join = employee.employeeDate_Join,
+                employeeGender = employee.employeeGender,
+                employeePhone_Number = employee.employeePhone_Number,
 
-            }).ToList() ;
 
+
+            }).AsEnumerable();
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                model = model.Where(e => e.employeeName.ToUpper().Contains(SearchString.ToUpper()));
+            }
 
             return View(model);
         }
