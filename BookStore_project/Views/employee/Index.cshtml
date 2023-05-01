@@ -1,4 +1,5 @@
-﻿@model IEnumerable< BookStore_project.Models.Employee.EmployeeIndexViewModel>
+﻿@model PagedList.IPagedList< BookStore_project.Models.Employee.EmployeeIndexViewModel>
+@using PagedList.Mvc
 @{
     ViewData["Title"] = "Index";
 }
@@ -21,13 +22,13 @@
     <thead>
         <tr class="table-success">
             <th>
-                @Html.DisplayNameFor(model => model.employeeID)
+                Employee ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.employeeName)
+                Employee Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.employeePhone_Number)
+                Employee Phone Number
             </th>
             <th>
                 Action
@@ -57,4 +58,42 @@
             </tr>
         }
     </tbody>
-</tabl
+</table>
+
+
+<div class="pagination">
+    @for (int i = 1; i <= @Model.PageCount; i++)
+    {
+        @if (Model.PageNumber == i)
+        {
+                <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
+        }
+        else
+        {
+                <a asp-action="Index" asp-route-page="@i">@i</a>
+        }
+    }
+</div>
+<style>
+   .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+          border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>

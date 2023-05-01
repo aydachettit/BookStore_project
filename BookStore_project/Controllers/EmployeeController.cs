@@ -3,6 +3,7 @@ using DataAccess;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PagedList;
 using Service;
 
 namespace BookStore_project.Controllers
@@ -38,7 +39,7 @@ namespace BookStore_project.Controllers
 
         //    return View(model);
         //}
-        public async Task<IActionResult> Index (string SearchString)
+        public async Task<IActionResult> Index (string SearchString, int? page)
         {
             ViewData["CurrentFilter"] = SearchString;
             //var employee = from e in _context.Employee
@@ -57,12 +58,15 @@ namespace BookStore_project.Controllers
 
             }).AsEnumerable();
 
+            int page_size = 5;
+            int page_number = (page ?? 1);
+
             if (!String.IsNullOrEmpty(SearchString))
             {
                 model = model.Where(e => e.employeeName.ToUpper().Contains(SearchString.ToUpper()));
             }
 
-            return View(model);
+            return View(model.ToPagedList(page_number,page_size));
         }
 
         [HttpGet]
