@@ -20,5 +20,7 @@ namespace Service
         IEnumerable<Category> GetAll();
 
         List<Book> GetBookByCategoryID(int id);
+
+        List<Category> GetCategoryByName(string name);
     }
 }

@@ -1,0 +1,66 @@
+@model IEnumerable<BookStore_project.Models.Bill.BillIndexViewModel>
+
+@{
+    ViewData["Title"] = "Index Bill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index Bill</h1>
+<p>
+    <a asp-action='Create'>Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_money)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill_status_ID)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_money)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bill_status_ID)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

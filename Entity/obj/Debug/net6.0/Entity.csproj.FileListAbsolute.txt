@@ -108,6 +108,7 @@ C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_p
 C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_phu\BookStore_project\Entity\obj\Debug\net6.0\Entity.pdb
 C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_phu\BookStore_project\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
 C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_phu\BookStore_project\Entity\obj\Debug\net6.0\ref\Entity.dll
+<<<<<<< HEAD
 E:\c#-workspace\BookStoreManagm\Entity\bin\Debug\net6.0\Entity.deps.json
 E:\c#-workspace\BookStoreManagm\Entity\bin\Debug\net6.0\Entity.runtimeconfig.json
 E:\c#-workspace\BookStoreManagm\Entity\bin\Debug\net6.0\Entity.dll
@@ -122,3 +123,19 @@ E:\c#-workspace\BookStoreManagm\Entity\obj\Debug\net6.0\refint\Entity.dll
 E:\c#-workspace\BookStoreManagm\Entity\obj\Debug\net6.0\Entity.pdb
 E:\c#-workspace\BookStoreManagm\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
 E:\c#-workspace\BookStoreManagm\Entity\obj\Debug\net6.0\ref\Entity.dll
+=======
+D:\F\BookStore_project\Entity\bin\Debug\net6.0\Entity.deps.json
+D:\F\BookStore_project\Entity\bin\Debug\net6.0\Entity.runtimeconfig.json
+D:\F\BookStore_project\Entity\bin\Debug\net6.0\Entity.dll
+D:\F\BookStore_project\Entity\bin\Debug\net6.0\Entity.pdb
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.csproj.AssemblyReference.cache
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.AssemblyInfoInputs.cache
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.AssemblyInfo.cs
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.csproj.CoreCompileInputs.cache
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.dll
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\refint\Entity.dll
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.pdb
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
+D:\F\BookStore_project\Entity\obj\Debug\net6.0\ref\Entity.dll
+>>>>>>> 6b214cbf316b810a031a5f83fbbfc8380ef5bc7f

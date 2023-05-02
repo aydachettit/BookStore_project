@@ -9,12 +9,17 @@ namespace Service
 {
     public interface IShipmentService
     {
-        Task CreateAsSync(Shipment newShipment);
-        Task UpdateAsSync(Shipment updateShipment);
-        Task DeleteAsSync(Shipment deleteShipment);
+        Task CreateAsAsync(Shipment newShipment);
+        Task UpdateAsAsync(Shipment updateShipment);
+        Task DeleteAsAsync(Shipment deleteShipment);
         Task UpdateByID(int id);
         Task DeleteByID(int id);
         Shipment GetByID(int id);
         IEnumerable<Shipment> GetAll();
+
+        IEnumerable<Shipment> GetShipmentByBillID(int BillID);
+        IEnumerable<Shipment> GetShipmentByCustomerName(string CustomerName);
+        IEnumerable<Shipment> GetShipmentByStatusID(int StatusID);
+
     }
 }

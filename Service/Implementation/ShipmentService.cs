@@ -15,13 +15,13 @@ namespace Service.Implementation
         {
             _context = context;
         }
-        public async Task CreateAsSync(Shipment newShipment)
+        public async Task CreateAsAsync(Shipment newShipment)
         {
             _context.Shipments.Add(newShipment);
             await _context.SaveChangesAsync(); 
         }
 
-        public async Task DeleteAsSync(Shipment deleteShipment)
+        public async Task DeleteAsAsync(Shipment deleteShipment)
         {
            _context.Shipments.Remove(deleteShipment);
             await _context.SaveChangesAsync();
@@ -44,7 +44,7 @@ namespace Service.Implementation
             return _context.Shipments.Where(x => x.ID == id).FirstOrDefault();
         }
 
-        public async Task UpdateAsSync(Shipment updateShipment)
+        public async Task UpdateAsAsync(Shipment updateShipment)
         {
             _context.Shipments.Update(updateShipment);
             await _context.SaveChangesAsync();
@@ -55,6 +55,21 @@ namespace Service.Implementation
             var Shipment = GetByID(id);
             _context.Shipments.Update(Shipment);
             await _context.SaveChangesAsync();
+        }
+
+        public IEnumerable<Shipment> GetShipmentByBillID(int BillID)
+        {
+            return _context.Shipments.Where(x => x.BillID == BillID).ToList();
+        }
+
+        public IEnumerable<Shipment> GetShipmentByStatusID(int StatusID)
+        {
+            return _context.Shipments.Where(x => x.Shipment_Status_ID == StatusID).ToList();
+        }
+
+        public IEnumerable<Shipment> GetShipmentByCustomerName(string CustomerName)
+        {
+            return _context.Shipments.Where(x => x.CustomerName == CustomerName).ToList();
         }
     }
 }
