@@ -15,10 +15,6 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<DataAccess.ApplicationDbContext>(options =>
 //    options.UseSqlServer(connectionString));
 
-//builder.Services.AddDbContext<ApplicationDbContext>(opt =>
-//{
-//    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLuong"));
-//});
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {

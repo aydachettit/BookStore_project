@@ -8,10 +8,12 @@ namespace BookStore_project.Controllers
     public class CartController : Controller
     {
         private readonly ICartService _cartService;
+        private IBookService _bookService;
 
-        public CartController(ICartService cartService)
+        public CartController(ICartService cartService, IBookService bookService)
         {
             _cartService = cartService;
+            _bookService = bookService;
         }
 
         public IActionResult Index()
@@ -20,25 +22,28 @@ namespace BookStore_project.Controllers
             return View(cartItems);
         }
 
-        public IActionResult AddToCart(CartViewModel model)
+        [HttpGet]
+        public IActionResult AddToCart(int bookId)
         {
+            var book = _bookService.GetByID(bookId);
             var item = new CartItem
             {
-                Id = model.Id,
-                Name = model.Name,
-                ImageURL = model.ImageURL,
-                Price = model.Price,
-                Quantity = model.Quantity
+                Id = book.ID,
+                Name = book.Name,
+                ImageURL = book.Image_URL,
+                Price = book.Price,
+                Quantity = 1,
             };
+            item.TotalPrice = item.Quantity * Convert.ToInt32(item.Price);
 
             _cartService.AddToCart(item);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("/Home/Index");
         }
 
-        public IActionResult RemoveFromCart(int productId)
+        public IActionResult RemoveFromCart(int bookId)
         {
-            _cartService.RemoveFromCart(productId);
+            _cartService.RemoveFromCart(bookId);
 
             return RedirectToAction("Index");
         }
