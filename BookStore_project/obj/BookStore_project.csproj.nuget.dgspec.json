@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {}
+    "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {
+    "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj",
         "projectName": "BookStore_project",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\obj\\",
+        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\BookStore_project.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,20 +26,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj"
+              "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj"
+              "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
               },
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj"
+              "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj": {
+                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj"
               }
             }
           }
@@ -54,6 +59,10 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
@@ -61,6 +70,10 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -112,17 +125,21 @@
         }
       }
     },
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+    "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\obj\\",
+        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,14 +147,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj"
+              "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
               }
             }
           }
@@ -155,6 +173,14 @@
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -191,17 +217,21 @@
         }
       }
     },
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
+    "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj",
+        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\obj\\",
+        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -209,6 +239,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -231,6 +262,14 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -266,17 +305,21 @@
         }
       }
     },
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj": {
+    "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj",
+        "projectUniqueName": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\obj\\",
+        "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "E:\\c#-workspace\\BookStoreManagement\\Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft Visual Studio\\shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -284,17 +327,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj"
+              "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj"
+              "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\c#-workspace\\BookStoreManagement\\Entity\\Entity.csproj"
               }
             }
           }
@@ -312,6 +356,14 @@
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

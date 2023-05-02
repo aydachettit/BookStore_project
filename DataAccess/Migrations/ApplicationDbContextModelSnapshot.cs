@@ -74,8 +74,8 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Bill_ID")
                         .HasColumnType("int");
@@ -83,8 +83,8 @@ namespace DataAccess.Migrations
                     b.Property<int>("Book_ID")
                         .HasColumnType("int");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Bill_Detail_ID");
 

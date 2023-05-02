@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookStore_project.Models.Book
 {
+    [Serializable]
     public class BookIndexViewModel
     {
         public int ID { get; set; }
