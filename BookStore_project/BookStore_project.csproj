@@ -29,8 +29,63 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\employee\" />
     <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Author\Create.cshtml" />
+    <None Include="Views\Author\Delete.cshtml" />
+    <None Include="Views\Author\Detail.cshtml" />
+    <None Include="Views\Author\Edit.cshtml" />
+    <None Include="Views\Author\Index.cshtml" />
+    <None Include="Views\Author\SearchByAuthorName.cshtml" />
+    <None Include="Views\Author\SearchPage.cshtml" />
+    <None Include="Views\BillDetail\Index.cshtml" />
+    <None Include="Views\Book\Create.cshtml" />
+    <None Include="Views\Book\Delete.cshtml" />
+    <None Include="Views\Book\Detail.cshtml" />
+    <None Include="Views\Book\Edit.cshtml" />
+    <None Include="Views\Book\Index.cshtml" />
+    <None Include="Views\Category\Create.cshtml" />
+    <None Include="Views\Category\Delete.cshtml" />
+    <None Include="Views\Category\Detail.cshtml" />
+    <None Include="Views\Category\Edit.cshtml" />
+    <None Include="Views\Category\Index.cshtml" />
+    <None Include="Views\Customer\Create.cshtml" />
+    <None Include="Views\Customer\Delete.cshtml" />
+    <None Include="Views\Customer\Edit.cshtml" />
+    <None Include="Views\Customer\Index.cshtml" />
+    <None Include="Views\Customer\SearchPage.cshtml" />
+    <None Include="Views\Customer\SearchResultPage.cshtml" />
+    <None Include="Views\employee\Create.cshtml" />
+    <None Include="Views\employee\Delete.cshtml" />
+    <None Include="Views\employee\Detail.cshtml" />
+    <None Include="Views\employee\Edit.cshtml" />
+    <None Include="Views\employee\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Import\Create.cshtml" />
+    <None Include="Views\Import\Delete.cshtml" />
+    <None Include="Views\Import\Detail.cshtml" />
+    <None Include="Views\Import\Index.cshtml" />
+    <None Include="Views\Import\number.cshtml" />
+    <None Include="Views\Publisher\Create.cshtml" />
+    <None Include="Views\Publisher\Delete.cshtml" />
+    <None Include="Views\Publisher\Detail.cshtml" />
+    <None Include="Views\Publisher\Edit.cshtml" />
+    <None Include="Views\Publisher\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Shipment\Create.cshtml" />
+    <None Include="Views\Shipment\Delete.cshtml" />
+    <None Include="Views\Shipment\Edit.cshtml" />
+    <None Include="Views\Shipment\Index.cshtml" />
+    <None Include="Views\Shipment\SearchPage.cshtml" />
+    <None Include="Views\Shipment\SearchResultPage.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
 
 </Project>

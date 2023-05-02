@@ -1,0 +1,46 @@
+﻿@using BookStore_project.Models.Customer;
+@using Entity;
+
+@model CustomerDeleteViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete Customer</h1>
+<nav aria-label="breadcrumb">
+     <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+     <li class="breadcrumb-item"><a asp-action="Index">Customer List</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Customer Delete</li>
+     </ol>
+</nav><br />
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    
+    <dl class="row-sm-2">
+        <dt class = "col-sm-2">
+            ID
+        </dt>
+
+        <input asp-for="@Model.ID" readonly class = "col-sm-10" >
+
+        <dt class = "col-sm-2">
+            Name
+        </dt>
+
+        <input asp-for="@Model.Name"  readonly  class = "col-sm-10">
+    </dl>
+        <form asp-action="Delete" method="post" asp-asp-controller="Customer">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

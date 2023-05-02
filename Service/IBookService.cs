@@ -17,5 +17,12 @@ namespace Service
         Book GetByID(int id);
         IEnumerable<Book> GetAll();
 
+        IEnumerable<Book> GetBookByName(string name);
+        IEnumerable<Book> GetBookByPublicDate(string date);
+        IEnumerable<Book> GetBookByAmount(int amount);
+        IEnumerable<Book> GetBookByPrice(int price);
+        IEnumerable<Book> GetBookByAuthor(string author);
+        IEnumerable<Book> GetBookByCategory(string category);
+        IEnumerable<Book> GetBookByPublisher(string publisher);
     }
 }

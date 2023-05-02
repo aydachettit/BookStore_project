@@ -62,5 +62,10 @@ namespace Service.implementation
             _context.Categories.Update(model);
             await _context.SaveChangesAsync();
         }
+
+        public List<Category> GetCategoryByName(string name)
+        {
+            return _context.Categories.Where(x => x.Name.Contains(name)).ToList();
+        }
     }
 }

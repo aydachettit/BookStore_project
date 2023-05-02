@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionDuy"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLoi"));
 });
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -35,6 +35,9 @@ builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBillService, BillService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IBillDetailService, BillDetailService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IShipmentService, ShipmentService>();
+builder.Services.AddScoped<IStatusService, StatusService>();
 builder.Services.AddScoped<IImport, ImportService>();
 builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
 var app = builder.Build();

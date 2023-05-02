@@ -1,13 +1,10 @@
 ﻿
 using BookStore_project.Models.Author;
-using BookStore_project.Models.Book;
 using BookStore_project.Models.Category;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using PagedList;
 using Service;
-using Service.implementation;
-using Service.Implementation;
 
 
 namespace BookStore_project.Controllers
@@ -26,16 +23,19 @@ namespace BookStore_project.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
 
             var model = _categoryService.GetAll().Select(c => new CategoryIndexViewModel
             {
                 ID = c.ID,
                 Name = c.Name,
-            }).ToList();
+            }).OrderBy(x => x.ID).ToList();
 
-            return View(model);
+            int pagesize = 5;
+            int pagenumber = (page ?? 1);
+
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
 
         [HttpGet]
@@ -149,6 +149,24 @@ namespace BookStore_project.Controllers
                 items.Publisher = publisher;
             }
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult SearchPage()
+        {
+            var model = new CategorySearchViewModel();
+            return View(model);
+        }
+
+        public IActionResult SearchByCategoryName(string name)
+        {
+            var model = _categoryService.GetCategoryByName(name).Select(category => new CategoryIndexViewModel
+            {
+                ID = category.ID,
+                Name = category.Name
+            }).ToList();
+            return View(model);
+
         }
     }
 }

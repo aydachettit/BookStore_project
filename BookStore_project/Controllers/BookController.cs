@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PagedList;
 using Service;
 using Service.Implementation;
 using System.Text.Json;
@@ -33,7 +34,7 @@ namespace BookStore_project.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
 
             var model = _bookService.GetAll().Select(c => new BookIndexViewModel
@@ -47,7 +48,9 @@ namespace BookStore_project.Controllers
                 AuthorID = c.AuthorID,
                 PublisherID = c.PublisherID,
                 CategoryID = c.CategoryID,
-            }).ToList();
+            }).OrderBy(x => x.ID).ToList();
+            int pagesize = 5;
+            int pagenumber = (page ?? 1);
 
             foreach (var item in model)
             {
@@ -56,7 +59,7 @@ namespace BookStore_project.Controllers
                 item.Publisher = _publisherService.GetById(item.PublisherID).Name;
             }
 
-            return View(model);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
 
         [HttpGet]
@@ -258,6 +261,172 @@ namespace BookStore_project.Controllers
             
 
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult SearchPage()
+        {
+            var model = new BookSearchViewModel();
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult SearchResultPage(BookSearchViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                int keyID = model.SearchKeyID;
+                string keyword = model.Keyword;
+
+                switch (keyID)
+                {
+                    case 1:
+                        var bookModel = _bookService.GetBookByName(keyword).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+                        
+                    case 2:
+                        bookModel = _bookService.GetBookByPublicDate(keyword).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+
+                    case 3:
+                        bookModel = _bookService.GetBookByAmount(Int32.Parse(keyword)).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+                    case 4:
+                        bookModel = _bookService.GetBookByPrice(Int32.Parse(keyword)).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+                    case 5:
+                        bookModel = _bookService.GetBookByAuthor(keyword).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+                    case 6:
+                        bookModel = _bookService.GetBookByCategory(keyword).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+                    case 7:
+                        bookModel = _bookService.GetBookByPublisher(keyword).Select(book => new BookIndexViewModel
+                        {
+                            ID = book.ID,
+                            Name = book.Name,
+                            PublicDate = book.PublicDate,
+                            Amount = book.Amount,
+                            Price = book.Price,
+                            Image_URL = book.Image_URL,
+                            AuthorID = book.AuthorID,
+                            CategoryID = book.CategoryID,
+                            PublisherID = book.PublisherID,
+                        }).ToList();
+                        foreach (var item in bookModel)
+                        {
+                            item.Author = _authorService.GetById(item.AuthorID).Name;
+                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                        }
+                        return View(bookModel);
+                }
+               
+            }
+            return View();
+            
+
         }
     }
 }

@@ -15,13 +15,13 @@ namespace Service.Implementation
         {
             _context = context;
         }
-        public async Task CreateAsSync(Customer newCustomer)
+        public async Task CreateAsAsync(Customer newCustomer)
         {
             _context.Customers.Add(newCustomer);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsSync(Customer deleteCustomer)
+        public async Task DeleteAsAsync(Customer deleteCustomer)
         {
             _context.Customers.Remove(deleteCustomer);
             await _context.SaveChangesAsync();
@@ -44,7 +44,27 @@ namespace Service.Implementation
             return _context.Customers.Where(x => x.ID == id).FirstOrDefault();
         }
 
-        public async Task UpdateAsSync(Customer updateCustomer)
+        public IEnumerable<Customer> GetCustomerByAddress(string address)
+        {
+            return _context.Customers.Where(x => x.Address == address).ToList();
+        }
+
+        public IEnumerable<Customer> GetCustomerByGender(string gender)
+        {
+            return _context.Customers.Where(x => x.Gender == gender).ToList();
+        }
+
+        public IEnumerable<Customer> GetCustomerByName(string name)
+        {
+            return _context.Customers.Where(x => x.Name == name).ToList();
+        }
+
+        public IEnumerable<Customer> GetCustomerByPhone(string phone)
+        {
+            return _context.Customers.Where(x => x.Phone == phone).ToList();
+        }
+
+        public async Task UpdateAsAsync(Customer updateCustomer)
         {
             _context.Customers.Update(updateCustomer);
             await _context.SaveChangesAsync();

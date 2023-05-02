@@ -15,6 +15,7 @@ namespace Entity
         [ForeignKey("Bill")]
         public int BillID { get; set; }
         public int CustomerID { get; set;}
+        public string CustomerName { get; set; }
         public int Shipment_Status_ID { get; set;}
     }
 }
