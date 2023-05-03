@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLoi"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionDuy"));
 });
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -40,7 +40,9 @@ builder.Services.AddScoped<IShipmentService, ShipmentService>();
 builder.Services.AddScoped<IStatusService, StatusService>();
 builder.Services.AddScoped<IImport, ImportService>();
 builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
+builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -64,7 +66,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=ProductDetail}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230430162147_DuyHuynh")]
+    [Migration("20230503084820_DuyHuynh")]
     partial class DuyHuynh
     {
         /// <inheritdoc />
@@ -77,8 +77,8 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Bill_ID")
                         .HasColumnType("int");
@@ -86,8 +86,8 @@ namespace DataAccess.Migrations
                     b.Property<int>("Book_ID")
                         .HasColumnType("int");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Bill_Detail_ID");
 
@@ -241,6 +241,31 @@ namespace DataAccess.Migrations
                     b.ToTable("ImportDetails");
                 });
 
+            modelBuilder.Entity("Entity.ProductDetail", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("AuthorID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductDescription")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("ProductPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ProductTitle")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ProductDetail");
+                });
+
             modelBuilder.Entity("Entity.Publisher", b =>
                 {
                     b.Property<int>("ID")
@@ -272,6 +297,10 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("CustomerID")
                         .HasColumnType("int");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Shipment_Status_ID")
                         .HasColumnType("int");

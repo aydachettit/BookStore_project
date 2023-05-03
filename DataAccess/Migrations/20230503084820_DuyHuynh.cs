@@ -39,8 +39,8 @@ namespace DataAccess.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Book_ID = table.Column<int>(type: "int", nullable: false),
                     Bill_ID = table.Column<int>(type: "int", nullable: false),
-                    Amount = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<float>(type: "float", nullable: false)
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -147,6 +147,23 @@ namespace DataAccess.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "ProductDetail",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    ProductTitle = table.Column<string>(type: "longtext", nullable: false),
+                    ProductDescription = table.Column<string>(type: "longtext", nullable: false),
+                    ProductPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    AuthorID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductDetail", x => x.ID);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Publishers",
                 columns: table => new
                 {
@@ -169,6 +186,7 @@ namespace DataAccess.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     BillID = table.Column<int>(type: "int", nullable: false),
                     CustomerID = table.Column<int>(type: "int", nullable: false),
+                    CustomerName = table.Column<string>(type: "longtext", nullable: false),
                     Shipment_Status_ID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -269,6 +287,9 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Imports");
+
+            migrationBuilder.DropTable(
+                name: "ProductDetail");
 
             migrationBuilder.DropTable(
                 name: "Shipments");
