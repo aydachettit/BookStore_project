@@ -62,7 +62,16 @@ namespace DataAccess
                     NormalizedUserName = "Nam".ToUpper(),
                     NormalizedEmail = "nam@gmail.com".ToUpper(),
                     PasswordHash = hasher.HashPassword(null, "Admin@123")
-                }
+                },
+                 new IdentityUser
+                 {
+                     Id = "2",
+                     UserName = "Admin",
+                     Email = "admin@gmail.com",
+                     NormalizedUserName = "Admin".ToUpper(),
+                     NormalizedEmail = "admin@gmail.com".ToUpper(),
+                     PasswordHash = hasher.HashPassword(null, "Admin@123")
+                 }
             );
             modelBuilder.Entity<IdentityUserRole<string>>().HasData
             (
@@ -70,7 +79,12 @@ namespace DataAccess
                 {
                     UserId = "1",
                     RoleId = "2"
-                }
+                },
+                 new IdentityUserRole<string>
+                 {
+                     UserId = "2",
+                     RoleId = "1"
+                 }
             );
         }
 
