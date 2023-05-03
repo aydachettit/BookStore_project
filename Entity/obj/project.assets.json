@@ -10157,19 +10157,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DuyHuynh\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_projec_phu\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\formerg\\BookStore_project\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_projec_phu\\Entity\\Entity.csproj",
-      "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_projec_phu\\Entity\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Source\\Repos\\formerg\\BookStore_project\\Entity\\Entity.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Source\\Repos\\formerg\\BookStore_project\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10230,7 +10230,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

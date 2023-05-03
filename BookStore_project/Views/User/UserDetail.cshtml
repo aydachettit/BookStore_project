@@ -1,0 +1,88 @@
+﻿@model BookStore_project.Models.User.UserDetailViewModel
+
+@{
+    ViewData["Title"] = "UserDetailAsync";
+    Layout = "~/Views/Shared/_layoutUser.cshtml";
+}
+
+<h1>UserDetailAsync</h1>
+
+<div>
+    <h4>UserDetailViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2" hidden="hidden">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10" hidden="hidden">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dd class ="col-sm-10">
+            <a asp-action="Edit" asp-route-id="@Model.Id">Chỉnh sửa thông tin</a>
+        </dd>
+        <dd class="col-sm-10">
+            <a asp-action="ChangePassword" asp-route-id="@Model.Id">Đổi mật khẩu</a>
+        </dd>
+    </dl>
+     <table class="table table-hover">
+        <thead>
+            <tr class="table-success">
+                <th>
+                 Tên người mua
+                </th>
+                <th>
+                    Ngày
+                </th>
+                <th>
+                   Tổng tiền(VNĐ)
+                </th>
+                <th>
+                    Tình trạng đơn hàng
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.ListOfBill)
+            {
+                    <tr>
+                        <td>
+                        @Model.Name
+                        </td>
+                        <td>
+                        @item.Date.ToShortDateString()
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Total_money)
+                        </td>
+                        <td>
+                        @ViewBag.statusbag[item.Bill_status_ID-1].Name
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+   
+    <a asp-action="Index">Back to List</a>
+</div>
