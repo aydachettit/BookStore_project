@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Service;
 using Service.implementation;
 using System.Net.WebSockets;
@@ -27,17 +28,17 @@ namespace BookStore_project.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> UserDetailAsync(string id)
+        public async Task<IActionResult> UserDetailAsync(string name)
         {
-            var user = await _userManager.FindByIdAsync(id) as IdentityUser;
-            var IdForBill = Convert.ToInt32(id);
-            var list = _BillService.FindBillByUser(IdForBill);
+            var user = await _userManager.FindByNameAsync(name) as IdentityUser;
+            //var IdForBill = Convert.ToInt32(user.Id);
+            //var list = _BillService.FindBillByUser(IdForBill);
             var model = new UserDetailViewModel();
-            model.Id = id;
+            model.Id = user.Id;
             model.Name = user.UserName;
             model.Phone = user.PhoneNumber;
             model.Email = user.Email;
-            model.ListOfBill = list;
+            //model.ListOfBill = list;
             var statusName = _StatusService.GetAll();
             ViewBag.statusbag = statusName;
             return View(model);
@@ -52,6 +53,7 @@ namespace BookStore_project.Controllers
             }
             var model = new UserEditViewModel();
             model.Id = user.Id;
+            model.UserName = user.UserName;
             model.email = user.Email;
             model.PhoneNumber = user.PhoneNumber;
             return View(model);
@@ -65,9 +67,10 @@ namespace BookStore_project.Controllers
             {
                 IdentityUser usr = await _userManager.FindByIdAsync(model.Id) as IdentityUser;
                 usr.Email = model.email;
+                usr.UserName = model.UserName;
                 usr.PhoneNumber = model.PhoneNumber;
                 await _userManager.UpdateAsync(usr);
-                return RedirectToAction("UserDetail", new { id = usr.Id });
+                return RedirectToAction("UserDetail", new { name = usr.UserName });
             }
             return View();
 
@@ -107,12 +110,87 @@ namespace BookStore_project.Controllers
                 var result = await _userManager.UpdateAsync(usr);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("UserDetail", new { id = usr.Id });
+                    return RedirectToAction("UserDetail", new { name = usr.UserName });
                 }
 
             }
             return View();
 
         }
+        [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            var model = new UserRegisterViewModel();
+            return View(model);
+
+        }
+        [HttpPost]
+        
+        public async Task<IActionResult> Register(UserRegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new IdentityUser
+                {
+                    UserName = model.Username,
+                    Email = model.Email,
+                    PasswordHash = model.Password
+                };
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if(result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, "Customer");
+                    await _signInManager.SignInAsync(user, isPersistent: false, authenticationMethod: null);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.ToString());
+                    }
+                }
+            }
+            return View(model);
+
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> Login()
+        {
+            var model = new UserLoginViewModel();
+            return View(model);
+
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> Login(UserLoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                IdentityUser userlogin =await _userManager.FindByEmailAsync(model.Email);
+                var result = await _signInManager.PasswordSignInAsync(userlogin.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+                
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                if (result.RequiresTwoFactor)
+                {
+                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = "", RememberMe = model.RememberMe });
+                }
+                if (result.IsLockedOut)
+                {
+                    return RedirectToPage("./Lockout");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
+            }
+            ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors);
+            return View(model);
+        }
+
     }
 }
