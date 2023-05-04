@@ -173,7 +173,9 @@ namespace BookStore_project.Controllers
                 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+
+                        return RedirectToAction("Index", "Home");
+                    
                 }
                 if (result.RequiresTwoFactor)
                 {
