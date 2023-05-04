@@ -13,8 +13,8 @@ namespace Entity {
         public DateTime Date { get; set; }
         public int Total_money { get; set; }
 
-        [ForeignKey("Customer")]
-        public int Customer_ID { get; set; }
+        [ForeignKey("Users")]
+        public string Customer_ID { get; set; }
         [ForeignKey("Employee")]
         public int Employee_ID { get; set; }
         [ForeignKey("Status")]

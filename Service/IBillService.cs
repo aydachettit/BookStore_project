@@ -14,7 +14,7 @@ namespace Service {
         Task DeleteByID(int id);
         Bill GetByID(int id);
 
-        List<Bill> FindBillByUser(int id);
+        List<Bill> FindBillByUser(string id);
         IEnumerable<Bill> GetAll();
     }
 }
