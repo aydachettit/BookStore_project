@@ -102,10 +102,20 @@ namespace BookStore_project.Controllers
                 {
                     ID = model.ID,
                     Name = model.Name,
-                    DOB = model.DOB,
-                    img_url = model.Img_url
+                    DOB = model.DOB
 
                 };
+                if (model.Image_URL != null && model.Image_URL.Length > 0)
+                {
+                    var uploadDir = @"img/authors";
+                    var fileName = Path.GetFileNameWithoutExtension(model.Image_URL.FileName);
+                    var extension = Path.GetExtension(model.Image_URL.FileName);
+                    var webrootPath = _hostingEnvironment.WebRootPath;
+                    fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
+                    var path = Path.Combine(webrootPath, uploadDir, fileName);
+                    await model.Image_URL.CopyToAsync(new FileStream(path, FileMode.Create));
+                    author.img_url= "/" + uploadDir + "/" + fileName;
+                }
                 await _authorService.CreateAsSync(author);
                 return RedirectToAction("Index");
             }

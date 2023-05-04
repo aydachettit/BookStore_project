@@ -31,14 +31,13 @@ namespace BookStore_project.Controllers
         public async Task<IActionResult> UserDetailAsync(string name)
         {
             var user = await _userManager.FindByNameAsync(name) as IdentityUser;
-            //var IdForBill = Convert.ToInt32(user.Id);
-            //var list = _BillService.FindBillByUser(IdForBill);
+            var list = _BillService.FindBillByUser(user.Id);
             var model = new UserDetailViewModel();
             model.Id = user.Id;
             model.Name = user.UserName;
             model.Phone = user.PhoneNumber;
             model.Email = user.Email;
-            //model.ListOfBill = list;
+            model.ListOfBill = list;
             var statusName = _StatusService.GetAll();
             ViewBag.statusbag = statusName;
             return View(model);

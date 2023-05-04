@@ -1,6 +1,7 @@
 ﻿using BookStore_project.Models.Publisher;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Service;
 using Service.Implementation;
 
@@ -71,6 +72,13 @@ namespace BookStore_project.Controllers
         public IActionResult Create()
         {
             var model = new PublisherCreateViewModel();
+            IEnumerable<string> countries = new List<string> { "USA", "Canada", "Mexico","Viet Nam","Campuchia","China" };
+            IEnumerable<SelectListItem> countryListItems = countries.Select(c => new SelectListItem
+            {
+                Value = c,
+                Text = c
+            }).ToList();
+            model.Country = countryListItems;
             return View(model);
         }
         [HttpPost]
@@ -83,7 +91,7 @@ namespace BookStore_project.Controllers
                 {
                     ID = model.ID,
                     Name = model.Name,
-                    Country=model.Country
+                    Country=model.CountryName
 
                 };
                 await _publisherService.CreateAsSync(publisher);
