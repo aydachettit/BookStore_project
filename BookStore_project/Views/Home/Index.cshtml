@@ -1,8 +1,7 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = User.IsInRole("Admin") ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_layoutUser.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Welcome to the Index page!</h2>
+
+<p>This is the index page of your application.</p>

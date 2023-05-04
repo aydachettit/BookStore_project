@@ -18,12 +18,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
+<<<<<<< HEAD
     opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLuong"));
+=======
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionNam"));
+>>>>>>> e53de67457c838c3ce273a638baf291dbdde2a63
 });
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<DataAccess.ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
