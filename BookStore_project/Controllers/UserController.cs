@@ -132,8 +132,8 @@ namespace BookStore_project.Controllers
             {
                 var user = new IdentityUser
                 {
-                    UserName = model.Username,
-                    Email = model.Email,
+                    UserName = model.Username.ToUpper(),
+                    Email = model.Email.ToUpper(),
                     PasswordHash = model.Password
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
