@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bY9YC0BYSuBN6uCQ5/TQgxdg+dLqY0w/AhAfrPuFFBA=",
+  "Hash": "wsuU018Fkh9QfL87HQsZrlzIqe9LRunj5HFkJN10rqI=",
   "Source": "BookStore_project",
   "BasePath": "_content/BookStore_project",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookStore_project.bundle.scp.css"
+    },
+    {
+      "Identity": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\css\\ProductDetail.css",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "css/ProductDetail.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ProductDetail.css"
     },
     {
       "Identity": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\css\\site.css",

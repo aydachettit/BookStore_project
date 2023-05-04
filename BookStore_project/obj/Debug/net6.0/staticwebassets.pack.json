@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\BookStore_project.bundle.scp.css"
     },
     {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\css\\ProductDetail.css",
+      "PackagePath": "staticwebassets\\css\\ProductDetail.css"
+    },
+    {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

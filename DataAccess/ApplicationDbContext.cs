@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
@@ -30,6 +32,61 @@ namespace DataAccess
         public DbSet<BillDetail> BillDetail { get; set; }
         public DbSet<Import> Imports { get; set; }
         public DbSet<ImportDetail> ImportDetails { get; set; }
+        public DbSet<ProductDetail> ProductDetail { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUserRole<string>>().HasKey(ur => new { ur.UserId, ur.RoleId });
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Id = "1",
+                    Name = "Admin",
+                    NormalizedName = "ADMIN".ToUpper()
+                },
+                new IdentityRole
+                {
+                    Id = "2",
+                    Name = "Customer",
+                    NormalizedName = "CUSTOMER".ToUpper()
+                }
+            );
+
+            var hasher = new PasswordHasher<IdentityUser>();
+            modelBuilder.Entity<IdentityUser>().HasData(
+                new IdentityUser
+                {
+                    Id = "1",
+                    UserName = "Nam",
+                    Email = "nam@gmail.com",
+                    NormalizedUserName = "Nam".ToUpper(),
+                    NormalizedEmail = "nam@gmail.com".ToUpper(),
+                    PasswordHash = hasher.HashPassword(null, "Admin@123")
+                },
+                 new IdentityUser
+                 {
+                     Id = "2",
+                     UserName = "Admin",
+                     Email = "admin@gmail.com",
+                     NormalizedUserName = "Admin".ToUpper(),
+                     NormalizedEmail = "admin@gmail.com".ToUpper(),
+                     PasswordHash = hasher.HashPassword(null, "Admin@123")
+                 }
+            );
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData
+            (
+                new IdentityUserRole<string>
+                {
+                    UserId = "1",
+                    RoleId = "2"
+                },
+                 new IdentityUserRole<string>
+                 {
+                     UserId = "2",
+                     RoleId = "1"
+                 }
+            );
+        }
 
     }
 }

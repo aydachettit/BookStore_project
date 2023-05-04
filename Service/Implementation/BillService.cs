@@ -34,6 +34,11 @@ namespace Service.implementation {
             await _context.SaveChangesAsync();
         }
 
+        public List<Bill> FindBillByUser(int id)
+        {
+            return _context.Bills.Where(x => x.Customer_ID == id).ToList();
+        }
+
         public IEnumerable<Bill> GetAll()
         {
             return _context.Bills.ToList();

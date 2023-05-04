@@ -38,8 +38,10 @@ builder.Services.AddScoped<IStatusService, StatusService>();
 builder.Services.AddScoped<IImport, ImportService>();
 builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
 builder.Services.AddScoped<ICartService, SessionCartService>();
+builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
 builder.Services.AddSession();
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

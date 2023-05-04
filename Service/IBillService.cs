@@ -13,6 +13,8 @@ namespace Service {
         Task UpdateByID(int id);
         Task DeleteByID(int id);
         Bill GetByID(int id);
+
+        List<Bill> FindBillByUser(int id);
         IEnumerable<Bill> GetAll();
     }
 }
