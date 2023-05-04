@@ -11,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace BookStore_project.Controllers {
     public class BillController : Controller {
         private IBillService _billService;
+        private IStatusService _StatusService;
 
-        public BillController(IBillService billService)
+        public BillController(IBillService billService, IStatusService StatusService)
         {
+            _StatusService = StatusService;
             _billService = billService;
         }
         public IActionResult Index(){
@@ -24,9 +26,9 @@ namespace BookStore_project.Controllers {
                 Total_money = Bill.Total_money,
                 Customer_ID = Bill.Customer_ID,
                 Employee_ID = Bill.Employee_ID,
-                Bill_status_ID = Bill.Bill_status_ID
+                Bill_status_ID = _StatusService.GetByID(Bill.Bill_status_ID).Name
             }).ToList();
-
+           
             return View(model);
         }
         [HttpGet]
@@ -143,5 +145,76 @@ namespace BookStore_project.Controllers {
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult Process(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var bill = _billService.GetByID(id);
+            var model = new BillProcessViewModel();
+            var user = _billService.FindBillByUser(bill.Customer_ID);
+            model.Date = bill.Date;
+            model.Total = bill.Total_money;
+            var statusName = _StatusService.GetByID(bill.Bill_status_ID).Name.ToString();
+            model.status = statusName;
+            if (statusName.Equals("Canceled") || bill.Bill_status_ID==3)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Process(BillProcessViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var bill = _billService.GetByID(model.id);
+                bill.Bill_status_ID++;
+                await _billService.UpdateAsSync(bill);
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Canceled(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var bill = _billService.GetByID(id);
+            var model = new BillCanceledViewModel();
+            var user = _billService.FindBillByUser(bill.Customer_ID);
+            model.Date = bill.Date;
+            model.Total = bill.Total_money;
+            var statusName = _StatusService.GetByID(bill.Bill_status_ID).Name.ToString();
+            model.status = statusName;
+            if (statusName.Equals("Canceled"))
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Canceled(BillCanceledViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var bill = _billService.GetByID(model.id);
+                bill.Bill_status_ID = 4;
+                await _billService.UpdateAsSync(bill);
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+
+
     }
 }
