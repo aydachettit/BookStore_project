@@ -55,6 +55,51 @@
             @Html.DisplayFor(model => model.Bill_status_ID)
         </dd>
     </dl>
+     <table class="table table-hover">
+        <thead>
+        <tr class="table-success">
+            <th>
+                ID
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Amount
+            </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    BookID
+                </th>
+        </tr>
+    </thead>
+
+    <tbody>
+            @foreach (var item in Model.ListOfBillDetail)
+            {
+            <tr>
+                <td>
+                        @Html.DisplayFor(modelItem =>item.Bill_Detail_ID)
+                </td>
+                <td>
+                      @Model.Date.ToShortDateString()
+                </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Book_ID)
+                        </td>
+
+            </tr>
+            }
+    </tbody>
+    </table>
 </div>
 <div>
 </div>

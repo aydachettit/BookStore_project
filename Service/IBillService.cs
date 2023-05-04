@@ -15,6 +15,7 @@ namespace Service {
         Bill GetByID(int id);
 
         List<Bill> FindBillByUser(string id);
+        List<BillDetail> GetBillDetailByBill (int id);
         IEnumerable<Bill> GetAll();
     }
 }

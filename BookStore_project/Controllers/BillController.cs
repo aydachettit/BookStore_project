@@ -11,20 +11,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace BookStore_project.Controllers {
     public class BillController : Controller {
         private IBillService _billService;
-        private IEmployeeService _employeeService;
-        private ICustomerService _customerService;
-        private IStatusService _statusService;
-        private IWebHostEnvironment _hostingEnvironment;
-        private ApplicationDbContext _context;
 
-        public BillController(IBillService billService, IEmployeeService employeeService, ICustomerService customerService, IStatusService statusService, IWebHostEnvironment hostingEnvironment, ApplicationDbContext context)
+        public BillController(IBillService billService)
         {
             _billService = billService;
-            _employeeService = employeeService;
-            _customerService = customerService;
-            _statusService = statusService;
-            _hostingEnvironment = hostingEnvironment;
-            _context = context;
         }
         public IActionResult Index(){
             var model = _billService.GetAll().Select(Bill => new BillIndexViewModel
@@ -47,13 +37,15 @@ namespace BookStore_project.Controllers {
                 return NotFound();
             }
             var bill = _billService.GetByID(id);
-            var model = new BillIndexViewModel();
+            var model = new BillDetailViewModel();
             model.ID = bill.ID;
             model.Date = bill.Date;
             model.Total_money = bill.Total_money;
             model.Customer_ID = bill.Customer_ID;
             model.Employee_ID = bill.Employee_ID;
             model.Bill_status_ID = bill.Bill_status_ID;
+            var listdetail = _billService.GetBillDetailByBill(id);
+            model.ListOfBillDetail = listdetail;
             return View(model);
         }
         [HttpGet]

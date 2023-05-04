@@ -44,6 +44,11 @@ namespace Service.implementation {
             return _context.Bills.ToList();
         }
 
+        public List<BillDetail> GetBillDetailByBill(int id)
+        {
+            return _context.BillDetail.Where(x => x.Bill_ID == id).ToList();
+        }
+
         public Bill GetByID(int id)
         {
             return _context.Bills.Where(x => x.ID == id).FirstOrDefault();
