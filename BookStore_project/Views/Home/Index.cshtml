@@ -23,8 +23,19 @@
         <div class="product-box">
             <div class="product-inner-box position-relative">
                 <div class="icons position-absolute">
-                    <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-eye"></i>
+
+
+                        <button class="btn" type="submit">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    <form asp-controller="Book" asp-action="CreateProductDetail" method="get">
+                            <input type="hidden" name="ID" value="@item.ID" />
+                           
+                        <button class="btn" type="submit">
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+                    </form>
                 </div>
                 <input type="hidden" value="@Html.DisplayFor(modelItem => item.ID)">
                 <img src="@Html.DisplayFor(modelItem => item.Image_URL)" alt="Woodan chair" class="img-fluid">
