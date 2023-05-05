@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Service;
@@ -39,7 +40,11 @@ builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddSession();
 var app = builder.Build();
-
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = new PathString("/User/Login");
+    });
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
