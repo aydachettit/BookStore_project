@@ -2,10 +2,12 @@
 using BookStore_project.Models.Book;
 using DataAccess;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PagedList;
 using Service;
+using System.Data;
 
 
 namespace BookStore_project.Controllers
@@ -28,7 +30,7 @@ namespace BookStore_project.Controllers
             _hostingEnvironment = hostingEnvironment;
             _context = context;
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Index(int? page)
         {
 
@@ -57,6 +59,7 @@ namespace BookStore_project.Controllers
             return View(model.ToPagedList(pagenumber, pagesize));
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {

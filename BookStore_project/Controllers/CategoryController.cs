@@ -2,9 +2,11 @@
 using BookStore_project.Models.Author;
 using BookStore_project.Models.Category;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PagedList;
 using Service;
+using System.Data;
 
 
 namespace BookStore_project.Controllers
@@ -22,7 +24,7 @@ namespace BookStore_project.Controllers
             _authorService = authorService;
             _hostingEnvironment = hostingEnvironment;
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Index(int? page)
         {
 
@@ -38,6 +40,7 @@ namespace BookStore_project.Controllers
             return View(model.ToPagedList(pagenumber, pagesize));
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -45,6 +48,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CategoryCreateViewModel model)
@@ -63,6 +67,7 @@ namespace BookStore_project.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -78,6 +83,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(CategoryEditViewModel model)
@@ -96,6 +102,7 @@ namespace BookStore_project.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Delete(int id)
         {
@@ -112,6 +119,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(CategoryDeleteViewModel model)
@@ -126,7 +134,7 @@ namespace BookStore_project.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Detail(int id)
         {
@@ -151,13 +159,14 @@ namespace BookStore_project.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult SearchPage()
         {
             var model = new CategorySearchViewModel();
             return View(model);
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult SearchByCategoryName(string name)
         {
             var model = _categoryService.GetCategoryByName(name).Select(category => new CategoryIndexViewModel

@@ -20,9 +20,13 @@
             <td>Thành tiền</td>
             <td>#</td>
           </tr>
+                    @{
+                        var sumPrice = 0;
+                    }
           @foreach (var item in Model)
           {
-              <tr>
+                        sumPrice = sumPrice + item.TotalPrice;
+                        <tr>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td><img src="@item.ImageURL" /></td>      
@@ -39,7 +43,7 @@
       <button class="btn btn-danger" id="btnDeleteAll">Xóa giỏ hàng</button>
       <a class="btn btn-primary" id="btnCheckout" asp-action="Checkout" asp-route-id="">Thanh toán</a>
       <div class="pull-right">
-        Tổng tiền: <span id="lblTotalOrder"></span>
+        Tổng tiền: <span id="lblTotalOrder">@sumPrice</span>
       </div>
     </div>
 

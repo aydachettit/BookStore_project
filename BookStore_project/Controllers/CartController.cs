@@ -9,7 +9,7 @@ using Service;
 
 namespace BookStore_project.Controllers
 {
-    [Authorize(Roles = "User")]
+    [Authorize(Roles = "Customer")]
     public class CartController : Controller
     {
         private readonly ICartService _cartService;
@@ -82,7 +82,7 @@ namespace BookStore_project.Controllers
             DateTime currentDateTime = DateTime.Now;
             bill.Date = currentDateTime;
             bill.Employee_ID = 1;
-            bill.Customer_ID = user.Id;
+            bill.Customer_ID = user.UserName;
             bill.Bill_status_ID = 1;
             
             var totalPrice = 0;
@@ -103,8 +103,12 @@ namespace BookStore_project.Controllers
                 billDetail.Price = item.Price;
                 await _billDetailService.CreateAsAsync(billDetail);
             }
-            
-            return View();
+            foreach (var item in cartItems)
+            {
+                _cartService.RemoveFromCart(item.Id);
+            }
+
+            return RedirectToAction("Index");
         }
 
 
