@@ -51,8 +51,9 @@ namespace DataAccess.Migrations
                     b.Property<int>("Bill_status_ID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Customer_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Customer_ID")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
@@ -180,10 +181,24 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("employeeAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("employeeDOB")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<DateTime>("employeeDate_Join")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("employeeEmail")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("employeeGender")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("employeeImage")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("employeeName")
@@ -236,31 +251,6 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ImportDetails");
-                });
-
-            modelBuilder.Entity("Entity.ProductDetail", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("AuthorID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ProductDescription")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("ProductPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("ProductTitle")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ProductDetail");
                 });
 
             modelBuilder.Entity("Entity.Publisher", b =>
@@ -351,14 +341,14 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "372aef4f-38c1-4552-93d6-20cb879b4577",
+                            ConcurrencyStamp = "e35fdb2a-b1de-4046-a3e5-cecaa985674a",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "cf35a6f1-c1ed-4111-8ac8-faf277c6eb93",
+                            ConcurrencyStamp = "9346dd29-35d3-4187-b810-471a4b9a54e4",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -455,17 +445,33 @@ namespace DataAccess.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04909683-ab04-4edb-8584-93bb8e9a6421",
+                            ConcurrencyStamp = "87a2e9c3-9f64-41d6-9da1-fa0b258bc9b7",
                             Email = "nam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NAM@GMAIL.COM",
                             NormalizedUserName = "NAM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE6TehhA+BSs4FTgbegrKqH5LfWhkzTKSropH6zCVLouiaJyQxQj0tqlNTUks+D+uQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIFinDbi+0moDgQNi60a3NOnJp+WKR9z7LQhNkE641gFCl5BuqTLYCYlXIX8Ja8qWA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c7e99dcd-839a-43c9-bba4-b9d7955bd6ca",
+                            SecurityStamp = "4053e60b-bc85-4361-a722-7724e882a56e",
                             TwoFactorEnabled = false,
                             UserName = "Nam"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "199ddaf3-9f76-4480-9160-811983a3b646",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIxxAxEPqx2PMkZeTThWaVNeJC0GHMN1a81UkEXMxMgmGcJfcMFFrFIn97FADvNwTg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "26045904-f16e-4e83-96d7-15d637deec75",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin"
                         });
                 });
 
@@ -535,6 +541,11 @@ namespace DataAccess.Migrations
                         {
                             UserId = "1",
                             RoleId = "2"
+                        },
+                        new
+                        {
+                            UserId = "2",
+                            RoleId = "1"
                         });
                 });
 

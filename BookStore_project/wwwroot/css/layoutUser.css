@@ -1,0 +1,67 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    /*display: flex;
+    align-items: center;*/
+    min-height: 100vh;
+}
+
+.product-inner-box .icons {
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    top: -3%;
+    transition: all 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.product-inner-box .icons i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.product-inner-box img {
+    box-shadow: 0 33px 61px -29px rgb(0 0 0 / 26%);
+    height: 350px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.product-box:hover .icons{
+    transform: rotateY(-3%);
+    top: 3%;
+    opacity: 1;
+}
+
+.cart-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.cart-btn button{
+    background-color: #fff;
+}
+
+.product-box:hover .cart-btn {
+    opacity: 1;
+}
+
+.product-price span {
+    font-size: 18px;
+
+}

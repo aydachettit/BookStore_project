@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {}
+    "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {
+    "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
         "projectName": "BookStore_project",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj"
+              "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj"
+              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
               },
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj"
+              "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj"
               }
             }
           }
@@ -112,21 +112,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+    "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -140,8 +140,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj"
+              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
               }
             }
           }
@@ -199,21 +199,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
+    "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -278,21 +278,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj": {
+    "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj",
+        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\DuyHuynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Service\\obj\\",
+        "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\F\\C#\\BookStore_project\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DuyHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -306,11 +306,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\DataAccess\\DataAccess.csproj"
+              "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\Entity\\Entity.csproj"
+              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
               }
             }
           }
@@ -364,7 +364,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

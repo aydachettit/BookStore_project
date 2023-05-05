@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionDuy"));
+    opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLoi"));
 });
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
