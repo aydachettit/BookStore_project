@@ -18,6 +18,7 @@ namespace Service
         IEnumerable<Book> GetAll();
 
         IEnumerable<Book> GetBookByName(string name);
+        IEnumerable<Book> GetBookByNameAndAuthor(string search);
         IEnumerable<Book> GetBookByPublicDate(string date);
         IEnumerable<Book> GetBookByAmount(int amount);
         IEnumerable<Book> GetBookByPrice(int price);

@@ -1,11 +1,16 @@
 ﻿using BookStore_project.Models;
 using BookStore_project.Models.Book;
+using DataAccess;
+using Entity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using PagedList;
 using Service;
 using Service.implementation;
 using Service.Implementation;
+using System.Collections.Generic;
 using System.Diagnostics;
+using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
 namespace BookStore_project.Controllers
 {
@@ -16,42 +21,67 @@ namespace BookStore_project.Controllers
         private IAuthorService _authorService;
         private ICategoryService _categoryService;
         private IPublisherService _publisherService;
+        private ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, IBookService bookService, ICategoryService categoryService, IPublisherService publisherService, IAuthorService authorService)
+        public HomeController(ILogger<HomeController> logger, IBookService bookService, ICategoryService categoryService, IPublisherService publisherService, IAuthorService authorService, ApplicationDbContext context)
         {
             _logger = logger;
             _bookService = bookService;
             _categoryService = categoryService;
             _publisherService = publisherService;
             _authorService = authorService;
+            _context = context;
         }
 
-        public IActionResult Index(int? page)
+        public IActionResult Index(string SearchText = "")
         {
-
-            var model = _bookService.GetAll().Select(c => new BookIndexViewModel
+            if (SearchText != "" && SearchText != null)
             {
-                ID = c.ID,
-                Name = c.Name,
-                PublicDate = c.PublicDate,
-                Amount = c.Amount,
-                Price = c.Price,
-                Image_URL = c.Image_URL,
-                AuthorID = c.AuthorID,
-                PublisherID = c.PublisherID,
-                CategoryID = c.CategoryID,
-            }).OrderBy(x => x.ID).ToList();
-            int pagesize = 5;
-            int pagenumber = (page ?? 1);
+                var bookModel = _bookService.GetBookByNameAndAuthor(SearchText).Select(book => new BookIndexViewModel
+                {
+                    ID = book.ID,
+                    Name = book.Name,
+                    PublicDate = book.PublicDate,
+                    Amount = book.Amount,
+                    Price = book.Price,
+                    Image_URL = book.Image_URL,
+                    AuthorID = book.AuthorID,
+                    CategoryID = book.CategoryID,
+                    PublisherID = book.PublisherID,
+                }).ToList();
 
-            foreach (var item in model)
-            {
-                item.Author = _authorService.GetById(item.AuthorID).Name;
-                item.Category = _categoryService.GetByID(item.CategoryID).Name;
-                item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                foreach (var item in bookModel)
+                {
+                    item.Author = _authorService.GetById(item.AuthorID).Name;
+                    item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                    item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                }
+                return View(bookModel);
             }
+            else
+            {
+                var model = _bookService.GetAll().Select(c => new BookIndexViewModel
+                {
+                    ID = c.ID,
+                    Name = c.Name,
+                    PublicDate = c.PublicDate,
+                    Amount = c.Amount,
+                    Price = c.Price,
+                    Image_URL = c.Image_URL,
+                    AuthorID = c.AuthorID,
+                    PublisherID = c.PublisherID,
+                    CategoryID = c.CategoryID,
+                }).OrderBy(x => x.ID).ToList();
 
-            return View(model.ToPagedList(pagenumber, pagesize));
+                foreach (var item in model)
+                {
+                    item.Author = _authorService.GetById(item.AuthorID).Name;
+                    item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                    item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+                }
+
+                return View(model);
+            }
         }
 
         [HttpGet]

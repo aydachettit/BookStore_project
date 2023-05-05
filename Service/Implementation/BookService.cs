@@ -47,19 +47,24 @@ namespace Service.implementation
             return _context.Books.Where(x => x.Amount == amount).ToList();
         }
 
+        public IEnumerable<Book> GetBookByNameAndAuthor(string search)
+        {
+            return _context.Books.Where(x => x.Name.Contains(search) || x.Author.Name.Contains(search)).ToList();
+        }
+
         public IEnumerable<Book> GetBookByAuthor(string author)
         {
-            return _context.Books.Where(x => x.Author.Name == author).ToList();
+            return _context.Books.Where(x => x.Author.Name.Contains(author)).ToList();
         }
 
         public IEnumerable<Book> GetBookByCategory(string category)
         {
-            return _context.Books.Where(x => x.Category.Name == category).ToList();
+            return _context.Books.Where(x => x.Category.Name.Contains(category)).ToList();
         }
 
         public IEnumerable<Book> GetBookByName(string name)
         {
-            return _context.Books.Where(x => x.Name == name).ToList();
+            return _context.Books.Where(x => x.Name.Contains(name)).ToList();
         }
         public IEnumerable<Book> GetBookByPrice(int price)
         {
@@ -74,7 +79,7 @@ namespace Service.implementation
 
         public IEnumerable<Book> GetBookByPublisher(string publisher)
         {
-            return _context.Books.Where(x => x.Publisher.Name == publisher).ToList();
+            return _context.Books.Where(x => x.Publisher.Name.Contains(publisher)).ToList();
         }
 
         public Book GetByID(int id)
