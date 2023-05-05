@@ -3,6 +3,7 @@ using System;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230505033332_FirstInitial")]
+    partial class FirstInitial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -348,7 +351,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "cf35a6f1-c1ed-4111-8ac8-faf277c6eb93",
+                            ConcurrencyStamp = "9346dd29-35d3-4187-b810-471a4b9a54e4",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -445,17 +448,33 @@ namespace DataAccess.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04909683-ab04-4edb-8584-93bb8e9a6421",
+                            ConcurrencyStamp = "87a2e9c3-9f64-41d6-9da1-fa0b258bc9b7",
                             Email = "nam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NAM@GMAIL.COM",
                             NormalizedUserName = "NAM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE6TehhA+BSs4FTgbegrKqH5LfWhkzTKSropH6zCVLouiaJyQxQj0tqlNTUks+D+uQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIFinDbi+0moDgQNi60a3NOnJp+WKR9z7LQhNkE641gFCl5BuqTLYCYlXIX8Ja8qWA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c7e99dcd-839a-43c9-bba4-b9d7955bd6ca",
+                            SecurityStamp = "4053e60b-bc85-4361-a722-7724e882a56e",
                             TwoFactorEnabled = false,
                             UserName = "Nam"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "199ddaf3-9f76-4480-9160-811983a3b646",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIxxAxEPqx2PMkZeTThWaVNeJC0GHMN1a81UkEXMxMgmGcJfcMFFrFIn97FADvNwTg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "26045904-f16e-4e83-96d7-15d637deec75",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin"
                         });
                 });
 

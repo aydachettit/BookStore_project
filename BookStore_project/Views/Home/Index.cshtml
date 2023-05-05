@@ -2,6 +2,36 @@
     Layout = User.IsInRole("Admin") ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_layoutUser.cshtml";
 }
 
-<h2>Welcome to the Index page!</h2>
+@*<h2>Welcome to the Index page!</h2>
 
-<p>This is the index page of your application.</p>
+<p>This is the index page of your application.</p>*@
+<h1>Index Book</h1>
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 mb-3">
+        <div class="product-box">
+            <div class="product-inner-box position-relative">
+                <div class="icons position-absolute">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <img src="~/img/books/1.jpg" alt="Woodan chair" class="img-fluid">
+                <div class="cart-btn">
+                    <button class="btn btn-white shadow-sm rounded-pill"><i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
+                </div>
+
+            </div>
+            <div class="product-info">
+                <div class="product-name">
+                    <h3>Woodan Chair</h3>
+                </div>
+                <div class="product-price">
+                    <span>$179</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

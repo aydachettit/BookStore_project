@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\ProductDetail.css"
     },
     {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\css\\layoutUser.css",
+      "PackagePath": "staticwebassets\\css\\layoutUser.css"
+    },
+    {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
