@@ -19,12 +19,14 @@
           "MySql.EntityFrameworkCore": "7.0.0",
           "PagedList": "1.17.0",
           "PagedList.Mvc": "4.5.0",
-          "Service": "1.0.0"
+          "Service": "1.0.0",
+          "iTextSharp": "5.5.13.3"
         },
         "runtime": {
           "BookStore_project.dll": {}
         }
       },
+      "BouncyCastle/1.8.9": {},
       "Google.Protobuf/3.21.9": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -38,6 +40,17 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {
+            "assemblyVersion": "5.5.13.3",
+            "fileVersion": "5.5.13.3"
           }
         }
       },
@@ -2566,8 +2579,10 @@
         "dependencies": {
           "Entity": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
-          "MySql.EntityFrameworkCore": "7.0.0"
+          "MySql.EntityFrameworkCore": "7.0.0",
+          "iTextSharp": "5.5.13.3"
         },
         "runtime": {
           "DataAccess.dll": {}
@@ -2577,7 +2592,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
-          "MySql.EntityFrameworkCore": "7.0.0"
+          "MySql.EntityFrameworkCore": "7.0.0",
+          "iTextSharp": "5.5.13.3"
         },
         "runtime": {
           "Entity.dll": {}
@@ -2589,7 +2605,8 @@
           "Entity": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
-          "MySql.EntityFrameworkCore": "7.0.0"
+          "MySql.EntityFrameworkCore": "7.0.0",
+          "iTextSharp": "5.5.13.3"
         },
         "runtime": {
           "Service.dll": {}
@@ -2602,6 +2619,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BouncyCastle/1.8.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "path": "bouncycastle/1.8.9",
+      "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
     },
     "Google.Protobuf/3.21.9": {
       "type": "package",
@@ -2616,6 +2640,13 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "iTextSharp/5.5.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "path": "itextsharp/5.5.13.3",
+      "hashPath": "itextsharp.5.5.13.3.nupkg.sha512"
     },
     "K4os.Compression.LZ4/1.2.6": {
       "type": "package",

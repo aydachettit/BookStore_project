@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "PGmUH2papwowNzNrq8UrxJtwPBxI4fUemDpoTnox+SLm5rYOaoJl0zDj2+S8+ZiowIwl2N9UPEGAjzu2FoBvuA==",
+  "dgSpecHash": "sa7sADhPCvRK0O+mqL6T2MwFLAVttD3c4xzrqWiJxTBEIamTzsXd9CvFvpR9r/cTnW8LD2lME3o0hBrIp6xGYw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_projec_phu\\BookStore_project\\BookStore_project.csproj",
+  "projectFilePath": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_phu\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DuyHuynh\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\DuyHuynh\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
@@ -200,6 +202,26 @@
     "C:\\Users\\DuyHuynh\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle 1.8.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'iTextSharp 5.5.13.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

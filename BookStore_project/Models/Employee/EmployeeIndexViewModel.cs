@@ -8,5 +8,6 @@
         public string? employeeGender { get; set; }
         public DateTime employeeDate_Join { get; set; }
         public int? employeePhone_Number { get; set; }
+        public string? employeeImage { get; set; }
     }
 }

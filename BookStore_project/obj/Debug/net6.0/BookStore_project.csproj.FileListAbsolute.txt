@@ -3066,3 +3066,4 @@ C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\PULL_P
 C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\PULL_PHU_2\BookStore_projec_phu\BookStore_project\obj\Debug\net6.0\BookStore_project.pdb
 C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\PULL_PHU_2\BookStore_projec_phu\BookStore_project\obj\Debug\net6.0\BookStore_project.genruntimeconfig.cache
 C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\PULL_PHU_2\BookStore_projec_phu\BookStore_project\obj\Debug\net6.0\ref\BookStore_project.dll
+C:\Users\DuyHuynh\Documents\Studying\nam-3-ky-2\xd-mo-hinh-phan-lop\do-an\pull_phu\BookStore_project\BookStore_project\bin\Debug\net6.0\itextsharp.dll

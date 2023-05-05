@@ -1,4 +1,4 @@
-﻿    @model BookStore_project.Models.Employee.EmployeeDetailViewModel
+﻿@model BookStore_project.Models.Employee.EmployeeDetailViewModel
 
 @{
     ViewData["Title"] = "Detail";
@@ -6,43 +6,38 @@
 
 <h1>Detail</h1>
 
-<div>
-    <h4>EmployeeDetailViewModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.employeeID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.employeeID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.employeeName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.employeeName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.employeeGender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.employeeGender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.employeeDate_Join)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.employeeDate_Join)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.employeePhone_Number)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.employeePhone_Number)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+<div class="col-md-12 grid-margin grid-margin-md-0">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Employee List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Employee Details</li>
+                </ol>
+            </nav><br /><br />
+            <div class="wrap d-flex justify-content-md-start justify-content-sm-center flex-wrap">
+                <img class="rounded-circle shadow-lg" style="width:250px; height:300px; margin-right:50px;" src="@Url.Content(Model.employeeImage)" alt="" />
+                <div class="wrap align-content-center ml-5">
+                    <p class="font-weight-bold text-success" style="font-size:20px">@Model.employeeName</p>
+                    <p class="font-weight-normal"> ID: @Model.employeeID</p>
+                    <p class="font-weight-normal"> Gender: @Model.employeeGender</p>
+                    <p class="font-weight-normal">Date Of Birth: @Model.employeeDOB.ToString("dd/MM/yyyy")</p>
+                    <p class="font-weight-normal">Email: <a href="#">@Model.employeeEmail</a></p>
+                    <p class="font-weight-normal">Phone: <a href="tel:@Model.employeePhone_Number">@Model.employeePhone_Number</a></p>
+                    <br /><br />
+                    <p class="font-weight-bold"> Pay & Deductions</p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-normal"><i class="fas fa-envelope" style="margin-right:0.6em; color:cornflowerblue"></i> <a href="mailto:@Model.employeeEmail?subject=Payslip&body=Attached within is your paylip.">Send Payslip</a></p>
+                    <br /><br />
+
+                    <p class="font-weight-bold"> Address</p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-normal"> @Model.employeeAddress</p>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
