@@ -25,6 +25,7 @@ namespace BookStore_project.Controllers
             _bookService = bookService;
             _hostingEnvironment = hostingEnvironment;
         }
+        [CustomAuthorize]
         public IActionResult Index()
         {
             var model = _ImportService.GetAll().Select(Import => new ImportIndexViewModel
@@ -36,6 +37,7 @@ namespace BookStore_project.Controllers
 
             return View(model);
         }
+        [CustomAuthorize]
         public IActionResult number()
         {
             var model = new ImportNumberOfProductsViewModel();
@@ -43,6 +45,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Create(ImportNumberOfProductsViewModel modell)
         {
             var import = new Import();
@@ -57,6 +60,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
+        [CustomAuthorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ImportCreateViewModel model)
         {
@@ -113,6 +117,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult DeleteIme(int id)
         {
             var import = _ImportService.GetById(id);
@@ -120,6 +125,7 @@ namespace BookStore_project.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Delete(int id)
         {
             var import =_ImportService.GetById(id);
@@ -130,6 +136,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
+        [CustomAuthorize]
         public async Task<IActionResult> Delete(ImportDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -140,6 +147,7 @@ namespace BookStore_project.Controllers
             }
             return View();
         }
+        [CustomAuthorize]
         public IActionResult Detail(int id)
         {
             var import = _ImportService.GetById(id);

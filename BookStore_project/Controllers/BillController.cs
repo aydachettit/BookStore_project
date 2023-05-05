@@ -18,6 +18,7 @@ namespace BookStore_project.Controllers {
             _StatusService = StatusService;
             _billService = billService;
         }
+        [CustomAuthorize]
         public IActionResult Index(){
             var model = _billService.GetAll().Select(Bill => new BillIndexViewModel
             {
@@ -32,6 +33,7 @@ namespace BookStore_project.Controllers {
             return View(model);
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -51,6 +53,7 @@ namespace BookStore_project.Controllers {
             return View(model);
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Delete(int id)
         {
             if (id.ToString() == null)
@@ -69,6 +72,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpGet]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Delete(BillDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -81,6 +85,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Create()
         {
             var model = new BillCreateViewModel();
@@ -88,6 +93,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Create(BillCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -108,6 +114,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -127,6 +134,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Edit(BillEditViewModel model)
         {
             if (ModelState.IsValid)
@@ -146,6 +154,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Process(int id)
         {
             if (id.ToString() == null)
@@ -167,6 +176,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Process(BillProcessViewModel model)
         {
             if (ModelState.IsValid)
@@ -180,6 +190,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Canceled(int id)
         {
             if (id.ToString() == null)
@@ -201,6 +212,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Canceled(BillCanceledViewModel model)
         {
             if (ModelState.IsValid)

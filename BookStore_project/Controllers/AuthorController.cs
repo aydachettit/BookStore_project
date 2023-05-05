@@ -22,6 +22,7 @@ namespace BookStore_project.Controllers
             _categoryService = categoryService;
             _hostingEnvironment = hostingEnvironment;
         }
+        [CustomAuthorize]
         public IActionResult Index(int? page)
         {
             var model = _authorService.GetAll().Select(Author => new AuthorIndexViewModel
@@ -37,6 +38,7 @@ namespace BookStore_project.Controllers
             return View(model.ToPagedList(pagenumber,pagesize));
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -59,6 +61,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Delete(int id)
         {
             if (id.ToString() == null)
@@ -75,6 +78,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Delete(AuthorDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -87,6 +91,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Create()
         {
             var model = new AuthorCreateViewModel();
@@ -94,6 +99,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Create(AuthorCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -122,6 +128,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -139,6 +146,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Edit(AuthorEditViewModel model)
         {
             if (ModelState.IsValid)
@@ -156,6 +164,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult SearchPage()
         {
             var model = new AuthorSearchViewModel();
