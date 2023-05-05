@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wsuU018Fkh9QfL87HQsZrlzIqe9LRunj5HFkJN10rqI=",
+  "Hash": "7L28j84v6qui1zHqCU6sXam/6FUtXQFCoMO+LcENM4c=",
   "Source": "BookStore_project",
   "BasePath": "_content/BookStore_project",
   "Mode": "Default",
@@ -1222,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\books\\2340201401.jpg"
+    },
+    {
+      "Identity": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\2343020498.jpg",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "img/books/2343020498.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\2343020498.jpg"
     },
     {
       "Identity": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\23465516210.jpg",

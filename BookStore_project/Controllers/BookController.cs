@@ -1,17 +1,12 @@
-﻿using BookStore_project.Models.Author;
+﻿
 using BookStore_project.Models.Book;
-using BookStore_project.Models.Employee;
 using DataAccess;
 using Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PagedList;
 using Service;
-using Service.Implementation;
-using System.Text.Json;
+
 
 namespace BookStore_project.Controllers
 {

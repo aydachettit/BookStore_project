@@ -61,7 +61,6 @@ namespace Service.implementation
         {
             return _context.Books.Where(x => x.Name == name).ToList();
         }
-
         public IEnumerable<Book> GetBookByPrice(int price)
         {
             return _context.Books.Where(x => x.Price == price).ToList();

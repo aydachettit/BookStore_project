@@ -18,7 +18,7 @@
             <p><strong>Author: @Model.AuthorName</strong></p>
             <p>@Model.ProductDescription</p>
             <p><strong>Price: @Model.ProductPrice</strong></p>
-            <form asp-controller="Employee" asp-action="Index" mothod="get">
+            <form asp-controller="Cart" asp-action="AddToCart" method="get">
                 <input type="hidden" name="ID" value="@Model.ID"/>
                 Số Lượng: 
                 <input type="number" name="number" value="1" />    <br /><br />
