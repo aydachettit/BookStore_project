@@ -110,8 +110,16 @@ namespace BookStore_project.Controllers
             var model = new PublisherEditViewModel();
             model.ID = publisher.ID;
             model.Name = publisher.Name;
-            model.Country = publisher.Country;
+            IEnumerable<string> countries = new List<string> { "USA", "Canada", "Mexico", "Viet Nam", "Campuchia", "China" };
+            IEnumerable<SelectListItem> countryListItems = countries.Select(c => new SelectListItem
+            {
+                Value = c,
+                Text = c
+            }).ToList();
+            model.Country = countryListItems;
+            model.CountryName = publisher.Country;
 
+            ViewBag.Country = model.Country;
             return View(model);
         }
         [HttpPost]
@@ -124,10 +132,10 @@ namespace BookStore_project.Controllers
                 {
                     ID = model.ID,
                     Name = model.Name,
-                    Country=model.Country
+                    Country=model.CountryName
                 };
                 await _publisherService.UpdateAsSync(publisher);
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View();
         }
