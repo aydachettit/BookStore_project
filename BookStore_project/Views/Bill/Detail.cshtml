@@ -6,7 +6,14 @@
 }
 
 <h1>Detail</h1>
-
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="Index">Book List</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Bill Detail</li>
+    </ol>
+</nav>
+<br />
 <div>
     <h4>BillDetailViewModel</h4>
     <hr />
@@ -48,8 +55,51 @@
             @Html.DisplayFor(model => model.Bill_status_ID)
         </dd>
     </dl>
+     <table class="table table-hover">
+        <thead>
+        <tr class="table-success">
+            <th>
+                ID
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Amount
+            </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    BookID
+                </th>
+        </tr>
+    </thead>
+
+    <tbody>
+            @foreach (var item in Model.ListOfBillDetail)
+            {
+            <tr>
+                <td>
+                        @Html.DisplayFor(modelItem =>item.Bill_Detail_ID)
+                </td>
+                <td>
+                      @Model.Date.ToShortDateString()
+                </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Book_ID)
+                        </td>
+
+            </tr>
+            }
+    </tbody>
+    </table>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
 </div>

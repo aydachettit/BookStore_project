@@ -13,12 +13,15 @@ namespace BookStore_project.Controllers
 
         private IEmployeeService _employeeService;
         private ApplicationDbContext _context;
+        private IWebHostEnvironment _hostingEnvironment;
 
 
-        public EmployeeController(IEmployeeService employeeService, ApplicationDbContext context)
+
+        public EmployeeController(IEmployeeService employeeService, ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
         {
             _employeeService = employeeService;
-            _context= context;
+            _hostingEnvironment = hostingEnvironment;
+            _context = context;
         }
 
         //public IActionResult Index()
@@ -31,15 +34,15 @@ namespace BookStore_project.Controllers
         //        employeeDate_Join= employee.employeeDate_Join,
         //        employeeGender= employee.employeeGender,
         //        employeePhone_Number= employee.employeePhone_Number,
-               
-                
+
+
 
         //    }).ToList() ;
 
 
         //    return View(model);
         //}
-        public async Task<IActionResult> Index (string SearchString, int? page)
+        public async Task<IActionResult> Index(string SearchString, int? page)
         {
             ViewData["CurrentFilter"] = SearchString;
             //var employee = from e in _context.Employee
@@ -53,7 +56,7 @@ namespace BookStore_project.Controllers
                 employeeDate_Join = employee.employeeDate_Join,
                 employeeGender = employee.employeeGender,
                 employeePhone_Number = employee.employeePhone_Number,
-
+                employeeImage = employee.employeeImage,
 
 
             }).AsEnumerable();
@@ -67,7 +70,7 @@ namespace BookStore_project.Controllers
                 model = model.Where(e => e.employeeName.ToUpper().Contains(SearchString.ToUpper()));
             }
 
-            return View(model.ToPagedList(page_number,page_size));
+            return View(model.ToPagedList(page_number, page_size));
         }
 
         [HttpGet]
@@ -79,7 +82,7 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task <IActionResult> Create (EmployeeCreateViewModel model)
+        public async Task<IActionResult> Create(EmployeeCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -87,12 +90,25 @@ namespace BookStore_project.Controllers
                 {
                     employeeID = model.employeeID,
                     employeeName = model.employeeName,
-                    employeeDate_Join = model.employeeDate_Join,
                     employeeGender = model.employeeGender,
-                    employeePhone_Number= model.employeePhone_Number
-
+                    employeeEmail = model.employeeEmail,
+                    employeePhone_Number = model.employeePhone_Number,
+                    employeeDOB = model.employeeDOB,
+                    employeeAddress = model.employeeAddress,
+                    employeeDate_Join = model.employeeDate_Join,
                 };
 
+                if (model.employeeImage != null && model.employeeImage.Length > 0)
+                {
+                    var uploadDir = @"img/employees";
+                    var fileName = Path.GetFileNameWithoutExtension(model.employeeImage.FileName);
+                    var extension = Path.GetExtension(model.employeeImage.FileName);
+                    var webrootPath = _hostingEnvironment.WebRootPath;
+                    fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
+                    var path = Path.Combine(webrootPath, uploadDir, fileName);
+                    await model.employeeImage.CopyToAsync(new FileStream(path, FileMode.Create));
+                    employee.employeeImage = "/" + uploadDir + "/" + fileName;
+                }
                 await _employeeService.CreateAsAsync(employee);
                 return RedirectToAction("Index");
             }
@@ -114,11 +130,15 @@ namespace BookStore_project.Controllers
                 employeeName = employee.employeeName,
                 employeeDate_Join = employee.employeeDate_Join,
                 employeeGender = employee.employeeGender,
-                employeePhone_Number = employee.employeePhone_Number
+                employeePhone_Number = employee.employeePhone_Number,
+                employeeImage = employee.employeeImage,
+                employeeAddress = employee.employeeAddress,
+                employeeDOB = employee.employeeDOB,
+                employeeEmail = employee.employeeEmail,
 
             };
 
-            return View(model); 
+            return View(model);
 
         }
 
@@ -141,7 +161,7 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteByID (int id)
+        public IActionResult DeleteByID(int id)
         {
             if (id.ToString() == null)
                 return NotFound();
@@ -153,12 +173,12 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete (EmployeeDeleteViewModel model)
+        public async Task<IActionResult> Delete(EmployeeDeleteViewModel model)
         {
             if (ModelState.IsValid)
             {
-                
-                var employee = _employeeService.GetByID (model.employeeID);
+
+                var employee = _employeeService.GetByID(model.employeeID);
 
                 await _employeeService.DeleteAsAsync(employee);
                 return RedirectToAction("Index");
@@ -168,7 +188,7 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit (int id)
+        public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
                 return NotFound();
@@ -187,25 +207,41 @@ namespace BookStore_project.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Edit ( EmployeeEditViewModel model)
+        public async Task<IActionResult> Edit(EmployeeEditViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var employee = _employeeService.GetByID (model.employeeID);
+                var employee = _employeeService.GetByID(model.employeeID);
 
                 //employee.employeeID = model.employeeID;
                 employee.employeeGender = model.employeeGender;
                 employee.employeeName = model.employeeName;
                 employee.employeeDate_Join = model.employeeDate_Join;
-                employee.employeePhone_Number= model.employeePhone_Number;
+                employee.employeePhone_Number = model.employeePhone_Number;
+                employee.employeeEmail = model.employeeEmail;
+                employee.employeeDOB = model.employeeDOB;
+                employee.employeeAddress = model.employeeAddress;
 
+
+
+                if (model.employeeImage != null && model.employeeImage.Length > 0)
+                {
+                    var uploadDir = @"img/employees";
+                    var fileName = Path.GetFileNameWithoutExtension(model.employeeImage.FileName);
+                    var extension = Path.GetExtension(model.employeeImage.FileName);
+                    var webrootPath = _hostingEnvironment.WebRootPath;
+                    fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
+                    var path = Path.Combine(webrootPath, uploadDir, fileName);
+                    await model.employeeImage.CopyToAsync(new FileStream(path, FileMode.Create));
+                    employee.employeeImage = "/" + uploadDir + "/" + fileName;
+                }
 
                 await _employeeService.UpdateAsAsync(employee);
                 return RedirectToAction("Index");
             }
 
             return View(model);
-            
+
 
         }
 

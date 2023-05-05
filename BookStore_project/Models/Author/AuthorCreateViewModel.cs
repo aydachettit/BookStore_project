@@ -7,6 +7,6 @@ namespace BookStore_project.Models.Author
         public int ID { get; set; }
         public string? Name { get; set; }
         public DateTime DOB { get; set; }
-        public string? Img_url { get; set; }
+        public IFormFile Image_URL { get; set; }
     }
 }

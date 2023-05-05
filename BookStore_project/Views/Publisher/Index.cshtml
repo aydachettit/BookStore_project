@@ -6,7 +6,12 @@
 }
 
 <h1>Index</h1>
-
+<nav aria-label="breadcrumb">
+     <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Publisher List</li>
+     </ol>
+</nav><br />
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -22,7 +27,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Country)
             </th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -37,12 +42,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Country)
             </td>
-            <td>
                  <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
                 <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
             </td>
         </tr>
 }

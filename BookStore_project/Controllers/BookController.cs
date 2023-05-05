@@ -253,7 +253,7 @@ namespace BookStore_project.Controllers
             model.Authors = authorName;
             model.Categories = categoryName;
             model.Publishers = publisherName;
-            
+
 
             return View(model);
         }
@@ -294,7 +294,7 @@ namespace BookStore_project.Controllers
                             item.Publisher = _publisherService.GetById(item.PublisherID).Name;
                         }
                         return View(bookModel);
-                        
+
                     case 2:
                         bookModel = _bookService.GetBookByPublicDate(keyword).Select(book => new BookIndexViewModel
                         {
@@ -417,11 +417,50 @@ namespace BookStore_project.Controllers
                         }
                         return View(bookModel);
                 }
-               
+
             }
             return View();
-            
 
+
+        }
+
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        [HttpGet]
+        public async Task<IActionResult> CreateProductDetail(int productID = 1, int authorID = 1)
+        {
+            var ProductDetail = _bookService.GetByID(productID);
+            var author = _authorService.GetById(authorID);
+
+            if (author == null || ProductDetail == null)
+            {
+                return NotFound();
+            }
+            string categories = _categoryService.GetByID(ProductDetail.CategoryID).Name;
+
+            var model = new CreateProductDetailViewModel
+            {
+                ID = ProductDetail.ID,
+                Name = ProductDetail.Name,
+                Amount = ProductDetail.Amount,
+                Price = ProductDetail.Price,
+                PublicDate = ProductDetail.PublicDate,
+                AuthorID = author.ID,
+                Authors = author.Name,
+                Image_URL = ProductDetail.Image_URL,
+                CategoryID = ProductDetail.CategoryID,
+                PublisherID = ProductDetail.PublisherID,
+                //Categories = ProductDetail.Category.Name.ToString()
+                Categories = categories
+
+
+
+            };
+
+
+            return View(model);
         }
     }
 }

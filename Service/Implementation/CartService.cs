@@ -6,12 +6,12 @@ using System.Text;
 
 namespace Service.Implementation
 {
-    public class SessionCartService : ICartService
+    public class CartService : ICartService
     {
         private const string SessionKey = "Cart";
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public SessionCartService(IHttpContextAccessor httpContextAccessor)
+        public CartService(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }

@@ -52,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbERldGFpbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Bill/Canceled.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxDYW5jZWxlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Bill/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,8 +76,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Bill/Process.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxQcm9jZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Book/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Book/CreateProductDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGVQcm9kdWN0RGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Book/Delete.cshtml]
@@ -206,10 +218,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Import/number.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XG51bWJlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/ProductDetail/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/c\#-workspace/BookStoreManagement/BookStore_project/Views/Publisher/Create.cshtml]

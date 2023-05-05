@@ -4,20 +4,29 @@
 @{
 }
 
-@model BookStore_project.Models.ProductDetail.ProductDetailViewModel
 
+@model BookStore_project.Models.Book.CreateProductDetailViewModel
+
+
+
+<style>
+    .book_price{
+        height:200px;
+        width:200px;
+        border: 1px solid #363636;
+    }
+</style>
 
 
 <div class="container">
     <div class="row">
         <div class="col-md-5 book_picture d-flex justify-content-center align-items-center">
-            <img src="~/img/books/1.jpg" />
+            <img style="height:300px; width:300px;border-radius:100%"  src="@Url.Content(Model.Image_URL)" />
         </div>
         <div class="col-md-6">
-            <h1>@Model.ProductTitle</h1>
-            <p><strong>Author: @Model.AuthorName</strong></p>
-            <p>@Model.ProductDescription</p>
-            <p><strong>Price: @Model.ProductPrice</strong></p>
+            <h1>@Model.Name</h1>
+            <p><strong>Author: @Model.Authors</strong></p>
+            <p><strong>Price: @Model.Price</strong></p>
             <form asp-controller="Cart" asp-action="AddToCart" method="get">
                 <input type="hidden" name="ID" value="@Model.ID"/>
                 Số Lượng: 

@@ -11,20 +11,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace BookStore_project.Controllers {
     public class BillController : Controller {
         private IBillService _billService;
-        private IEmployeeService _employeeService;
-        private ICustomerService _customerService;
-        private IStatusService _statusService;
-        private IWebHostEnvironment _hostingEnvironment;
-        private ApplicationDbContext _context;
+        private IStatusService _StatusService;
 
-        public BillController(IBillService billService, IEmployeeService employeeService, ICustomerService customerService, IStatusService statusService, IWebHostEnvironment hostingEnvironment, ApplicationDbContext context)
+        public BillController(IBillService billService, IStatusService StatusService)
         {
+            _StatusService = StatusService;
             _billService = billService;
-            _employeeService = employeeService;
-            _customerService = customerService;
-            _statusService = statusService;
-            _hostingEnvironment = hostingEnvironment;
-            _context = context;
         }
         public IActionResult Index(){
             var model = _billService.GetAll().Select(Bill => new BillIndexViewModel
@@ -34,9 +26,9 @@ namespace BookStore_project.Controllers {
                 Total_money = Bill.Total_money,
                 Customer_ID = Bill.Customer_ID,
                 Employee_ID = Bill.Employee_ID,
-                Bill_status_ID = Bill.Bill_status_ID
+                Bill_status_ID = _StatusService.GetByID(Bill.Bill_status_ID).Name
             }).ToList();
-
+           
             return View(model);
         }
         [HttpGet]
@@ -47,13 +39,15 @@ namespace BookStore_project.Controllers {
                 return NotFound();
             }
             var bill = _billService.GetByID(id);
-            var model = new BillIndexViewModel();
+            var model = new BillDetailViewModel();
             model.ID = bill.ID;
             model.Date = bill.Date;
             model.Total_money = bill.Total_money;
             model.Customer_ID = bill.Customer_ID;
             model.Employee_ID = bill.Employee_ID;
             model.Bill_status_ID = bill.Bill_status_ID;
+            var listdetail = _billService.GetBillDetailByBill(id);
+            model.ListOfBillDetail = listdetail;
             return View(model);
         }
         [HttpGet]
@@ -151,5 +145,76 @@ namespace BookStore_project.Controllers {
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult Process(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var bill = _billService.GetByID(id);
+            var model = new BillProcessViewModel();
+            var user = _billService.FindBillByUser(bill.Customer_ID);
+            model.Date = bill.Date;
+            model.Total = bill.Total_money;
+            var statusName = _StatusService.GetByID(bill.Bill_status_ID).Name.ToString();
+            model.status = statusName;
+            if (statusName.Equals("Canceled") || bill.Bill_status_ID==3)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Process(BillProcessViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var bill = _billService.GetByID(model.id);
+                bill.Bill_status_ID++;
+                await _billService.UpdateAsSync(bill);
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Canceled(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var bill = _billService.GetByID(id);
+            var model = new BillCanceledViewModel();
+            var user = _billService.FindBillByUser(bill.Customer_ID);
+            model.Date = bill.Date;
+            model.Total = bill.Total_money;
+            var statusName = _StatusService.GetByID(bill.Bill_status_ID).Name.ToString();
+            model.status = statusName;
+            if (statusName.Equals("Canceled"))
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Canceled(BillCanceledViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var bill = _billService.GetByID(model.id);
+                bill.Bill_status_ID = 4;
+                await _billService.UpdateAsSync(bill);
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+
+
     }
 }

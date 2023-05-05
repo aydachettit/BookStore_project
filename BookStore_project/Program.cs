@@ -1,5 +1,4 @@
-using DataAccess;
-using Microsoft.AspNetCore.Cors.Infrastructure;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Service;
@@ -19,7 +18,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
     opt.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionLuong"));
-
 });
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -38,8 +36,7 @@ builder.Services.AddScoped<IShipmentService, ShipmentService>();
 builder.Services.AddScoped<IStatusService, StatusService>();
 builder.Services.AddScoped<IImport, ImportService>();
 builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
-builder.Services.AddScoped<ICartService, SessionCartService>();
-builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
+builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddSession();
 var app = builder.Build();
 

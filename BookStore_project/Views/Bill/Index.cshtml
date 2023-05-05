@@ -9,7 +9,13 @@
 <p>
     <a asp-action='Create'>Create New</a>
 </p>
-
+<nav aria-label="breadcrumb">
+     <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+     <li class="breadcrumb-item"><a asp-action="Index">Book List</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Bill List</li>
+     </ol>
+</nav><br />
 <table class="table">
     <thead>
         <tr>
@@ -30,6 +36,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Bill_status_ID)
+            </th>
+            <th>
+                Action
             </th>
         </tr>
     </thead>
@@ -56,9 +65,9 @@
                     @Html.DisplayFor(modelItem => item.Bill_status_ID)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
                     <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-action="Process" asp-route-id="@item.ID">Process</a>
+                    <a asp-action="Canceled" asp-route-id="@item.ID">Canceled</a>
                 </td>
             </tr>
         }

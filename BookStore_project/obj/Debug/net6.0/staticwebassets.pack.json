@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\exportpdf\\202355922.pdf",
+      "PackagePath": "staticwebassets\\exportpdf\\202355922.pdf"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\exportpdf\\2023_5_5.pdf",
+      "PackagePath": "staticwebassets\\exportpdf\\2023_5_5.pdf"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\exportpdf\\2023_5_5_921.pdf",
+      "PackagePath": "staticwebassets\\exportpdf\\2023_5_5_921.pdf"
+    },
+    {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -39,6 +51,10 @@
     {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\2340201401.jpg",
       "PackagePath": "staticwebassets\\img\\books\\2340201401.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\234259540753531.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\234259540753531.jpg"
     },
     {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\2343020498.jpg",
@@ -75,6 +91,14 @@
     {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\9.jpg",
       "PackagePath": "staticwebassets\\img\\books\\9.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\employees\\233957240669006.png",
+      "PackagePath": "staticwebassets\\img\\employees\\233957240669006.png"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\employees\\234233123744919.jpg",
+      "PackagePath": "staticwebassets\\img\\employees\\234233123744919.jpg"
     },
     {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\js\\site.js",

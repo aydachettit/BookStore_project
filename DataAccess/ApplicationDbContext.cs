@@ -32,7 +32,6 @@ namespace DataAccess
         public DbSet<BillDetail> BillDetail { get; set; }
         public DbSet<Import> Imports { get; set; }
         public DbSet<ImportDetail> ImportDetails { get; set; }
-        public DbSet<ProductDetail> ProductDetail { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -10,6 +10,6 @@ namespace BookStore_project.Models.Bill
 
         public string Customer_ID { get; set; }
         public int Employee_ID { get; set; }
-        public int Bill_status_ID { get; set;}
+        public string Bill_status_ID { get; set;}
     }
 }
