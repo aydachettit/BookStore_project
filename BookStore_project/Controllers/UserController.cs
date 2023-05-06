@@ -30,6 +30,7 @@ namespace BookStore_project.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Lock(string id)
         {
             var user = await _userManager.FindByIdAsync(id) as IdentityUser;
@@ -37,7 +38,7 @@ namespace BookStore_project.Controllers
             await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow.AddMinutes(30));
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Unlock(string id)
         {
             var user = await _userManager.FindByIdAsync(id) as IdentityUser;
@@ -45,6 +46,7 @@ namespace BookStore_project.Controllers
             await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow);
             return RedirectToAction("Index");
         }
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
             var model = _userService.getALL().Select(user => new UserIndexViewModel
@@ -73,6 +75,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        
         public async Task<IActionResult> Edit(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -87,7 +90,7 @@ namespace BookStore_project.Controllers
             model.PhoneNumber = user.PhoneNumber;
             return View(model);
         }
-        //[Authorize]
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(UserEditViewModel model)
