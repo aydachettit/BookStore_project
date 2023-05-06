@@ -12,7 +12,6 @@ using System.Data;
 
 namespace BookStore_project.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class BookController : Controller
     {
         private IBookService _bookService;
@@ -62,6 +61,8 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Create()
         {
             var model = new BookCreateViewModel();
@@ -94,6 +95,8 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Create(BookCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -130,6 +133,8 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -175,6 +180,8 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(BookEditViewModel model)
         {
             if (ModelState.IsValid)
@@ -209,6 +216,8 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Delete(int id)
         {
             var book = _bookService.GetByID(id);
@@ -226,6 +235,8 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(BookDeleteViewModel model)
         {
             var book = _bookService.GetByID(model.ID);
@@ -239,6 +250,8 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
