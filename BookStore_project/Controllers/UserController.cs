@@ -54,9 +54,12 @@ namespace BookStore_project.Controllers
             await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow);
             return RedirectToAction("Index");
         }
-        [Authorize(Roles = "Admin")]
+        
         public IActionResult Index()
-        {
+        { if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             
             var model = _userService.getALL().Select(user => new UserIndexViewModel
             {
