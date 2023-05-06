@@ -24,6 +24,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
+            <th>
+                Is Locked
+            </th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -41,6 +45,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lock)
+                </td>
+                <td>
+                    @if(item.Lock==false){
+                    <a asp-action="lock" asp-route-id="@item.id">lock</a>
+                    }
+                    else{
+                    <a asp-action="Unlock" asp-route-id="@item.id">Unlock</a>
+                    }
+                </td>
+                    
     
         </tr>
 }

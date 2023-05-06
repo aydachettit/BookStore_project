@@ -30,6 +30,21 @@ namespace BookStore_project.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+        public async Task<IActionResult> Lock(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id) as IdentityUser;
+            await _userManager.SetLockoutEnabledAsync(user, true);
+            await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow.AddMinutes(30));
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Unlock(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id) as IdentityUser;
+            await _userManager.SetLockoutEnabledAsync(user, false);
+            await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow);
+            return RedirectToAction("Index");
+        }
         public IActionResult Index()
         {
             var model = _userService.getALL().Select(user => new UserIndexViewModel
@@ -37,7 +52,8 @@ namespace BookStore_project.Controllers
                 id = user.Id,
                 UserName = user.UserName,
                 Phone = user.PhoneNumber,
-                Gmail = user.Email
+                Gmail = user.Email,
+                Lock=user.LockoutEnabled
             }).ToList();
 
             return View(model);
@@ -200,7 +216,7 @@ namespace BookStore_project.Controllers
                     }
                     if (result.IsLockedOut)
                     {
-                        return RedirectToPage("./Lockout");
+                        ModelState.AddModelError(string.Empty, "User Locked Please contact Admin.");
                     }
                     else
                     {
