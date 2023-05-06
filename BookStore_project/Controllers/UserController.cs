@@ -193,8 +193,12 @@ namespace BookStore_project.Controllers
                         ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     }
                 }
+                 else
+                {
+                    ModelState.AddModelError(string.Empty, "Username or password might not be correct");
+                }
             }
-            ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors);
+            
             return View(model);
         }
 
