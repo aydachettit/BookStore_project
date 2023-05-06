@@ -127,6 +127,7 @@ namespace BookStore_project.Controllers
         
         public async Task<IActionResult> Register(UserRegisterViewModel model)
         {
+            
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser
@@ -146,7 +147,7 @@ namespace BookStore_project.Controllers
                 {
                     foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError("", error.ToString());
+                        ModelState.AddModelError("", error.Description.ToString());
                     }
                 }
             }
