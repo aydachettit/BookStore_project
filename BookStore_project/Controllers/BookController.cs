@@ -456,7 +456,7 @@ namespace BookStore_project.Controllers
                 return NotFound();
             }
             string categories = _categoryService.GetByID(ProductDetail.CategoryID).Name;
-
+            string publisher = _publisherService.GetById(ProductDetail.PublisherID).Name;
             var model = new CreateProductDetailViewModel
             {
                 ID = ProductDetail.ID,
@@ -471,7 +471,8 @@ namespace BookStore_project.Controllers
                 CategoryID = ProductDetail.CategoryID,
                 PublisherID = ProductDetail.PublisherID,
                 //Categories = ProductDetail.Category.Name.ToString()
-                Categories = categories
+                Categories = categories,
+                Publishers = publisher
 
 
 

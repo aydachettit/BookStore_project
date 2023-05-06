@@ -10,29 +10,140 @@
 
 
 <style>
-    .book_price{
-        height:200px;
-        width:200px;
-        border: 1px solid #363636;
+
+    h1 {
+        font: bold 25px Roboto, sans-serif, sans-serif
+    }
+
+    .row + .row {
+        margin-top: 0;
+    }
+
+    .contain-all-book {
+        border: 1px solid #dbdbdb;
+    }
+
+    .book_picture {
+        border: 1px solid #dbdbdb;
+    }
+
+    .model-titel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .model-title-items {
+        font-size: 15px;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .activate {
+        background-color: #ffa897;
+    }
+
+    .non-activate {
+    }
+
+    .model-info {
+        flex: 2;
     }
 </style>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 book_picture d-flex justify-content-center align-items-center">
-            <img style="height:300px; width:300px;border-radius:100%"  src="@Url.Content(Model.Image_URL)" />
+<div class="container contain-all-book">
+    <div class="row" style="padding-left:20px;">
+        <div class="col-md-5 book_picture d-flex justify-content-center align-items-center ">
+            <img style=" width:300px" src="@Url.Content(Model.Image_URL)" />
+
         </div>
-        <div class="col-md-6">
-            <h1>@Model.Name</h1>
-            <p><strong>Author: @Model.Authors</strong></p>
-            <p><strong>Price: @Model.Price</strong></p>
+        <div class="col-md-6" style="margin-left:20px;">
+            <h1 style="border-bottom: 2px solid red; padding-bottom:10px;">@Model.Name</h1>
+
+            <p>Publisher: @Model.Publishers</p>
+            <p style="font-weight:bold">Author: @Model.Authors</p>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="font-weight:bold; color:red">@Model.Price VND</p>
+
+                </div>
+            </div>
+
             <form asp-controller="Cart" asp-action="AddToCart" method="get">
-                <input type="hidden" name="ID" value="@Model.ID"/>
-                Số Lượng: 
-                <input type="number" name="number" value="1" />    <br /><br />
-                <input type="submit" value="Add To Cart" class="btn btn-primary"  />
+                <input type="hidden" name="ID" value="@Model.ID" />
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Còn Hàng:</p>
+                    </div>
+                    <div class="col-md-9">
+                        <p>@Model.Amount Sản phẩm</p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Số Lượng:</p>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" name="number" value="1" style="max-width:100px" />
+
+                    </div>
+                </div>
+
+
+                <br /><br />
+                <input type="submit" value="Add To Cart" class="btn btn-primary" />
             </form>
         </div>
     </div>
+
+
+
+    <div class="row" style="padding-top:50px;padding-left:20px">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Mô tả sản phẩm</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Thông tin chi tiết</button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="padding-top:30px;">@Model.Description</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                <div style="display:flex; flex-direction:row; padding-top:30px;">
+                    <div class="model-title">
+                        <p class="model-title-items activate">LOẠI SẢN PHẨM</p>
+                        <p class="model-title-items non-activate">KÍCH THƯỚC</p>
+                        <p class="model-title-items activate">SỐ TRANG</p>
+                        <p class="model-title-items non-activate">TÁC GIẢ</p>
+                        <p class="model-title-items activate">NHÀ XUẤT BẢN</p>
+                        <p class="model-title-items non-activate">THỂ LOẠI</p>
+
+                    </div>
+                    <div class="model-info">
+                        <p class="model-title-items activate">Bìa mềm </p>
+                        <p class="model-title-items non-activate">15 X 16</p>
+                        <p class="model-title-items activate">200</p>
+                        <p class="model-title-items non-activate">@Model.Authors</p>
+                        <p class="model-title-items activate">@Model.Publishers </p>
+                        <p class="model-title-items non-activate">@Model.Categories </p>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
 </div>
