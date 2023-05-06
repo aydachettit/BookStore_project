@@ -27,7 +27,7 @@ namespace BookStore_project.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
       
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
             if (!User.IsInRole("Admin"))
             {
@@ -38,9 +38,11 @@ namespace BookStore_project.Controllers
                 id=Import.id,
                 date_import=Import.date_import,
                 Total=Import.Total
-            }).ToList();
+            }).OrderBy(x=>x.id).ToList();
+            int pagesize = 5;
+            int pagenumber = (page ?? 1);
 
-            return View(model);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
         
         public IActionResult number()
