@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\img\authors\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,8 +66,6 @@
     <None Include="Views\employee\Detail.cshtml" />
     <None Include="Views\employee\Edit.cshtml" />
     <None Include="Views\employee\Index.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Import\Create.cshtml" />
     <None Include="Views\Import\Delete.cshtml" />
     <None Include="Views\Import\Detail.cshtml" />

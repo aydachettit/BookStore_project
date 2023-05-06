@@ -1,11 +1,15 @@
-﻿using BookStore_project.Models.User;
+﻿using BookStore_project.Models.Author;
+using BookStore_project.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Service;
 using Service.implementation;
+using Service.Implementation;
 using System.Net.WebSockets;
+using System.Runtime.CompilerServices;
 
 namespace BookStore_project.Controllers
 {
@@ -16,17 +20,45 @@ namespace BookStore_project.Controllers
         private readonly IPasswordHasher<IdentityUser> _PasswordHaser;
         private IBillService _BillService;
         private IStatusService _StatusService;
-        public UserController(IPasswordHasher<IdentityUser> PasswordHaser, IStatusService StatusService, IBillService BillService, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        private IUserService _userService;
+        public UserController(IUserService userService,IPasswordHasher<IdentityUser> PasswordHaser, IStatusService StatusService, IBillService BillService, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
+            _userService = userService;
             _PasswordHaser = PasswordHaser;
             _StatusService = StatusService;
             _BillService = BillService;
             _userManager = userManager;
             _signInManager = signInManager;
         }
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> Lock(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id) as IdentityUser;
+            await _userManager.SetLockoutEnabledAsync(user, true);
+            await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow.AddMinutes(30));
+            return RedirectToAction("Index");
+        }
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> Unlock(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id) as IdentityUser;
+            await _userManager.SetLockoutEnabledAsync(user, false);
+            await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow);
+            return RedirectToAction("Index");
+        }
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
-            return View();
+            var model = _userService.getALL().Select(user => new UserIndexViewModel
+            {
+                id = user.Id,
+                UserName = user.UserName,
+                Phone = user.PhoneNumber,
+                Gmail = user.Email,
+                Lock=user.LockoutEnabled
+            }).ToList();
+
+            return View(model);
         }
         public async Task<IActionResult> UserDetailAsync(string name)
         {
@@ -43,6 +75,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        
         public async Task<IActionResult> Edit(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -57,7 +90,7 @@ namespace BookStore_project.Controllers
             model.PhoneNumber = user.PhoneNumber;
             return View(model);
         }
-        //[Authorize]
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(UserEditViewModel model)
@@ -127,6 +160,7 @@ namespace BookStore_project.Controllers
         
         public async Task<IActionResult> Register(UserRegisterViewModel model)
         {
+            
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser
@@ -146,7 +180,7 @@ namespace BookStore_project.Controllers
                 {
                     foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError("", error.ToString());
+                        ModelState.AddModelError("", error.Description.ToString());
                     }
                 }
             }
@@ -168,28 +202,36 @@ namespace BookStore_project.Controllers
             if (ModelState.IsValid)
             {
                 IdentityUser userlogin =await _userManager.FindByEmailAsync(model.Email);
-                var result = await _signInManager.PasswordSignInAsync(userlogin.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
-                
-                if (result.Succeeded)
+                bool checkPass = await _userManager.CheckPasswordAsync(userlogin, model.Password);
+                if (userlogin != null && checkPass)
                 {
+                    var result = await _signInManager.PasswordSignInAsync(userlogin.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+                    if (result.Succeeded)
+                    {
 
                         return RedirectToAction("Index", "Home");
-                    
+
+                    }
+                    if (result.RequiresTwoFactor)
+                    {
+                        return RedirectToPage("./LoginWith2fa", new { ReturnUrl = "", RememberMe = model.RememberMe });
+                    }
+                    if (result.IsLockedOut)
+                    {
+                        ModelState.AddModelError(string.Empty, "User Locked Please contact Admin.");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    }
                 }
-                if (result.RequiresTwoFactor)
+                 else
                 {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = "", RememberMe = model.RememberMe });
-                }
-                if (result.IsLockedOut)
-                {
-                    return RedirectToPage("./Lockout");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Username or password might not be correct");
                 }
             }
-            ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors);
+            
             return View(model);
         }
 

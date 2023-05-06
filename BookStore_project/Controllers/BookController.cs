@@ -291,7 +291,7 @@ namespace BookStore_project.Controllers
                             Amount = book.Amount,
                             Price = book.Price,
                             Image_URL = book.Image_URL,
-                            Description = model.Description,
+                            Description = book.Description,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
                             PublisherID = book.PublisherID,
@@ -444,9 +444,11 @@ namespace BookStore_project.Controllers
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         [HttpGet]
-        public async Task<IActionResult> CreateProductDetail(int productID = 1, int authorID = 1)
+        public async Task<IActionResult> CreateProductDetail(int ID , int authorID = 1)
         {
-            var ProductDetail = _bookService.GetByID(productID);
+
+            //ViewData["CurrentFilter"] = prodIDuctID;
+            var ProductDetail = _bookService.GetByID(ID);
             var author = _authorService.GetById(authorID);
 
             if (author == null || ProductDetail == null)

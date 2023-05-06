@@ -16,6 +16,7 @@ namespace BookStore_project.Controllers
             _statusService = statusService;
             _hostingEnvironment = hostingEnvironment;
         }
+        [CustomAuthorize]
         public IActionResult Index()
         {
             var model = _statusService.GetAll().Select(Status => new StatusIndexViewModel
@@ -26,6 +27,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -39,6 +41,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Delete(int id)
         {
             if (id.ToString() == null)
@@ -52,6 +55,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
+        [CustomAuthorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(StatusDeleteViewModel model)
         {
@@ -64,6 +68,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Create()
         {
             var model = new StatusCreateViewModel();
@@ -71,6 +76,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Create(StatusCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -87,6 +93,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [CustomAuthorize]
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -101,6 +108,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthorize]
         public async Task<IActionResult> Edit(StatusEditViewModel model)
         {
             if (ModelState.IsValid)

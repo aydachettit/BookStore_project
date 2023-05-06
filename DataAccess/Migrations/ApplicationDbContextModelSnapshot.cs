@@ -39,7 +39,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Bill", b =>
@@ -66,7 +66,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Bills");
+                    b.ToTable("Bills", (string)null);
                 });
 
             modelBuilder.Entity("Entity.BillDetail", b =>
@@ -89,7 +89,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Bill_Detail_ID");
 
-                    b.ToTable("BillDetail");
+                    b.ToTable("BillDetail", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Book", b =>
@@ -134,7 +134,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("PublisherID");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Category", b =>
@@ -149,7 +149,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Customer", b =>
@@ -175,7 +175,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Employee", b =>
@@ -212,7 +212,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("employeeID");
 
-                    b.ToTable("Employee");
+                    b.ToTable("Employee", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Import", b =>
@@ -229,7 +229,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Imports");
+                    b.ToTable("Imports", (string)null);
                 });
 
             modelBuilder.Entity("Entity.ImportDetail", b =>
@@ -253,7 +253,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ImportDetails");
+                    b.ToTable("ImportDetails", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Publisher", b =>
@@ -273,7 +273,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Publishers");
+                    b.ToTable("Publishers", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Shipment", b =>
@@ -297,7 +297,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Shipments");
+                    b.ToTable("Shipments", (string)null);
                 });
 
             modelBuilder.Entity("Entity.Status", b =>
@@ -312,7 +312,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Status");
+                    b.ToTable("Status", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -351,7 +351,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "ee4213b0-e502-4147-8541-982f87cadffe",
+                            ConcurrencyStamp = "9346dd29-35d3-4187-b810-471a4b9a54e4",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -448,33 +448,17 @@ namespace DataAccess.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c262291f-4d61-4e80-a179-853ec79d0c31",
+                            ConcurrencyStamp = "04909683-ab04-4edb-8584-93bb8e9a6421",
                             Email = "nam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NAM@GMAIL.COM",
                             NormalizedUserName = "NAM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEADO73FKF0lYFsLZYjVQuRNCRRZSUcU9+ArUAbSq6mxBw/AgneZHSVbQ+jZvlYMYvA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE6TehhA+BSs4FTgbegrKqH5LfWhkzTKSropH6zCVLouiaJyQxQj0tqlNTUks+D+uQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "59d7ba8d-495c-439a-a089-2e55bf91a08e",
+                            SecurityStamp = "c7e99dcd-839a-43c9-bba4-b9d7955bd6ca",
                             TwoFactorEnabled = false,
                             UserName = "Nam"
-                        },
-                        new
-                        {
-                            Id = "2",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "bf17dde4-fc6b-44a6-bb0d-e7cad2e71e8b",
-                            Email = "admin@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@GMAIL.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAED7Bv1BX3d8UHws679OShpiz3ICpqjKZLzmFqOkoTfQKteh7TajimzDhNu1z44FUAA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "9c080d4f-15df-439a-8958-2dec14ab8922",
-                            TwoFactorEnabled = false,
-                            UserName = "Admin"
                         });
                 });
 

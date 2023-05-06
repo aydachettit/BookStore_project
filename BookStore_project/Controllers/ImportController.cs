@@ -3,6 +3,7 @@ using BookStore_project.Models.Import;
 using Entity;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -25,6 +26,7 @@ namespace BookStore_project.Controllers
             _bookService = bookService;
             _hostingEnvironment = hostingEnvironment;
         }
+       [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
             var model = _ImportService.GetAll().Select(Import => new ImportIndexViewModel
@@ -36,6 +38,7 @@ namespace BookStore_project.Controllers
 
             return View(model);
         }
+        [Authorize(Roles ="Admin")]
         public IActionResult number()
         {
             var model = new ImportNumberOfProductsViewModel();
@@ -43,6 +46,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult Create(ImportNumberOfProductsViewModel modell)
         {
             var import = new Import();
@@ -57,6 +61,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ImportCreateViewModel model)
         {
@@ -113,6 +118,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult DeleteIme(int id)
         {
             var import = _ImportService.GetById(id);
@@ -120,6 +126,7 @@ namespace BookStore_project.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult Delete(int id)
         {
             var import =_ImportService.GetById(id);
@@ -130,6 +137,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(ImportDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -140,6 +148,7 @@ namespace BookStore_project.Controllers
             }
             return View();
         }
+       [Authorize(Roles ="Admin")]
         public IActionResult Detail(int id)
         {
             var import = _ImportService.GetById(id);
