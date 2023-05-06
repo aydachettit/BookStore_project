@@ -80,14 +80,12 @@ namespace BookStore_project.Controllers
                 CustomerName = shipment.CustomerName,
                 Shipment_Status_ID = shipment.Shipment_Status_ID,
                 StatusName = _statusService.GetByID(shipment.Shipment_Status_ID).Name
-            }).Where(x => x.Shipment_Status_ID >= 2).ToList();
+            }).Where(x => x.Shipment_Status_ID >= 2).OrderBy(x=>x.ID).ToList();
 
-            //foreach (var item in model)
-            //{
-            //    item.CustomerName = _customerService.GetByID(item.CustomerID).Name;
-            //    //item.StatusName = _statusService.GetByID(item.Shipment_Status_ID).Name;
-            //}
-            return View(model);
+           
+            int pagesize = 1;
+            int pagenumber = (page ?? 1);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
 
         [HttpGet]
