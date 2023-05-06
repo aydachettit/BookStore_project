@@ -72,7 +72,7 @@ namespace BookStore_project.Controllers
 
             return View(model);
         }
-        [CustomAuthorize]
+        
         public async Task<IActionResult> UserDetailAsync(string name)
         {
             var user = await _userManager.FindByNameAsync(name) as IdentityUser;
@@ -133,11 +133,11 @@ namespace BookStore_project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(UserChangePasswordViewModel model)
         {
-            if (ModelState.IsValid)
+             if (ModelState.IsValid)
             {
                 if (model.NewPassword != model.ConfirmNewPassword)
                 {
-                    return View();
+                    ModelState.AddModelError("", "Mật khẩu nhập lại không trùng khớp!");
                 }
                 var usr = await _userManager.FindByIdAsync(model.id) as IdentityUser;
 
@@ -148,15 +148,21 @@ namespace BookStore_project.Controllers
                 var PasswordIsvalid = await _userManager.CheckPasswordAsync(usr, model.OldPassword);
                 if (!PasswordIsvalid)
                 {
-                    return View();
+                    ModelState.AddModelError("", "Old password is not correct!");
                 }
-
-                var HashNewpassword = _PasswordHaser.HashPassword(usr, model.NewPassword);
-                usr.PasswordHash = HashNewpassword;
-                var result = await _userManager.UpdateAsync(usr);
-                if (result.Succeeded)
+                var res = await _userManager.ChangePasswordAsync(usr, model.OldPassword, model.NewPassword);
+                
+                if (res.Succeeded)
                 {
+                   
                     return RedirectToAction("UserDetail", new { name = usr.UserName });
+                }
+                else
+                {
+                    foreach (var error in res.Errors)
+                    {
+                        ModelState.AddModelError("","Mật khẩu phải lớn hơn 6 kí tự,có ít nhất 1 kí tự đặc biệt và chữ in hoa  ");
+                    }
                 }
 
             }
