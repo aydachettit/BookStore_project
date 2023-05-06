@@ -16,7 +16,7 @@ namespace BookStore_project.Controllers
             _publisherService = publisherservice;
             _hostingEnvironment = hostingEnvironment;
         }
-        [CustomAuthorize]
+        
         public IActionResult Index()
         {
             var model = _publisherService.GetAll().Select(Publisher => new PublisherIndexViewModel
@@ -29,7 +29,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
-        [CustomAuthorize]
+        
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -44,7 +44,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
-        [CustomAuthorize]
+        
         public IActionResult Delete(int id)
         {
             if (id.ToString() == null)
@@ -60,7 +60,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        
         public async Task<IActionResult> Delete(PublisherDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -73,7 +73,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        
         public IActionResult Create()
         {
             var model = new PublisherCreateViewModel();
@@ -88,7 +88,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        
         public async Task<IActionResult> Create(PublisherCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -106,7 +106,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -131,7 +131,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        
         public async Task<IActionResult> Edit(PublisherEditViewModel model)
         {
             if (ModelState.IsValid)
