@@ -37,7 +37,7 @@ namespace BookStore_project.Controllers
         {
             if (SearchText != "" && SearchText != null)
             {
-                var bookModel = _bookService.GetBookByNameAndAuthor(SearchText).Select(book => new BookIndexViewModel
+                var model = _bookService.GetBookByNameAndAuthor(SearchText).Select(book => new BookIndexViewModel
                 {
                     ID = book.ID,
                     Name = book.Name,
@@ -50,13 +50,15 @@ namespace BookStore_project.Controllers
                     PublisherID = book.PublisherID,
                 }).ToList();
 
-                foreach (var item in bookModel)
+                foreach (var item in model)
                 {
                     item.Author = _authorService.GetById(item.AuthorID).Name;
                     item.Category = _categoryService.GetByID(item.CategoryID).Name;
                     item.Publisher = _publisherService.GetById(item.PublisherID).Name;
                 }
-                return View(bookModel);
+                int pagesize = 8;
+                int pagenumber = (page ?? 1);
+                return View(model.ToPagedList(pagenumber, pagesize));
             }
             else
             {

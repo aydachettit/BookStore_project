@@ -49,7 +49,7 @@ namespace Service.implementation
 
         public IEnumerable<Book> GetBookByNameAndAuthor(string search)
         {
-            return _context.Books.Where(x => x.Name.Contains(search) || x.Author.Name.Contains(search)).ToList();
+            return _context.Books.Where(x => x.Name.Contains(search.ToLower()) || x.Author.Name.Contains(search.ToLower())).ToList();
         }
 
         public IEnumerable<Book> GetBookByAuthor(string author)
