@@ -23,13 +23,10 @@ namespace BookStore_project.Controllers
             _categoryService = categoryService;
             _hostingEnvironment = hostingEnvironment;
         }
-        
+        [Authorize(Roles = "Admin")]
         public IActionResult Index(int? page)
         {
-            if (!User.IsInRole("Admin"))
-            {
-                return RedirectToAction("Index","Home");
-            }
+            
             var model = _authorService.GetAll().Select(Author => new AuthorIndexViewModel
             {
                 ID = Author.ID,
