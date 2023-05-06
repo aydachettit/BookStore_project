@@ -35,7 +35,7 @@ namespace BookStore_project.Controllers {
                 Employee_ID = Bill.Employee_ID,
                 Bill_status_ID = _StatusService.GetByID(Bill.Bill_status_ID).Name
             }).OrderBy(x=>x.ID).ToList();
-            int pagesize = 1;
+            int pagesize = 5;
             int pagenumber = (page ?? 1);
 
             return View(model.ToPagedList(pagenumber, pagesize));
