@@ -14,9 +14,16 @@
         .dropdown:hover .dropdown-menu{
                 display: block;
             }
-
+        .navbar-nav.flex-grow-1 {
+            background-color: #edfafc;
+        }
         .navbar-nav .nav-item .nav-link{
             color: #000;
+        }
+
+        .navbar-nav .nav-item:hover .nav-link{
+            color: #81d8d0 ;
+            transition: 0.3s;
         }
     </style>
 </head>
@@ -32,10 +39,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                            <a class="nav-link" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,13 +54,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                            <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Publisher" asp-action="Index">Publisher</a>
+                            <a class="nav-link" asp-area="" asp-controller="Publisher" asp-action="Index">Publisher</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Author" asp-action="Index" asp-route-page="1">Author</a>
+                            <a class="nav-link" asp-area="" asp-controller="Author" asp-action="Index" asp-route-page="1">Author</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,10 +74,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="BillDetail" asp-action="Index">Bill Detail</a>
+                            <a class="nav-link" asp-area="" asp-controller="BillDetail" asp-action="Index">Bill Detail</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+                            <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
