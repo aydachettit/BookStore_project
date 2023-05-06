@@ -1,11 +1,15 @@
-﻿using BookStore_project.Models.User;
+﻿using BookStore_project.Models.Author;
+using BookStore_project.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Service;
 using Service.implementation;
+using Service.Implementation;
 using System.Net.WebSockets;
+using System.Runtime.CompilerServices;
 
 namespace BookStore_project.Controllers
 {
@@ -16,8 +20,10 @@ namespace BookStore_project.Controllers
         private readonly IPasswordHasher<IdentityUser> _PasswordHaser;
         private IBillService _BillService;
         private IStatusService _StatusService;
-        public UserController(IPasswordHasher<IdentityUser> PasswordHaser, IStatusService StatusService, IBillService BillService, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        private IUserService _userService;
+        public UserController(IUserService userService,IPasswordHasher<IdentityUser> PasswordHaser, IStatusService StatusService, IBillService BillService, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
+            _userService = userService;
             _PasswordHaser = PasswordHaser;
             _StatusService = StatusService;
             _BillService = BillService;
@@ -26,7 +32,15 @@ namespace BookStore_project.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var model = _userService.getALL().Select(user => new UserIndexViewModel
+            {
+                id = user.Id,
+                UserName = user.UserName,
+                Phone = user.PhoneNumber,
+                Gmail = user.Email
+            }).ToList();
+
+            return View(model);
         }
         public async Task<IActionResult> UserDetailAsync(string name)
         {
