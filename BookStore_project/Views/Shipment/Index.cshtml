@@ -54,12 +54,13 @@
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Shipment_Status_ID)
+                @Html.DisplayFor(modelItem => item.StatusName)
             </td>
             <td>
                 <a class="text-primary" asp-action="Edit" asp-route-id="@item.ID"><i class="fas fa-edit"></i> Edit</a>
 @*                <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
 *@              <a class="text-danger" asp-action="Delete" asp-route-id="@item.ID"><i class="far fa-trash"></i> Delete</a>
+                    <a class="text-danger" asp-action="Process" asp-route-id="@item.ID"> Process</a>
             </td>
         </tr>
         }

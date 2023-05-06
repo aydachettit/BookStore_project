@@ -1,6 +1,8 @@
-﻿using BookStore_project.Models.Customer;
+﻿using BookStore_project.Models.Bill;
+using BookStore_project.Models.Customer;
 using BookStore_project.Models.Shipment;
 using Entity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Service;
@@ -17,13 +19,54 @@ namespace BookStore_project.Controllers
         public readonly ICustomerService _customerService;
         public readonly IBillService _billService;
 
-        public ShipmentController(IShipmentService shipmentService, IWebHostEnvironment hostingEnvironment, IStatusService statusService, ICustomerService customerService, IBillService billService)
+        private readonly UserManager<IdentityUser> _userManager;
+
+
+
+        public ShipmentController(UserManager<IdentityUser> userManager, IShipmentService shipmentService, IWebHostEnvironment hostingEnvironment, IStatusService statusService, ICustomerService customerService, IBillService billService)
         {
+            _userManager = userManager;
             _shipmentService = shipmentService;
             _hostingEnvironment = hostingEnvironment;
             _statusService = statusService;
             _customerService = customerService;
             _billService = billService;
+        }
+        [HttpGet]
+        public IActionResult Process(int id)
+        {
+            if (id.ToString() == null)
+            {
+                return NotFound();
+            }
+            var ship = _shipmentService.GetByID(id);
+            var model = new ShipmenrtProcessViewModel();
+            model.id = ship.ID;
+            model.Status = _statusService.GetByID(ship.Shipment_Status_ID).Name;
+
+
+            if (model.Status.Equals("Canceled") || model.Status.Equals("Shipped"))
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Process(ShipmenrtProcessViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var ship = _shipmentService.GetByID(model.id);
+                ship.Shipment_Status_ID++;
+                await _shipmentService.UpdateAsAsync(ship);
+                var bill = _billService.GetByID(ship.BillID);
+                bill.Bill_status_ID = ship.Shipment_Status_ID;
+                await _billService.UpdateAsSync(bill);
+                return RedirectToAction("Index");
+            }
+
+            return View();
         }
 
         public IActionResult Index()
@@ -34,14 +77,16 @@ namespace BookStore_project.Controllers
                 ID = shipment.ID,
                 BillID = shipment.BillID,
                 CustomerID = shipment.CustomerID,
+                CustomerName = shipment.CustomerName,
                 Shipment_Status_ID = shipment.Shipment_Status_ID,
-            }).ToList();
+                StatusName = _statusService.GetByID(shipment.Shipment_Status_ID).Name
+            }).Where(x => x.Shipment_Status_ID >= 2).ToList();
 
-            foreach (var item in model)
-            {
-                item.CustomerName = _customerService.GetByID(item.CustomerID).Name;
-                //item.StatusName = _statusService.GetByID(item.Shipment_Status_ID).Name;
-            }
+            //foreach (var item in model)
+            //{
+            //    item.CustomerName = _customerService.GetByID(item.CustomerID).Name;
+            //    //item.StatusName = _statusService.GetByID(item.Shipment_Status_ID).Name;
+            //}
             return View(model);
         }
 
@@ -189,14 +234,13 @@ namespace BookStore_project.Controllers
 
             var shipment = _shipmentService.GetByID(id);
             var BillID = _billService.GetByID(shipment.BillID).ID;
-            var CustomerID = _customerService.GetByID(shipment.CustomerID).ID;
             var Ship_StatusID = _statusService.GetByID(shipment.Shipment_Status_ID).ID;
 
             var model = new ShipmentDetailViewModel
             {
                 ID = shipment.ID,
                 BillID = BillID,
-                CustomerID = CustomerID,
+                CustomerID = shipment.CustomerID,
                 Shipment_Status_ID = Ship_StatusID
             };
             return View(model);
@@ -209,7 +253,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
-        public IActionResult SearchResultPage(ShipmentSearchViewModel model)
+        public async Task<IActionResult> SearchResultPageAsync(ShipmentSearchViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -228,7 +272,8 @@ namespace BookStore_project.Controllers
                         }).ToList();
                         foreach (var shipment in shipmentmodel)
                         {
-                            shipment.CustomerName = _customerService.GetByID(shipment.CustomerID).Name;
+                            var temp = await _userManager.FindByIdAsync(shipment.CustomerID) as IdentityUser;
+                            shipment.CustomerName = temp.UserName;
                             shipment.StatusName = _statusService.GetByID(shipment.Shipment_Status_ID).Name;
                         }
                         return View(shipmentmodel);
@@ -242,7 +287,8 @@ namespace BookStore_project.Controllers
                         }).ToList();
                         foreach (var shipment in shipmentmodel)
                         {
-                            shipment.CustomerName = _customerService.GetByID(shipment.CustomerID).Name;
+                            var temp = await _userManager.FindByIdAsync(shipment.CustomerID) as IdentityUser;
+                            shipment.CustomerName = temp.UserName;
                             shipment.StatusName = _statusService.GetByID(shipment.Shipment_Status_ID).Name;
                         }
                         return View(shipmentmodel);
@@ -256,7 +302,8 @@ namespace BookStore_project.Controllers
                         }).ToList();
                         foreach (var shipment in shipmentmodel)
                         {
-                            shipment.CustomerName = _customerService.GetByID(shipment.CustomerID).Name;
+                            var temp = await _userManager.FindByIdAsync(shipment.CustomerID) as IdentityUser;
+                            shipment.CustomerName = temp.UserName;
                             shipment.StatusName = _statusService.GetByID(shipment.Shipment_Status_ID).Name;
                         }
                         return View(shipmentmodel);
