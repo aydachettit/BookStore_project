@@ -7,6 +7,8 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Authorization;
+using PagedList;
 
 namespace BookStore_project.Controllers {
     public class BillController : Controller {

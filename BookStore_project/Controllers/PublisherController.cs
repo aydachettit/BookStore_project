@@ -1,7 +1,9 @@
 ﻿using BookStore_project.Models.Publisher;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using PagedList;
 using Service;
 using Service.Implementation;
 
@@ -17,7 +19,7 @@ namespace BookStore_project.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
         [Authorize(Roles ="Admin")]
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
             var model = _publisherService.GetAll().Select(Publisher => new PublisherIndexViewModel
             {

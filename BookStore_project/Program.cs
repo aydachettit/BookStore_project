@@ -38,6 +38,7 @@ builder.Services.AddScoped<IStatusService, StatusService>();
 builder.Services.AddScoped<IImport, ImportService>();
 builder.Services.AddScoped<IImportDetailService, ImportDetailService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddSession();
 var app = builder.Build();
 

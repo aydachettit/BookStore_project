@@ -2,9 +2,11 @@
 using BookStore_project.Models.Customer;
 using BookStore_project.Models.Shipment;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using PagedList;
 using Service;
 using Service.implementation;
 using Service.Implementation;
@@ -71,7 +73,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [Authorize(Roles ="Admin")]
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
             var model = _shipmentService.GetAll().Select(shipment => new ShipmentIndexViewModel
             {

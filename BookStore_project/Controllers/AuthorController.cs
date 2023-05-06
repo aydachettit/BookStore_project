@@ -1,5 +1,6 @@
 ﻿using BookStore_project.Models.Author;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PagedList;

@@ -45,12 +45,12 @@
                 </div>
 
             </div>
-            <div class="product-info">
+            <div class="product-info" style="padding-top:10px;display:flex; flex-direction:column; justify-content:center; align-items:center">
                 <div class="product-name">
-                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                    <h4 style="text-align:center">@Html.DisplayFor(modelItem => item.Name)</h4>
                 </div>
                 <div class="product-price">
-                    <span>$@Html.DisplayFor(modelItem => item.Price)</span>
+                    <span style="color:red">@Html.DisplayFor(modelItem => item.Price)   VND</span>
                 </div>
             </div>
         </div>

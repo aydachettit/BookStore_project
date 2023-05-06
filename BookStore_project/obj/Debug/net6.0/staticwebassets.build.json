@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dJ3O9XUUACdNSVluw52YaOrz6KbyT4ss213ZtMZvJTg=",
+  "Hash": "NWX6VuWMQ4FJIdIYfwvYtv4qVIRbGKHYe7PY74Pg/TU=",
   "Source": "BookStore_project",
   "BasePath": "_content/BookStore_project",
   "Mode": "Default",
@@ -1290,6 +1290,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\books\\230046195919958.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\231703838Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_project\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "img/books/231703838Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\231703838Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\232211255A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_project\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "img/books/232211255A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\232211255A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg"
     },
     {
       "Identity": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\PULL_PHU_2\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\2335223839.jpg",
