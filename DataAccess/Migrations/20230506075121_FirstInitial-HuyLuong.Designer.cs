@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230504021229_FirstInitial-HuyLuong")]
+    [Migration("20230506075121_FirstInitial-HuyLuong")]
     partial class FirstInitialHuyLuong
     {
         /// <inheritdoc />
@@ -54,8 +54,9 @@ namespace DataAccess.Migrations
                     b.Property<int>("Bill_status_ID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Customer_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Customer_ID")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
@@ -108,6 +109,10 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Image_URL")
                         .HasColumnType("longtext");
@@ -183,10 +188,24 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("employeeAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("employeeDOB")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<DateTime>("employeeDate_Join")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("employeeEmail")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("employeeGender")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("employeeImage")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("employeeName")
@@ -239,31 +258,6 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ImportDetails");
-                });
-
-            modelBuilder.Entity("Entity.ProductDetail", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("AuthorID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ProductDescription")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("ProductPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("ProductTitle")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ProductDetail");
                 });
 
             modelBuilder.Entity("Entity.Publisher", b =>
@@ -354,14 +348,14 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "c2ff33b1-bc2a-47ac-8f65-65d090ed4105",
+                            ConcurrencyStamp = "3df57c53-c632-48bd-803d-00586db9c5e3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "53ecbb67-777c-453b-a930-22f08f08f75d",
+                            ConcurrencyStamp = "e3eac33c-0456-44d9-a1d8-4aac1d2f7d8a",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -458,15 +452,15 @@ namespace DataAccess.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "06b9de95-e144-4b25-8f14-395b82764390",
+                            ConcurrencyStamp = "13cf3bf5-a5dc-4174-adcf-dadb587aa3a0",
                             Email = "nam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NAM@GMAIL.COM",
                             NormalizedUserName = "NAM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOZG1Xzwo9q1d0jpbKdxewC76LSRBGVVLt01lAbn1vcRHQaFtN3Z/hNjN790iF6AdQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEX3Tz2rwv/mdBeRMdWASuQoTuugNGre842i+E/+H8JbZMENA1AjS4KLxmsSWZ+v9Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "08e7d66b-0120-425c-8702-f08ec47b0459",
+                            SecurityStamp = "f6285a06-3901-4fc3-8049-bc3d69bec31d",
                             TwoFactorEnabled = false,
                             UserName = "Nam"
                         },
@@ -474,15 +468,15 @@ namespace DataAccess.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "16420ddb-4fd5-455b-b5f6-3851b713b02e",
+                            ConcurrencyStamp = "fb0079ba-e0ff-4660-840e-8c74e8391cfc",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAENtEcVvBvhBYTWqnugwmybvYnqNteDBefOLA5WhQO6Bouj9G/jG0e73JNPv03yOIow==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOblon2aQgGOddMLTOK/FBCtIpZSM+Gc4bdKsS41O2ZXV19o6TQk/KLl3plpIjLROw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a301d08d-de73-4126-b18e-8470f19b406d",
+                            SecurityStamp = "b985fc2d-70de-4a38-9543-1542a0f1b518",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });

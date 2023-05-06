@@ -107,6 +107,9 @@ namespace DataAccess.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Image_URL")
                         .HasColumnType("longtext");
 
@@ -341,14 +344,14 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "e35fdb2a-b1de-4046-a3e5-cecaa985674a",
+                            ConcurrencyStamp = "4d64713b-a9f8-4ea9-a220-627221c40f5d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "cf35a6f1-c1ed-4111-8ac8-faf277c6eb93",
+                            ConcurrencyStamp = "ee4213b0-e502-4147-8541-982f87cadffe",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -445,17 +448,33 @@ namespace DataAccess.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04909683-ab04-4edb-8584-93bb8e9a6421",
+                            ConcurrencyStamp = "c262291f-4d61-4e80-a179-853ec79d0c31",
                             Email = "nam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NAM@GMAIL.COM",
                             NormalizedUserName = "NAM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE6TehhA+BSs4FTgbegrKqH5LfWhkzTKSropH6zCVLouiaJyQxQj0tqlNTUks+D+uQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEADO73FKF0lYFsLZYjVQuRNCRRZSUcU9+ArUAbSq6mxBw/AgneZHSVbQ+jZvlYMYvA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c7e99dcd-839a-43c9-bba4-b9d7955bd6ca",
+                            SecurityStamp = "59d7ba8d-495c-439a-a089-2e55bf91a08e",
                             TwoFactorEnabled = false,
                             UserName = "Nam"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "bf17dde4-fc6b-44a6-bb0d-e7cad2e71e8b",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAED7Bv1BX3d8UHws679OShpiz3ICpqjKZLzmFqOkoTfQKteh7TajimzDhNu1z44FUAA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "9c080d4f-15df-439a-8958-2dec14ab8922",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin"
                         });
                 });
 

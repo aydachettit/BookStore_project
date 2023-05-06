@@ -12,6 +12,7 @@ using System.Data;
 
 namespace BookStore_project.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BookController : Controller
     {
         private IBookService _bookService;
@@ -30,7 +31,7 @@ namespace BookStore_project.Controllers
             _hostingEnvironment = hostingEnvironment;
             _context = context;
         }
-        [Authorize(Roles = "Admin")]
+        
         public IActionResult Index(int? page)
         {
 
@@ -41,6 +42,7 @@ namespace BookStore_project.Controllers
                 PublicDate = c.PublicDate,
                 Amount = c.Amount,
                 Price = c.Price,
+                Description = c.Description,
                 Image_URL = c.Image_URL,
                 AuthorID = c.AuthorID,
                 PublisherID = c.PublisherID,
@@ -59,7 +61,6 @@ namespace BookStore_project.Controllers
             return View(model.ToPagedList(pagenumber, pagesize));
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -105,6 +106,7 @@ namespace BookStore_project.Controllers
                     PublicDate = model.PublicDate,
                     Amount = model.Amount,
                     Price = model.Price,
+                    Description = model.Description,
                     AuthorID = model.AuthorID,
                     CategoryID = model.CategoryID,
                     PublisherID = model.PublisherID
@@ -141,6 +143,7 @@ namespace BookStore_project.Controllers
             model.PublicDate = book.PublicDate;
             model.Amount = book.Amount;
             model.Price = book.Price;
+            model.Description = book.Description;
 
             IEnumerable<SelectListItem> authorList = _authorService.GetAll().
                 Select(c => new SelectListItem
@@ -183,6 +186,7 @@ namespace BookStore_project.Controllers
                     PublicDate = model.PublicDate,
                     Amount = model.Amount,
                     Price = model.Price,
+                    Description = model.Description,
                     AuthorID = model.AuthorID,
                     CategoryID = model.CategoryID,
                     PublisherID = model.PublisherID,
@@ -253,6 +257,7 @@ namespace BookStore_project.Controllers
             model.Image_URL = book.Image_URL;
             model.Amount = book.Amount;
             model.Price = book.Price;
+            model.Description = book.Description;
             model.Authors = authorName;
             model.Categories = categoryName;
             model.Publishers = publisherName;
@@ -286,6 +291,7 @@ namespace BookStore_project.Controllers
                             Amount = book.Amount,
                             Price = book.Price,
                             Image_URL = book.Image_URL,
+                            Description = model.Description,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
                             PublisherID = book.PublisherID,
@@ -306,6 +312,7 @@ namespace BookStore_project.Controllers
                             PublicDate = book.PublicDate,
                             Amount = book.Amount,
                             Price = book.Price,
+                            Description = book.Description,
                             Image_URL = book.Image_URL,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
@@ -327,6 +334,7 @@ namespace BookStore_project.Controllers
                             PublicDate = book.PublicDate,
                             Amount = book.Amount,
                             Price = book.Price,
+                            Description = book.Description,
                             Image_URL = book.Image_URL,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
@@ -347,6 +355,7 @@ namespace BookStore_project.Controllers
                             PublicDate = book.PublicDate,
                             Amount = book.Amount,
                             Price = book.Price,
+                            Description = book.Description,
                             Image_URL = book.Image_URL,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
@@ -367,6 +376,7 @@ namespace BookStore_project.Controllers
                             PublicDate = book.PublicDate,
                             Amount = book.Amount,
                             Price = book.Price,
+                            Description = book.Description,
                             Image_URL = book.Image_URL,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
@@ -387,6 +397,7 @@ namespace BookStore_project.Controllers
                             PublicDate = book.PublicDate,
                             Amount = book.Amount,
                             Price = book.Price,
+                            Description = book.Description,
                             Image_URL = book.Image_URL,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
@@ -407,6 +418,7 @@ namespace BookStore_project.Controllers
                             PublicDate = book.PublicDate,
                             Amount = book.Amount,
                             Price = book.Price,
+                            Description = book.Description,
                             Image_URL = book.Image_URL,
                             AuthorID = book.AuthorID,
                             CategoryID = book.CategoryID,
@@ -450,6 +462,7 @@ namespace BookStore_project.Controllers
                 Amount = ProductDetail.Amount,
                 Price = ProductDetail.Price,
                 PublicDate = ProductDetail.PublicDate,
+                Description = ProductDetail.Description,
                 AuthorID = author.ID,
                 Authors = author.Name,
                 Image_URL = ProductDetail.Image_URL,

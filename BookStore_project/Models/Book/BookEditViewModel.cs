@@ -16,6 +16,9 @@ namespace BookStore_project.Models.Book
         public int Amount { get; set; }
         [Required(ErrorMessage = "Price Book is required")]
         public int Price { get; set; }
+
+        public string? Description { get; set; }
+
         [Display(Name = "Book Image")]
         public IFormFile Image_URL { get; set; }
 

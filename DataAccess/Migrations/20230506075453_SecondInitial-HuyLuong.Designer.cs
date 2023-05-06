@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230505033332_FirstInitial")]
-    partial class FirstInitial
+    [Migration("20230506075453_SecondInitial-HuyLuong")]
+    partial class SecondInitialHuyLuong
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -109,6 +109,9 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Image_URL")
                         .HasColumnType("longtext");
@@ -344,14 +347,14 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "e35fdb2a-b1de-4046-a3e5-cecaa985674a",
+                            ConcurrencyStamp = "4d64713b-a9f8-4ea9-a220-627221c40f5d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "9346dd29-35d3-4187-b810-471a4b9a54e4",
+                            ConcurrencyStamp = "ee4213b0-e502-4147-8541-982f87cadffe",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -448,15 +451,15 @@ namespace DataAccess.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "87a2e9c3-9f64-41d6-9da1-fa0b258bc9b7",
+                            ConcurrencyStamp = "c262291f-4d61-4e80-a179-853ec79d0c31",
                             Email = "nam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NAM@GMAIL.COM",
                             NormalizedUserName = "NAM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIFinDbi+0moDgQNi60a3NOnJp+WKR9z7LQhNkE641gFCl5BuqTLYCYlXIX8Ja8qWA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEADO73FKF0lYFsLZYjVQuRNCRRZSUcU9+ArUAbSq6mxBw/AgneZHSVbQ+jZvlYMYvA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4053e60b-bc85-4361-a722-7724e882a56e",
+                            SecurityStamp = "59d7ba8d-495c-439a-a089-2e55bf91a08e",
                             TwoFactorEnabled = false,
                             UserName = "Nam"
                         },
@@ -464,15 +467,15 @@ namespace DataAccess.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "199ddaf3-9f76-4480-9160-811983a3b646",
+                            ConcurrencyStamp = "bf17dde4-fc6b-44a6-bb0d-e7cad2e71e8b",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIxxAxEPqx2PMkZeTThWaVNeJC0GHMN1a81UkEXMxMgmGcJfcMFFrFIn97FADvNwTg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED7Bv1BX3d8UHws679OShpiz3ICpqjKZLzmFqOkoTfQKteh7TajimzDhNu1z44FUAA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "26045904-f16e-4e83-96d7-15d637deec75",
+                            SecurityStamp = "9c080d4f-15df-439a-8958-2dec14ab8922",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });

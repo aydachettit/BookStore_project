@@ -97,6 +97,78 @@
       "PackagePath": "staticwebassets\\img\\books\\9.jpg"
     },
     {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Fairy Tale - Stephen King - Khoa học viễn tưởng.jpeg",
+      "PackagePath": "staticwebassets\\img\\books\\Fairy Tale - Stephen King - Khoa học viễn tưởng.jpeg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Forrest Gump - Winston Groom - Hài, kịch.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Forrest Gump - Winston Groom - Hài, kịch.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\How Minds Change.. The Surprising Science of Belief, Opinion, and Persuasion - David McRaney - Khoa học.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\How Minds Change.. The Surprising Science of Belief, Opinion, and Persuasion - David McRaney - Khoa học.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Jurassic Park - Michael Crichton - Khoa học viễn tưởng.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Jurassic Park - Michael Crichton - Khoa học viễn tưởng.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Knight Owl - Christopher Denise - Truyện thiếu nhi.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Knight Owl - Christopher Denise - Truyện thiếu nhi.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Moby Dick - Herman Melville - Phiêu lưu & hành động.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Moby Dick - Herman Melville - Phiêu lưu & hành động.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Oscar from Elsewhere - Jacklyn Moriarty - Sách thiếu nhi.jpeg",
+      "PackagePath": "staticwebassets\\img\\books\\Oscar from Elsewhere - Jacklyn Moriarty - Sách thiếu nhi.jpeg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Stan Lee.. The Man behind Marvel - Bob Batchelor - Tiểu sử.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Stan Lee.. The Man behind Marvel - Bob Batchelor - Tiểu sử.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\The Hobbit - J.R.R.Tolkien - Văn học viễn tưởng.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\The Hobbit - J.R.R.Tolkien - Văn học viễn tưởng.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\The Lord of the Rings - J.R.R.Tolkien - Văn học viễn tưởng.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\The Lord of the Rings - J.R.R.Tolkien - Văn học viễn tưởng.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\The Lost World - Michael Crichton - Khoa học viễn tưởng.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\The Lost World - Michael Crichton - Khoa học viễn tưởng.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\The Rise and Reign of the Mammals.. A New History, from the Shadow of the Dinosaurs to Us - Steve Brusatte - Khoa học.jpeg",
+      "PackagePath": "staticwebassets\\img\\books\\The Rise and Reign of the Mammals.. A New History, from the Shadow of the Dinosaurs to Us - Steve Brusatte - Khoa học.jpeg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\The Shawshank Redemption - Stephen King - Giật gân.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\The Shawshank Redemption - Stephen King - Giật gân.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Tomorrow, and Tomorrow, and Tomorrow.. A Novel - Gabrielle Zevin - Phiêu lưu & hành động.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Tomorrow, and Tomorrow, and Tomorrow.. A Novel - Gabrielle Zevin - Phiêu lưu & hành động.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Well, That was unexpected - Jesse Q. Sutanto - Thanh thiếu niên.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Well, That was unexpected - Jesse Q. Sutanto - Thanh thiếu niên.jpg"
+    },
+    {
+      "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\books\\Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg"
+    },
+    {
       "Id": "E:\\c#-workspace\\BookStoreManagement\\BookStore_project\\wwwroot\\img\\employees\\233957240669006.png",
       "PackagePath": "staticwebassets\\img\\employees\\233957240669006.png"
     },

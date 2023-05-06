@@ -99,7 +99,7 @@ namespace DataAccess.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Total_money = table.Column<int>(type: "int", nullable: false),
-                    Customer_ID = table.Column<int>(type: "int", nullable: false),
+                    Customer_ID = table.Column<string>(type: "longtext", nullable: false),
                     Employee_ID = table.Column<int>(type: "int", nullable: false),
                     Bill_status_ID = table.Column<int>(type: "int", nullable: false)
                 },
@@ -149,7 +149,11 @@ namespace DataAccess.Migrations
                     employeeName = table.Column<string>(type: "longtext", nullable: true),
                     employeeGender = table.Column<string>(type: "longtext", nullable: true),
                     employeeDate_Join = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    employeePhone_Number = table.Column<int>(type: "int", nullable: true)
+                    employeePhone_Number = table.Column<int>(type: "int", nullable: true),
+                    employeeImage = table.Column<string>(type: "longtext", nullable: false),
+                    employeeAddress = table.Column<string>(type: "longtext", nullable: false),
+                    employeeDOB = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    employeeEmail = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -186,23 +190,6 @@ namespace DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Imports", x => x.id);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "ProductDetail",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    ProductTitle = table.Column<string>(type: "longtext", nullable: false),
-                    ProductDescription = table.Column<string>(type: "longtext", nullable: false),
-                    ProductPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    AuthorID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductDetail", x => x.ID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -373,6 +360,7 @@ namespace DataAccess.Migrations
                     PublicDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Amount = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "longtext", nullable: false),
                     Image_URL = table.Column<string>(type: "longtext", nullable: true),
                     AuthorID = table.Column<int>(type: "int", nullable: false),
                     PublisherID = table.Column<int>(type: "int", nullable: false),
@@ -407,8 +395,8 @@ namespace DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1", "c2ff33b1-bc2a-47ac-8f65-65d090ed4105", "Admin", "ADMIN" },
-                    { "2", "53ecbb67-777c-453b-a930-22f08f08f75d", "Customer", "CUSTOMER" }
+                    { "1", "3df57c53-c632-48bd-803d-00586db9c5e3", "Admin", "ADMIN" },
+                    { "2", "e3eac33c-0456-44d9-a1d8-4aac1d2f7d8a", "Customer", "CUSTOMER" }
                 });
 
             migrationBuilder.InsertData(
@@ -416,8 +404,8 @@ namespace DataAccess.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, "06b9de95-e144-4b25-8f14-395b82764390", "nam@gmail.com", false, false, null, "NAM@GMAIL.COM", "NAM", "AQAAAAEAACcQAAAAEOZG1Xzwo9q1d0jpbKdxewC76LSRBGVVLt01lAbn1vcRHQaFtN3Z/hNjN790iF6AdQ==", null, false, "08e7d66b-0120-425c-8702-f08ec47b0459", false, "Nam" },
-                    { "2", 0, "16420ddb-4fd5-455b-b5f6-3851b713b02e", "admin@gmail.com", false, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAENtEcVvBvhBYTWqnugwmybvYnqNteDBefOLA5WhQO6Bouj9G/jG0e73JNPv03yOIow==", null, false, "a301d08d-de73-4126-b18e-8470f19b406d", false, "Admin" }
+                    { "1", 0, "13cf3bf5-a5dc-4174-adcf-dadb587aa3a0", "nam@gmail.com", false, false, null, "NAM@GMAIL.COM", "NAM", "AQAAAAEAACcQAAAAEEX3Tz2rwv/mdBeRMdWASuQoTuugNGre842i+E/+H8JbZMENA1AjS4KLxmsSWZ+v9Q==", null, false, "f6285a06-3901-4fc3-8049-bc3d69bec31d", false, "Nam" },
+                    { "2", 0, "fb0079ba-e0ff-4660-840e-8c74e8391cfc", "admin@gmail.com", false, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEOblon2aQgGOddMLTOK/FBCtIpZSM+Gc4bdKsS41O2ZXV19o6TQk/KLl3plpIjLROw==", null, false, "b985fc2d-70de-4a38-9543-1542a0f1b518", false, "Admin" }
                 });
 
             migrationBuilder.InsertData(
@@ -520,9 +508,6 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Imports");
-
-            migrationBuilder.DropTable(
-                name: "ProductDetail");
 
             migrationBuilder.DropTable(
                 name: "Shipments");
