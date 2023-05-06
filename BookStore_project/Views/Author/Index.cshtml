@@ -50,12 +50,14 @@
                 @item.DOB.ToShortDateString()
             </td>
                 <td>
-                    <img style="width:36px; height:36 px;border-radius:100% " src="@Html.DisplayFor(modelItem => item.img_url)" />
+                    <img style="width:36px; height:36;border-radius:100% " src="@Html.DisplayFor(modelItem => item.img_url)" />
                 </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <div class="btn-group" style="flex-direction: column;">
+                    <a class="text-primary" style="text-decoration: none" asp-action="Edit" asp-route-id="@item.ID">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+                    <a class="text-success" style="text-decoration: none" asp-action="Detail" asp-route-id="@item.ID">Detail<i class="fa-solid fa-circle-info"></i></a>
+                    <a class="text-danger" style="text-decoration: none" asp-action="Delete" asp-route-id="@item.ID">Delete<i class="fa-solid fa-trash"></i></a>                  
+                </div>   
             </td>
         </tr>
 }

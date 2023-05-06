@@ -37,19 +37,21 @@
     <tbody>
         @foreach (var item in Model)
         {
-                            <tr>
-                                <td>
+            <tr>
+                <td>
                     @Html.DisplayFor(modelItem => item.ID)
-                                </td>
-                                <td>
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                                    <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
-                                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                                </td>
-                            </tr>
+                </td>
+                <td>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a class="text-primary" style="text-decoration: none" asp-action="Edit" asp-route-id="@item.ID">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="text-success" style="text-decoration: none" asp-action="Detail" asp-route-id="@item.ID">Detail<i class="fa-solid fa-circle-info"></i></a>
+                        <a class="text-danger" style="text-decoration: none" asp-action="Delete" asp-route-id="@item.ID">Delete<i class="fa-solid fa-trash"></i></a>                  
+                     </div>                    
+                </td>
+            </tr>                   
         }
     </tbody>
 </table>

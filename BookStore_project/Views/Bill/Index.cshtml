@@ -60,9 +60,11 @@
                     @Html.DisplayFor(modelItem => item.Bill_status_ID)
                 </td>
                 <td>
-                    <a asp-action="Detail" asp-route-id="@item.ID">Detail</a>
-                    <a asp-action="Process" asp-route-id="@item.ID">Process</a>
-                    <a asp-action="Canceled" asp-route-id="@item.ID">Canceled</a>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a class="text-primary" style="text-decoration: none" asp-action="Edit" asp-route-id="@item.ID">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="text-success" style="text-decoration: none" asp-action="Detail" asp-route-id="@item.ID">Detail<i class="fa-solid fa-circle-info"></i></a>
+                        <a class="text-danger" style="text-decoration: none" asp-action="Delete" asp-route-id="@item.ID">Delete<i class="fa-solid fa-trash"></i></a>                  
+                    </div>  
                 </td>
             </tr>
         }
