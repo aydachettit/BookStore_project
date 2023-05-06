@@ -72,7 +72,7 @@ namespace BookStore_project.Controllers
 
             return View(model);
         }
-        [CustomAuthorize]
+        
         public async Task<IActionResult> UserDetailAsync(string name)
         {
             var user = await _userManager.FindByNameAsync(name) as IdentityUser;
