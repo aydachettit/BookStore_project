@@ -30,25 +30,37 @@ namespace BookStore_project.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-        [Authorize(Roles ="Admin")]
+       
         public async Task<IActionResult> Lock(string id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var user = await _userManager.FindByIdAsync(id) as IdentityUser;
             await _userManager.SetLockoutEnabledAsync(user, true);
             await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow.AddMinutes(30));
             return RedirectToAction("Index");
         }
-        [Authorize(Roles ="Admin")]
+       
         public async Task<IActionResult> Unlock(string id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var user = await _userManager.FindByIdAsync(id) as IdentityUser;
             await _userManager.SetLockoutEnabledAsync(user, false);
             await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow);
             return RedirectToAction("Index");
         }
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Index()
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = _userService.getALL().Select(user => new UserIndexViewModel
             {
                 id = user.Id,
@@ -60,6 +72,7 @@ namespace BookStore_project.Controllers
 
             return View(model);
         }
+        [CustomAuthorize]
         public async Task<IActionResult> UserDetailAsync(string name)
         {
             var user = await _userManager.FindByNameAsync(name) as IdentityUser;
@@ -75,6 +88,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
+
         
         public async Task<IActionResult> Edit(string id)
         {

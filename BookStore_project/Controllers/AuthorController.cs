@@ -23,9 +23,13 @@ namespace BookStore_project.Controllers
             _categoryService = categoryService;
             _hostingEnvironment = hostingEnvironment;
         }
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Index(int? page)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index","Home");
+            }
             var model = _authorService.GetAll().Select(Author => new AuthorIndexViewModel
             {
                 ID = Author.ID,
@@ -33,15 +37,18 @@ namespace BookStore_project.Controllers
                 DOB = Author.DOB,
                 img_url = Author.img_url
             }).OrderBy(x=>x.ID).ToList();
-            int pagesize = 1;
+            int pagesize = 5;
             int pagenumber = (page ?? 1);
 
             return View(model.ToPagedList(pagenumber,pagesize));
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
         public IActionResult Detail(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -62,9 +69,12 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
-       [Authorize(Roles ="Admin")]
         public IActionResult Delete(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -79,9 +89,12 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(AuthorDeleteViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var author = _authorService.GetById(model.ID);
@@ -92,17 +105,23 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new AuthorCreateViewModel();
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Create(AuthorCreateViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var author = new Author
@@ -129,9 +148,12 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
         public IActionResult Edit(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -147,9 +169,12 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Edit(AuthorEditViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var author = new Author
@@ -165,7 +190,6 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
         public IActionResult SearchPage()
         {
             var model = new AuthorSearchViewModel();

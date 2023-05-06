@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
+using PagedList;
 using Service;
 using Service.Implementation;
 
@@ -26,29 +27,43 @@ namespace BookStore_project.Controllers
             _bookService = bookService;
             _hostingEnvironment = hostingEnvironment;
         }
-       [Authorize(Roles ="Admin")]
-        public IActionResult Index()
+      
+        public IActionResult Index(int? page)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = _ImportService.GetAll().Select(Import => new ImportIndexViewModel
             {
                 id=Import.id,
                 date_import=Import.date_import,
                 Total=Import.Total
-            }).ToList();
+            }).OrderBy(x=>x.id).ToList();
+            int pagesize = 5;
+            int pagenumber = (page ?? 1);
 
-            return View(model);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult number()
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new ImportNumberOfProductsViewModel();
            
             return View(model);
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Create(ImportNumberOfProductsViewModel modell)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var import = new Import();
             import.date_import = DateTime.Now;
             import.Total = 0;
@@ -61,10 +76,14 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
-        [Authorize(Roles ="Admin")]
+       
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ImportCreateViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 
@@ -118,17 +137,25 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult DeleteIme(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var import = _ImportService.GetById(id);
             _ImportService.DeleteAsSync(import);
             return RedirectToAction("Index");
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Delete(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var import =_ImportService.GetById(id);
             var model = new ImportDeleteViewModel();
             model.id = import.id;
@@ -137,9 +164,13 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
-        [Authorize(Roles ="Admin")]
+        
         public async Task<IActionResult> Delete(ImportDeleteViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var import = _ImportService.GetById(model.id);
@@ -148,9 +179,13 @@ namespace BookStore_project.Controllers
             }
             return View();
         }
-       [Authorize(Roles ="Admin")]
+       
         public IActionResult Detail(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var import = _ImportService.GetById(id);
             var list_of_detail = _importDetailService.getAllByImportId(id);
             var model = new ImportDetailViewModel();

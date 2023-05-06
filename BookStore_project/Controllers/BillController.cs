@@ -20,8 +20,12 @@ namespace BookStore_project.Controllers {
             _StatusService = StatusService;
             _billService = billService;
         }
-        [Authorize(Roles ="Admin")]
+       
          public IActionResult Index(int ? page){
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = _billService.GetAll().Select( Bill => new BillIndexViewModel
             {
                 ID = Bill.ID,
@@ -31,16 +35,20 @@ namespace BookStore_project.Controllers {
                 Employee_ID = Bill.Employee_ID,
                 Bill_status_ID = _StatusService.GetByID(Bill.Bill_status_ID).Name
             }).OrderBy(x=>x.ID).ToList();
-            int pagesize = 1;
+            int pagesize = 5;
             int pagenumber = (page ?? 1);
 
             return View(model.ToPagedList(pagenumber, pagesize));
 
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Detail(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -58,9 +66,13 @@ namespace BookStore_project.Controllers {
             return View(model);
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Delete(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -77,9 +89,13 @@ namespace BookStore_project.Controllers {
         }
         [HttpGet]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+        
         public async Task<IActionResult> Delete(BillDeleteViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var bill = _billService.GetByID(model.ID);
@@ -90,17 +106,25 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Create()
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new BillCreateViewModel();
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+       
         public async Task<IActionResult> Create(BillCreateViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var bill = new Bill
@@ -119,9 +143,13 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Edit(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -139,9 +167,13 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+        
         public async Task<IActionResult> Edit(BillEditViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var bill = new Bill
@@ -159,9 +191,13 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Process(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -181,9 +217,13 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+       
         public async Task<IActionResult> Process(BillProcessViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var bill = _billService.GetByID(model.id);
@@ -195,9 +235,13 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Canceled(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -217,9 +261,13 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+        
         public async Task<IActionResult> Canceled(BillCanceledViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var bill = _billService.GetByID(model.id);

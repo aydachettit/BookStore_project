@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PagedList;
 using Service;
+using Service.implementation;
 using Service.Implementation;
 
 namespace BookStore_project.Controllers
@@ -12,15 +13,21 @@ namespace BookStore_project.Controllers
     public class PublisherController : Controller
     {
         private IPublisherService _publisherService;
+        private ICategoryService _categoryService;
         private IWebHostEnvironment _hostingEnvironment;
-        public PublisherController(IPublisherService publisherservice, IWebHostEnvironment hostingEnvironment)
+        public PublisherController(ICategoryService categoryService,IPublisherService publisherservice, IWebHostEnvironment hostingEnvironment)
         {
+            _categoryService = categoryService;
             _publisherService = publisherservice;
             _hostingEnvironment = hostingEnvironment;
         }
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Index(int? page)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = _publisherService.GetAll().Select(Publisher => new PublisherIndexViewModel
             {
                 ID = Publisher.ID,
@@ -33,9 +40,13 @@ namespace BookStore_project.Controllers
             return View(model.ToPagedList(pagenumber, pagesize));
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Detail(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -45,12 +56,23 @@ namespace BookStore_project.Controllers
             model.ID = publisher.ID;
             model.Name = publisher.Name;
             model.Country = publisher.Country;
+            var publisherbook = _publisherService.getBookByPublisherId(id);
+            model.lob = publisherbook;
+            foreach (var items in model.lob)
+            {
+                var cate = _categoryService.GetByID(items.CategoryID);
+                items.Category = cate;
+            }
             return View(model);
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Delete(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -64,9 +86,13 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+       
         public async Task<IActionResult> Delete(PublisherDeleteViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var publisher = _publisherService.GetById(model.ID);
@@ -77,9 +103,13 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Create()
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new PublisherCreateViewModel();
             IEnumerable<string> countries = new List<string> { "USA", "Canada", "Mexico","Viet Nam","Campuchia","China" };
             IEnumerable<SelectListItem> countryListItems = countries.Select(c => new SelectListItem
@@ -92,9 +122,13 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+       
         public async Task<IActionResult> Create(PublisherCreateViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var publisher = new Publisher
@@ -110,9 +144,13 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        
         public IActionResult Edit(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -135,9 +173,13 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+        
         public async Task<IActionResult> Edit(PublisherEditViewModel model)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 var publisher = new Publisher
