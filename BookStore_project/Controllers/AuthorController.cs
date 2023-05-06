@@ -37,7 +37,7 @@ namespace BookStore_project.Controllers
                 DOB = Author.DOB,
                 img_url = Author.img_url
             }).OrderBy(x=>x.ID).ToList();
-            int pagesize = 1;
+            int pagesize = 5;
             int pagenumber = (page ?? 1);
 
             return View(model.ToPagedList(pagenumber,pagesize));
