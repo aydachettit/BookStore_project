@@ -19,8 +19,8 @@ namespace BookStore_project.Controllers {
             _billService = billService;
         }
         [CustomAuthorize]
-        public IActionResult Index(){
-            var model = _billService.GetAll().Select(Bill => new BillIndexViewModel
+         public IActionResult Index(int ? page){
+            var model = _billService.GetAll().Select( Bill => new BillIndexViewModel
             {
                 ID = Bill.ID,
                 Date = Bill.Date,
@@ -28,9 +28,12 @@ namespace BookStore_project.Controllers {
                 Customer_ID = Bill.Customer_ID,
                 Employee_ID = Bill.Employee_ID,
                 Bill_status_ID = _StatusService.GetByID(Bill.Bill_status_ID).Name
-            }).ToList();
-           
-            return View(model);
+            }).OrderBy(x=>x.ID).ToList();
+            int pagesize = 1;
+            int pagenumber = (page ?? 1);
+
+            return View(model.ToPagedList(pagenumber, pagesize));
+
         }
         [HttpGet]
         [CustomAuthorize]
