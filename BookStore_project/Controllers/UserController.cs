@@ -168,25 +168,29 @@ namespace BookStore_project.Controllers
             if (ModelState.IsValid)
             {
                 IdentityUser userlogin =await _userManager.FindByEmailAsync(model.Email);
-                var result = await _signInManager.PasswordSignInAsync(userlogin.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
-                
-                if (result.Succeeded)
+                bool checkPass = await _userManager.CheckPasswordAsync(userlogin, model.Password);
+                if (userlogin != null && checkPass)
                 {
+                    var result = await _signInManager.PasswordSignInAsync(userlogin.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+                    if (result.Succeeded)
+                    {
 
                         return RedirectToAction("Index", "Home");
-                    
-                }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = "", RememberMe = model.RememberMe });
-                }
-                if (result.IsLockedOut)
-                {
-                    return RedirectToPage("./Lockout");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+
+                    }
+                    if (result.RequiresTwoFactor)
+                    {
+                        return RedirectToPage("./LoginWith2fa", new { ReturnUrl = "", RememberMe = model.RememberMe });
+                    }
+                    if (result.IsLockedOut)
+                    {
+                        return RedirectToPage("./Lockout");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    }
                 }
             }
             ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors);
