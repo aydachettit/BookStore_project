@@ -85,6 +85,14 @@
       "PackagePath": "staticwebassets\\img\\books\\2343020498.jpg"
     },
     {
+      "Id": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\234352495A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\234352495A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg"
+    },
+    {
+      "Id": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\234634342Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\234634342Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg"
+    },
+    {
       "Id": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\23465516210.jpg",
       "PackagePath": "staticwebassets\\img\\books\\23465516210.jpg"
     },
@@ -147,6 +155,10 @@
     {
       "Id": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\Knight Owl - Christopher Denise - Truyện thiếu nhi.jpg",
       "PackagePath": "staticwebassets\\img\\books\\Knight Owl - Christopher Denise - Truyện thiếu nhi.jpg"
+    },
+    {
+      "Id": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\Logo.png",
+      "PackagePath": "staticwebassets\\img\\books\\Logo.png"
     },
     {
       "Id": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\Moby Dick - Herman Melville - Phiêu lưu & hành động.jpg",

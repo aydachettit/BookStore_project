@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zhle7Ov5a+0J8ph7TcyeQst20Hjl5jL1cJJG8JST+co=",
+  "Hash": "dCv+cFzRYLu5FDqYsulNHTNq9z8vplhPtBFkx1QqgJc=",
   "Source": "BookStore_project",
   "BasePath": "_content/BookStore_project",
   "Mode": "Default",
@@ -1411,6 +1411,40 @@
       "OriginalItemSpec": "wwwroot\\img\\books\\2343020498.jpg"
     },
     {
+      "Identity": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\234352495A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "img/books/234352495A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\234352495A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg"
+    },
+    {
+      "Identity": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\234634342Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "img/books/234634342Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\234634342Big Picture Book Dinosaurs - Laura Cowan - Tranh ảnh.jpg"
+    },
+    {
       "Identity": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\23465516210.jpg",
       "SourceId": "BookStore_project",
       "SourceType": "Discovered",
@@ -1681,6 +1715,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\books\\Knight Owl - Christopher Denise - Truyện thiếu nhi.jpg"
+    },
+    {
+      "Identity": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\Logo.png",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "img/books/Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\Logo.png"
     },
     {
       "Identity": "D:\\F\\C#\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\Moby Dick - Herman Melville - Phiêu lưu & hành động.jpg",
