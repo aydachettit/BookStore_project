@@ -61,9 +61,6 @@
                 <th>
                     Amount
                 </th>
-                <th>
-                    Image
-                </th>
             <th>
                 Category
             </th>
@@ -89,9 +86,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Amount)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Image_URL)
-                    </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
@@ -102,6 +96,6 @@
 
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Edit" asp-route-id="@Model.ID"></a>
     <a asp-action="Index">Back to List</a>
 </div>

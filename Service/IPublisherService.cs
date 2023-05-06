@@ -15,5 +15,7 @@ namespace Service
         Task DeleteById(int id);
         Publisher GetById(int id);
         IEnumerable<Publisher> GetAll();
+
+        List<Book> getBookByPublisherId(int id);
     }
 }

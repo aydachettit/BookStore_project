@@ -10873,19 +10873,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\F\\C#\\BookStore_project\\Service\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\Service\\Service.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10899,11 +10899,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\DataAccess\\DataAccess.csproj"
             },
-            "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
-              "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
+            "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\nowing\\BookStore_project\\Entity\\Entity.csproj"
             }
           }
         }
@@ -10965,7 +10965,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

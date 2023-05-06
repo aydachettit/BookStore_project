@@ -39,6 +39,11 @@ namespace Service.Implementation
             return _context.Publishers.ToList();
         }
 
+        public List<Book> getBookByPublisherId(int id)
+        {
+            return _context.Books.Where(x => x.PublisherID == id).ToList();
+        }
+
         public Publisher GetById(int id)
         {
             return _context.Publishers.Where(x => x.ID == id).FirstOrDefault();

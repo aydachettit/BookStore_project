@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PagedList;
 using Service;
+using Service.implementation;
 using Service.Implementation;
 
 namespace BookStore_project.Controllers
@@ -12,9 +13,11 @@ namespace BookStore_project.Controllers
     public class PublisherController : Controller
     {
         private IPublisherService _publisherService;
+        private ICategoryService _categoryService;
         private IWebHostEnvironment _hostingEnvironment;
-        public PublisherController(IPublisherService publisherservice, IWebHostEnvironment hostingEnvironment)
+        public PublisherController(ICategoryService categoryService,IPublisherService publisherservice, IWebHostEnvironment hostingEnvironment)
         {
+            _categoryService = categoryService;
             _publisherService = publisherservice;
             _hostingEnvironment = hostingEnvironment;
         }
@@ -45,6 +48,13 @@ namespace BookStore_project.Controllers
             model.ID = publisher.ID;
             model.Name = publisher.Name;
             model.Country = publisher.Country;
+            var publisherbook = _publisherService.getBookByPublisherId(id);
+            model.lob = publisherbook;
+            foreach (var items in model.lob)
+            {
+                var cate = _categoryService.GetByID(items.CategoryID);
+                items.Category = cate;
+            }
             return View(model);
         }
         [HttpGet]
