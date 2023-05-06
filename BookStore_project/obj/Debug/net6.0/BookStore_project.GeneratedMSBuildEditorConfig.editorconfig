@@ -276,6 +276,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/F/BookStore_project/BookStore_project/Views/Shipment/Process.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcUHJvY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/F/BookStore_project/BookStore_project/Views/Shipment/SearchPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcU2VhcmNoUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -310,6 +314,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/F/BookStore_project/BookStore_project/Views/User/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/F/BookStore_project/BookStore_project/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/F/BookStore_project/BookStore_project/Views/User/Login.cshtml]

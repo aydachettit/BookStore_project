@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\img\authors\" />
   </ItemGroup>
 
   <ItemGroup>

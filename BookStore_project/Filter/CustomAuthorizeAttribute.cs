@@ -16,7 +16,7 @@ public class CustomAuthorizeAttribute : TypeFilterAttribute
                 // user is not authenticated, redirect to login page
                 context.Result = new RedirectToActionResult("Login", "User", new { returnUrl = context.HttpContext.Request.Path });
             }
-            else if (!context.HttpContext.User.IsInRole("Admin"))
+            else if (!context.HttpContext.User.IsInRole("Customer"))
             {
                 // user is not authorized, redirect to access denied page
                 context.Result = new RedirectToActionResult("Index", "Home", null);

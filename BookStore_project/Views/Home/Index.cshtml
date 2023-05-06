@@ -19,27 +19,34 @@
 
 <div class="row">
     @foreach (var item in Model){
-    <div class="col-lg-3 col-md-4 mb-3">
+    <div class="col-lg-3 col-md-3 mb-4">
         <div class="product-box">
             <div class="product-inner-box position-relative">
                 <div class="icons position-absolute">
-                    <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-eye"></i>
+                     <button class="btn" type="submit">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    <form asp-controller="Book" asp-action="CreateProductDetail" method="get">
+                        <input type="hidden" name="ID" value="@item.ID" />
+                        <button class="btn" type="submit">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </form>   
                 </div>
                 <input type="hidden" value="@Html.DisplayFor(modelItem => item.ID)">
-                <img src="@Html.DisplayFor(modelItem => item.Image_URL)" alt="Woodan chair" class="img-fluid">
+                    <img src="@Html.DisplayFor(modelItem => item.Image_URL)" alt="@Html.DisplayFor(modelItem => item.Name)" class="img-fluid">
 
                 <div class="cart-btn">
                     <button class="btn btn-white shadow-sm rounded-pill"><i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
                 </div>
 
             </div>
-            <div class="product-info">
+            <div class="product-info" style="padding-top:10px;display:flex; flex-direction:column; justify-content:center; align-items:center">
                 <div class="product-name">
-                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                    <h4 style="text-align:center">@Html.DisplayFor(modelItem => item.Name)</h4>
                 </div>
                 <div class="product-price">
-                    <span>$@Html.DisplayFor(modelItem => item.Price)</span>
+                    <span style="color:red">@Html.DisplayFor(modelItem => item.Price)   VND</span>
                 </div>
             </div>
         </div>

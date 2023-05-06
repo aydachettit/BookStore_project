@@ -1,7 +1,9 @@
 ﻿using BookStore_project.Models.Publisher;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using PagedList;
 using Service;
 using Service.Implementation;
 
@@ -16,20 +18,22 @@ namespace BookStore_project.Controllers
             _publisherService = publisherservice;
             _hostingEnvironment = hostingEnvironment;
         }
-        [CustomAuthorize]
-        public IActionResult Index()
+        [Authorize(Roles ="Admin")]
+        public IActionResult Index(int? page)
         {
             var model = _publisherService.GetAll().Select(Publisher => new PublisherIndexViewModel
             {
                 ID = Publisher.ID,
                 Name = Publisher.Name,
                 Country=Publisher.Country
-            }).ToList();
+            }).OrderBy(x=>x.ID).ToList();
+            int pagesize = 5;
+            int pagenumber = (page ?? 1);
 
-            return View(model);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -44,7 +48,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Delete(int id)
         {
             if (id.ToString() == null)
@@ -60,7 +64,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(PublisherDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -73,7 +77,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             var model = new PublisherCreateViewModel();
@@ -88,7 +92,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Create(PublisherCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -106,7 +110,7 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -131,7 +135,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Edit(PublisherEditViewModel model)
         {
             if (ModelState.IsValid)

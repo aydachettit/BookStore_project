@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\authors\\2354268241054160.jpg",
+      "PackagePath": "staticwebassets\\img\\authors\\2354268241054160.jpg"
+    },
+    {
+      "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\authors\\235918763680688.jpg",
+      "PackagePath": "staticwebassets\\img\\authors\\235918763680688.jpg"
+    },
+    {
       "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\1.jpg",
       "PackagePath": "staticwebassets\\img\\books\\1.jpg"
     },
@@ -43,6 +51,18 @@
     {
       "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\2.jpg",
       "PackagePath": "staticwebassets\\img\\books\\2.jpg"
+    },
+    {
+      "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\230046195919958.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\230046195919958.jpg"
+    },
+    {
+      "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\231703838Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\231703838Wild at Heart.. A Novel - K.A. Tucker - Phiêu lưu & hành động.jpg"
+    },
+    {
+      "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\232211255A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\232211255A Journey Under the Sea - Craig Foster, Ross Frylinck - Sách thiếu nhi.jpg"
     },
     {
       "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\2335223839.jpg",
@@ -67,6 +87,10 @@
     {
       "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\23465516210.jpg",
       "PackagePath": "staticwebassets\\img\\books\\23465516210.jpg"
+    },
+    {
+      "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\235541805677667.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\235541805677667.jpg"
     },
     {
       "Id": "D:\\F\\BookStore_project\\BookStore_project\\wwwroot\\img\\books\\3.jpg",

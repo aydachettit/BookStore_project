@@ -15,9 +15,8 @@ body {
     background-color: #fff;
 }
 
-.col-lg-3 {
+.col-lg-3.col-md-3 {
     box-shadow: 0 33px 61px -29px rgb(0 0 0 / 26%);
-   margin: 0 10px;
 }
 
 .product-inner-box .icons {
@@ -41,7 +40,6 @@ body {
 }
 
 .product-inner-box img {
-    /*box-shadow: 0 33px 61px -29px rgb(0 0 0 / 26%);*/
     height: 350px;
     width: 100%;
     object-fit: contain;

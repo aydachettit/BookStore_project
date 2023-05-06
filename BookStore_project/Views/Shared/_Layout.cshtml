@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Book Store</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BookStore_project.styles.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/BookStore_project.styles.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" asp-append-version="true" />
     <link href="~/css/layoutUser.css" rel="stylesheet" />
 </head>
@@ -47,7 +47,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="BillDetail" asp-action="Index">Bill Detail</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Customer</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Shipment" asp-action="Index">Shipment</a>

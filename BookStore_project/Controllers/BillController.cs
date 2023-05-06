@@ -7,6 +7,8 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Authorization;
+using PagedList;
 
 namespace BookStore_project.Controllers {
     public class BillController : Controller {
@@ -18,9 +20,9 @@ namespace BookStore_project.Controllers {
             _StatusService = StatusService;
             _billService = billService;
         }
-        [CustomAuthorize]
-        public IActionResult Index(){
-            var model = _billService.GetAll().Select(Bill => new BillIndexViewModel
+        [Authorize(Roles ="Admin")]
+         public IActionResult Index(int ? page){
+            var model = _billService.GetAll().Select( Bill => new BillIndexViewModel
             {
                 ID = Bill.ID,
                 Date = Bill.Date,
@@ -28,12 +30,15 @@ namespace BookStore_project.Controllers {
                 Customer_ID = Bill.Customer_ID,
                 Employee_ID = Bill.Employee_ID,
                 Bill_status_ID = _StatusService.GetByID(Bill.Bill_status_ID).Name
-            }).ToList();
-           
-            return View(model);
+            }).OrderBy(x=>x.ID).ToList();
+            int pagesize = 1;
+            int pagenumber = (page ?? 1);
+
+            return View(model.ToPagedList(pagenumber, pagesize));
+
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -53,7 +58,7 @@ namespace BookStore_project.Controllers {
             return View(model);
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Delete(int id)
         {
             if (id.ToString() == null)
@@ -72,7 +77,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpGet]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(BillDeleteViewModel model)
         {
             if (ModelState.IsValid)
@@ -85,7 +90,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             var model = new BillCreateViewModel();
@@ -93,7 +98,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Create(BillCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -114,7 +119,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Edit(int id)
         {
             if (id.ToString() == null)
@@ -134,7 +139,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Edit(BillEditViewModel model)
         {
             if (ModelState.IsValid)
@@ -154,7 +159,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Process(int id)
         {
             if (id.ToString() == null)
@@ -176,7 +181,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Process(BillProcessViewModel model)
         {
             if (ModelState.IsValid)
@@ -190,7 +195,7 @@ namespace BookStore_project.Controllers {
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Canceled(int id)
         {
             if (id.ToString() == null)
@@ -212,7 +217,7 @@ namespace BookStore_project.Controllers {
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Canceled(BillCanceledViewModel model)
         {
             if (ModelState.IsValid)
