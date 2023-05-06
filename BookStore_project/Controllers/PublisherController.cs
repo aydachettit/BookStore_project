@@ -24,9 +24,11 @@ namespace BookStore_project.Controllers
                 ID = Publisher.ID,
                 Name = Publisher.Name,
                 Country=Publisher.Country
-            }).ToList();
+            }).OrderBy(x=>x.ID).ToList();
+            int pagesize = 5;
+            int pagenumber = (page ?? 1);
 
-            return View(model);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
         [HttpGet]
         
