@@ -33,6 +33,7 @@ namespace BookStore_project.Controllers
             _billService = billService;
         }
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult Process(int id)
         {
             if (id.ToString() == null)
@@ -53,6 +54,7 @@ namespace BookStore_project.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Process(ShipmenrtProcessViewModel model)
         {
             if (ModelState.IsValid)
@@ -68,7 +70,7 @@ namespace BookStore_project.Controllers
 
             return View();
         }
-
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
             var model = _shipmentService.GetAll().Select(shipment => new ShipmentIndexViewModel
@@ -89,6 +91,7 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             var model = new ShipmentCreateViewModel();
@@ -114,7 +117,7 @@ namespace BookStore_project.Controllers
             model.Status = StatusList;
             return View(model);
         }
-
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ShipmentCreateViewModel model)
@@ -133,7 +136,7 @@ namespace BookStore_project.Controllers
             }
             return View();
         }
-
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -172,8 +175,9 @@ namespace BookStore_project.Controllers
 
             return View(model);
         }
-
+        
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(ShipmentEditViewModel model)
         {
@@ -193,6 +197,7 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult Delete(int id)
         {
             var shipment = _shipmentService.GetByID(id);
@@ -211,7 +216,7 @@ namespace BookStore_project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(ShipmentDeleteViewModel model)
         {
             var shipment = _shipmentService.GetByID(model.ID);
@@ -223,6 +228,7 @@ namespace BookStore_project.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult Detail(int id)
         {
             if (id.ToString() == null)
@@ -245,12 +251,14 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult SearchPage()
         {
             var model = new ShipmentSearchViewModel();
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> SearchResultPageAsync(ShipmentSearchViewModel model)
         {
             if (ModelState.IsValid)
