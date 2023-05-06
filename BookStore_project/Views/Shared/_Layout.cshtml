@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/BookStore_project.styles.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" asp-append-version="true" />
+    <link href="~/css/layoutUser.css" rel="stylesheet" />
+    <style>
+        .dropdown:hover .dropdown-menu{
+            display: block;
+        }
+        .navbar-nav {
+            background-color: #cc4125;
+        }
+
+        .navbar-nav.two {
+            background-color: #fff;
+        }
+        .navbar-nav .nav-item .nav-link{
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .navbar-nav .nav-item:hover .nav-link{
+            color: #81d8d0 ;
+            transition: 0.3s;
+        }
+
+        .container-fluid {
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        
+        .container-fluid .row-one {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+        .container-fluid .row.two {
+            width: 90%;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+        <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <div class="row-one">
+                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                            <img style="width: 250px" src="~/img/books/Logo.png" />
+                     </a>
+                     <div class="col-4 p-0 justify-content-end">
+                        <form asp-action="Index" asp-controller="Home">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="SearchText" placeholder="Search Key">
+                                <input class="btn btn-primary" type="submit" value="Search">
+                            </div>
+                        </form>
+                    </div>
+                    <partial name="_LoginPartial" />
+                </div>
+
+                <div class="row two">
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    CRM management
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Employee" asp-action="Index">Employee</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Publisher" asp-action="Index">Publisher</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Author" asp-action="Index" asp-route-page="1">Author</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Export-Import
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Bill" asp-action="Index">Bill</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Import" asp-action="Index">Import</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Shipment" asp-action="Index">Shipment</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="BillDetail" asp-action="Index">Bill Detail</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+            @RenderBody()
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Book Store - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,108 @@
+@model PagedList.IPagedList<BookStore_project.Models.Bill.BillIndexViewModel>
+@using PagedList.Mvc
+
+@{
+    ViewData["Title"] = "Index Bill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index Bill</h1>
+<p>
+    <a asp-action='Create'>Create New</a>
+</p>
+<nav aria-label="breadcrumb">
+     <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+     <li class="breadcrumb-item"><a asp-action="Index">Bill List</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Bill List</li>
+     </ol>
+</nav><br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               ID
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Total Money
+            </th>
+            <th>
+               Customer
+            </th>
+            <th>
+               Status
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_money)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bill_status_ID)
+                </td>
+                <td>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a class="text-primary" style="text-decoration: none" asp-action="Edit" asp-route-id="@item.ID">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="text-success" style="text-decoration: none" asp-action="Detail" asp-route-id="@item.ID">Detail<i class="fa-solid fa-circle-info"></i></a>
+                        <a class="text-danger" style="text-decoration: none" asp-action="Delete" asp-route-id="@item.ID">Delete<i class="fa-solid fa-trash"></i></a>                  
+                    </div>  
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="pagination">
+    @for (int i = 1; i <= @Model.PageCount; i++)
+    {
+        @if (Model.PageNumber == i)
+        {
+                        <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
+        }
+        else
+        {
+                        <a asp-action="Index" asp-route-page="@i">@i</a>
+        }
+    }
+</div>
+<style>
+   .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+          border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>

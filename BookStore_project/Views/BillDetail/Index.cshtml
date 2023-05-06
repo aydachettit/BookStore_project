@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BookStore_project.Models.BillDetail.BillDetailIndexViewModel>
+
+
+<div class="card">
+    <div class="card-body">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">All Bill Detail</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-md-12 table-responsive-md">
+                <table class="table table-striped table-info">
+                    <thead>
+                        <tr>
+                            <th>Bill Detail ID</th>
+                            <th>Amount</th>
+                            <th>Price</th>
+                            <th>Book ID</th>
+                            <th>Bill ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Bill_Detail_ID</td>
+                                <td>@item.Amount</td>
+                                <td>@item.Price</td>
+                                <td>@item.Book_ID</td>
+                                <td>@item.Bill_ID</td>
+
+
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model BookStore_project.Models.Book.BookSearchViewModel
+
+<div class="form-group">
+    <form asp-action="SearchResultPage" method="post">
+       <div class="form-group">
+          <label asp-for="@Model.SearchKeyID" class="control-label"></label>
+          <select asp-for="@Model.SearchKeyID" class="form-control">
+              <option value="0">Chọn khóa tìm kiếm</option>
+              <option value="1">Tên sách</option>
+              <option value="2">Ngày xuất bản (mm/dd/YYYY)</option>
+              <option value="3">Số lượng</option>
+              <option value="4">Giá</option>
+              <option value="5">Tác giả</option>
+              <option value="6">Thể loại</option>
+              <option value="7">Nhà xuất bản</option>
+          </select>
+          <span asp-validation-for="SearchKeyID" class="text-danger"></span>
+       </div>
+       <div class="form-group">
+                <fieldset>
+                    <label asp-for="@Model.Keyword" class="control-label"></label>
+                    <input class="form-control" asp-for="@Model.Keyword" class="form-control" />
+                    <span asp-validation-for="Keyword" class="text-danger"></span>
+                </fieldset>
+        </div>
+        <a asp-action="Index">Back to List</a>
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

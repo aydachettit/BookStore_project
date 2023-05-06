@@ -1,0 +1,68 @@
+﻿@model BookStore_project.Models.Import.ImportCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<nav aria-label="breadcrumb">
+     <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Create Import</li>
+     </ol>
+</nav><br />
+<h1>Create</h1>
+    <h4>Nhập hàng</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="import_id" class="control-label" hidden="hidden" ></label>
+                    <input asp-for="import_id" class="form-control" value="@Model.import_id" hidden="hidden"/>
+                    <span asp-validation-for="import_id" class="text-danger"></span>
+                </div>
+                @for (int i = 0; i < Model.numberofproduct; i++)
+                {
+                    <div class="form-group">
+                        <label asp-for="@Model.lod.[i].book_name" class="control-label"></label>
+                        <select asp-for="@Model.lod[i].book_name" asp-items="@ViewBag.Books">
+                            <option selected >----Books------</option>
+                        </select>
+                        <a asp-controller="Book" asp-action="Create">Create Book</a>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.lod[i].book_price" class="control-label"></label>
+                        <input asp-for="@Model.lod[i].book_price" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.lod[i].book_amount" class="control-label"></label>
+                        <input asp-for="@Model.lod[i].book_amount" class="form-control" />
+                    </div>
+                }
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+
+
+            </form>
+            </br>
+            <form asp-action="DeleteIme" asp-route-id="@Model.import_id" method="get">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+
+<script>
+    // Add new book input fields when clicking the "Add book" button
+    document.querySelector('#add-book').addEventListener('click', function () {
+        const bookList = document.querySelector('#book-list');
+        const newBook = document.querySelector('.book').cloneNode(true);
+        bookList.appendChild(newBook);
+    });
+</script>

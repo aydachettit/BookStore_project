@@ -1,0 +1,151 @@
+﻿@model PagedList.IPagedList<BookStore_project.Models.Book.BookIndexViewModel>
+@using PagedList.Mvc
+@{
+    ViewData["Title"] = "Index Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index Book</h1>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Book List</li>
+    </ol>
+</nav>
+<br />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-group">
+        <lable for="SearchString"> Search By Employee Name</lable>
+        <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+
+    </div>
+
+</form>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-success">
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Public Date
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Publisher
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Action
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <img style="width:100px; height: 100px; object-fit: cover" src="@Html.DisplayFor(modelItem => item.Image_URL)" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publisher)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td style="width: 10%">
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a class="text-primary" style="text-decoration: none" asp-action="Edit" asp-route-id="@item.ID">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="text-success" style="text-decoration: none" asp-action="Detail" asp-route-id="@item.ID">Detail<i class="fa-solid fa-circle-info"></i></a>
+                        <a class="text-danger" style="text-decoration: none" asp-action="Delete" asp-route-id="@item.ID">Delete<i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div class="pagination">
+    @for (int i = 1; i <= @Model.PageCount; i++)
+    {
+        @if (Model.PageNumber == i)
+        {
+            <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i">@i</a>
+        }
+    }
+</div>
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+</style>

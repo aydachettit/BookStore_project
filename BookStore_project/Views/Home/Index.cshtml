@@ -1,0 +1,101 @@
+﻿@model PagedList.IPagedList<BookStore_project.Models.Book.BookIndexViewModel>
+@using PagedList.Mvc
+
+@{
+    ViewData["Title"] = "Index Home";
+    Layout = User.IsInRole("Admin") ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_layoutUser.cshtml";
+}
+
+@*<div class="col-4 p-0 justify-content-end">
+    <form asp-action="Index" asp-controller="Home">
+        <div class="form-group">
+            <input class="form-control" type="text" name="SearchText" placeholder="Search Key">
+            <input class="btn btn-primary" type="submit" value="Search">
+        </div>
+    </form>
+</div>*@
+
+
+
+<div class="row">
+    @foreach (var item in Model){
+    <div class="col-lg-3 col-md-3 mb-4">
+        <div class="product-box">
+            <div class="product-inner-box position-relative">
+                <div class="icons position-absolute">
+                     <button class="btn" type="submit">
+                            <i class="fa-solid fa-heart"></i>
+                     </button>
+                    <form asp-controller="Book" asp-action="CreateProductDetail" method="get">
+                        <input type="hidden" name="ID" value="@item.ID" />
+                        <button class="btn" type="submit">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </form>   
+                </div>
+                <input type="hidden" value="@Html.DisplayFor(modelItem => item.ID)">
+                    <img src="@Html.DisplayFor(modelItem => item.Image_URL)" alt="@Html.DisplayFor(modelItem => item.Name)" class="img-fluid">
+
+                <div class="cart-btn">
+                    <button class="btn btn-white shadow-sm rounded-pill">
+                        <a class="text-dark" asp-controller="Cart" asp-action="Index">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart 
+                        </a>
+                    </button>
+                </div>
+
+            </div>
+            <div class="product-info" style="padding-top:10px;display:flex; flex-direction:column; justify-content:center; align-items:center">
+                <div class="product-name">
+                    <h4 style="text-align:center">@Html.DisplayFor(modelItem => item.Name)</h4>
+                </div>
+                <div class="product-price">
+                    <span style="color:red">@Html.DisplayFor(modelItem => item.Price)   VND</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+
+<div class="pagination">
+    @for (int i = 1; i <= @Model.PageCount; i++)
+    {
+        @if (Model.PageNumber == i)
+        {
+            <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i">@i</a>
+        }
+    }
+</div>
+<style>
+
+        
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }        
+</style>
