@@ -9,7 +9,6 @@ using Service;
 
 namespace BookStore_project.Controllers
 {
-    [Authorize(Roles = "Customer")]
     public class CartController : Controller
     {
         private readonly ICartService _cartService;

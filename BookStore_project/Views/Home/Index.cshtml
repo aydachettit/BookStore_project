@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BookStore_project.Models.Book.BookIndexViewModel>
+﻿@model PagedList.IPagedList<BookStore_project.Models.Book.BookIndexViewModel>
+@using PagedList.Mvc
 
 @{
     ViewData["Title"] = "Index Home";
@@ -25,7 +26,7 @@
                 <div class="icons position-absolute">
                      <button class="btn" type="submit">
                             <i class="fa-solid fa-heart"></i>
-                        </button>
+                     </button>
                     <form asp-controller="Book" asp-action="CreateProductDetail" method="get">
                         <input type="hidden" name="ID" value="@item.ID" />
                         <button class="btn" type="submit">
@@ -37,7 +38,11 @@
                     <img src="@Html.DisplayFor(modelItem => item.Image_URL)" alt="@Html.DisplayFor(modelItem => item.Name)" class="img-fluid">
 
                 <div class="cart-btn">
-                    <button class="btn btn-white shadow-sm rounded-pill"><i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
+                    <button class="btn btn-white shadow-sm rounded-pill">
+                        <a class="text-dark" asp-controller="Cart" asp-action="Index">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart 
+                        </a>
+                    </button>
                 </div>
 
             </div>
@@ -53,3 +58,43 @@
     </div>
     }
 </div>
+
+
+<div class="pagination">
+    @for (int i = 1; i <= @Model.PageCount; i++)
+    {
+        @if (Model.PageNumber == i)
+        {
+            <a asp-action="Index" asp-route-page="@i" class="active">@i</a>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i">@i</a>
+        }
+    }
+</div>
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+</style>

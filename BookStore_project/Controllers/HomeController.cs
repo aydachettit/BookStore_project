@@ -33,7 +33,7 @@ namespace BookStore_project.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string SearchText = "")
+        public IActionResult Index(string SearchText = "", int? page = 1)
         {
             if (SearchText != "" && SearchText != null)
             {
@@ -80,7 +80,10 @@ namespace BookStore_project.Controllers
                     item.Publisher = _publisherService.GetById(item.PublisherID).Name;
                 }
 
-                return View(model);
+                int pagesize = 8;
+                int pagenumber = (page ?? 1);
+
+                return View(model.ToPagedList(pagenumber, pagesize));
             }
         }
 

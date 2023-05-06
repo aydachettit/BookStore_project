@@ -9,6 +9,16 @@
     @*<link rel="stylesheet" href="~/BookStore_project.styles.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" asp-append-version="true" />
     <link href="~/css/layoutUser.css" rel="stylesheet" />
+    <style>
+
+        .dropdown:hover .dropdown-menu{
+                display: block;
+            }
+
+        .navbar-nav .nav-item .nav-link{
+            color: #000;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,37 +35,40 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                CRM management
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Employee" asp-action="Index">Employee</a></li>
+                                <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Customer</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
-                        </li
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Publisher" asp-action="Index">Publisher</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Author" asp-action="Index" asp-route-page="1">Author</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">Employee</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Export-Import
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Bill" asp-action="Index">Bill</a></li>
+                                <li><a class="dropdown-item" asp-controller="Import" asp-action="Index">Import</a></li>
+                                <li><a class="dropdown-item" asp-controller="Shipment" asp-action="Index">Shipment</a></li>
+
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="BillDetail" asp-action="Index">Bill Detail</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Customer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Shipment" asp-action="Index">Shipment</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Import" asp-action="Index">Import</a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
                         </li>
