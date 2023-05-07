@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rrG+/zFqCvKeejrrRG8glrDBTZhQEkMFymfIRvhGWA4ZtsDNkXf82cOctsRyHi9tDV38qOHIVibSPkM5arDhXQ==",
+  "dgSpecHash": "q7qj58/A7JRJnbp8Uw9sgtka8JnqaqtikVgTmazXWOU1+V9HDb3FBwmPLtcVj7FqAHIXpmkXR10ex2MWlP3lyQ==",
   "success": true,
-  "projectFilePath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+  "projectFilePath": "D:\\F\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

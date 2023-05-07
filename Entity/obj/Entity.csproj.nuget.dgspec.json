@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {}
+    "D:\\F\\BookStore_project\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+    "D:\\F\\BookStore_project\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
+        "projectUniqueName": "D:\\F\\BookStore_project\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
+        "projectPath": "D:\\F\\BookStore_project\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\F\\C#\\BookStore_project\\Entity\\obj\\",
+        "outputPath": "D:\\F\\BookStore_project\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

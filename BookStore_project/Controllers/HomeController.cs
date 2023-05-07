@@ -2,6 +2,7 @@
 using BookStore_project.Models.Book;
 using DataAccess;
 using Entity;
+using iTextSharp.text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PagedList;
@@ -59,7 +60,7 @@ namespace BookStore_project.Controllers
                 int pagesize = 8;
                 int pagenumber = (page ?? 1);
                 return View(model.ToPagedList(pagenumber, pagesize));
-            }
+            } 
             else
             {
                 var model = _bookService.GetAll().Select(c => new BookIndexViewModel
@@ -89,92 +90,39 @@ namespace BookStore_project.Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult SearchPage()
-        {
-            var model = new BookSearchViewModel();
-            return View(model);
-        }
-        [HttpPost]
-        public IActionResult SearchResultPage(BookSearchViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                int keyID = model.SearchKeyID;
-                string keyword = model.Keyword;
-
-                switch (keyID)
-                {
-                    case 1:
-                        var bookModel = _bookService.GetBookByName(keyword).Select(book => new BookIndexViewModel
-                        {
-                            ID = book.ID,
-                            Name = book.Name,
-                            PublicDate = book.PublicDate,
-                            Amount = book.Amount,
-                            Price = book.Price,
-                            Image_URL = book.Image_URL,
-                            AuthorID = book.AuthorID,
-                            CategoryID = book.CategoryID,
-                            PublisherID = book.PublisherID,
-                        }).ToList();
-                        foreach (var item in bookModel)
-                        {
-                            item.Author = _authorService.GetById(item.AuthorID).Name;
-                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
-                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
-                        }
-                        return View(bookModel);
-
-                    case 2:
-                        bookModel = _bookService.GetBookByAuthor(keyword).Select(book => new BookIndexViewModel
-                        {
-                            ID = book.ID,
-                            Name = book.Name,
-                            PublicDate = book.PublicDate,
-                            Amount = book.Amount,
-                            Price = book.Price,
-                            Image_URL = book.Image_URL,
-                            AuthorID = book.AuthorID,
-                            CategoryID = book.CategoryID,
-                            PublisherID = book.PublisherID,
-                        }).ToList();
-                        foreach (var item in bookModel)
-                        {
-                            item.Author = _authorService.GetById(item.AuthorID).Name;
-                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
-                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
-                        }
-                        return View(bookModel);
-                    case 3:
-                        bookModel = _bookService.GetBookByCategory(keyword).Select(book => new BookIndexViewModel
-                        {
-                            ID = book.ID,
-                            Name = book.Name,
-                            PublicDate = book.PublicDate,
-                            Amount = book.Amount,
-                            Price = book.Price,
-                            Image_URL = book.Image_URL,
-                            AuthorID = book.AuthorID,
-                            CategoryID = book.CategoryID,
-                            PublisherID = book.PublisherID,
-                        }).ToList();
-                        foreach (var item in bookModel)
-                        {
-                            item.Author = _authorService.GetById(item.AuthorID).Name;
-                            item.Category = _categoryService.GetByID(item.CategoryID).Name;
-                            item.Publisher = _publisherService.GetById(item.PublisherID).Name;
-                        }
-                        return View(bookModel);
-                }
-
-            }
-            return View();
-        }
-
         public IActionResult Privacy()
         {
             return View();
+        }
+        public IActionResult FilterByCategory(int? page, int categoryid)
+        {
+            
+            if (categoryid.ToString() == null)
+            {
+                return NotFound();
+            }
+            var model = _bookService.GetBookByCategoryID(categoryid).Select(book => new BookIndexViewModel
+            {
+                ID = book.ID,
+                Name = book.Name,
+                PublicDate = book.PublicDate,
+                Amount = book.Amount,
+                Price = book.Price,
+                Image_URL = book.Image_URL,
+                AuthorID = book.AuthorID,
+                CategoryID = book.CategoryID,
+                PublisherID = book.PublisherID,
+            }).ToList();
+
+            foreach (var item in model)
+            {
+                item.Author = _authorService.GetById(item.AuthorID).Name;
+                item.Category = _categoryService.GetByID(item.CategoryID).Name;
+                item.Publisher = _publisherService.GetById(item.PublisherID).Name;
+            }
+            int pagesize = 8;
+            int pagenumber = (page ?? 1);
+            return View(model.ToPagedList(pagenumber, pagesize));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

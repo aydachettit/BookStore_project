@@ -99,5 +99,10 @@ namespace Service.implementation
             _context.Books.Update(model);
             await _context.SaveChangesAsync();
         }
+
+        public IEnumerable<Book> GetBookByCategoryID(int categoryid)
+        {
+            return _context.Books.Where(x => x.CategoryID == categoryid).ToList();
+        }
     }
 }

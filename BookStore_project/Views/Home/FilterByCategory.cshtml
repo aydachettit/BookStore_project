@@ -2,21 +2,8 @@
 @using PagedList.Mvc
 
 @{
-    ViewData["Title"] = "Index Home";
-    Layout = User.IsInRole("Admin") ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_layoutUser.cshtml";
+    ViewData["Title"] = "FilterByCategory Home";
 }
-<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Filter by Category
-    </a>
-    <ul class="dropdown-menu">
-        @foreach (var item in Model)
-        {
-            <li>@Html.ActionLink(@item.Category.ToString(), "FilterByCategory", new { categoryid = @item.CategoryID })</li>
-        }
-    </ul>                               
-</div>
-
 
 <div class="row">
     @foreach (var item in Model){
@@ -74,24 +61,7 @@
     }
 </div>
 <style>
-        .dropdown-menu {
-            width: 200px;
-        }
-        .dropdown-menu li a {
-            text-decoration: none;
-            color: #000;
-            margin-left: 10px
-        }
 
-        .dropdown-menu li:hover a {
-            color: red;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-
-        .dropdown-menu li:hover{
-            border-bottom: 1px solid #ccc;
-        }
         
         .pagination {
             display: inline-block;

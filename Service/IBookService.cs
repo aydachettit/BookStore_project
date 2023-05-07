@@ -24,6 +24,8 @@ namespace Service
         IEnumerable<Book> GetBookByPrice(int price);
         IEnumerable<Book> GetBookByAuthor(string author);
         IEnumerable<Book> GetBookByCategory(string category);
+        IEnumerable<Book> GetBookByCategoryID(int categoryid);
+
         IEnumerable<Book> GetBookByPublisher(string publisher);
     }
 }

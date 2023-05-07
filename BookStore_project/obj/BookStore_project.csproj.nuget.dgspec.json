@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {}
+    "D:\\F\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {}
   },
   "projects": {
-    "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {
+    "D:\\F\\BookStore_project\\BookStore_project\\BookStore_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+        "projectUniqueName": "D:\\F\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
         "projectName": "BookStore_project",
-        "projectPath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
+        "projectPath": "D:\\F\\BookStore_project\\BookStore_project\\BookStore_project.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\F\\C#\\BookStore_project\\BookStore_project\\obj\\",
+        "outputPath": "D:\\F\\BookStore_project\\BookStore_project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
+              "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj"
               },
-              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
+              "D:\\F\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\BookStore_project\\Entity\\Entity.csproj"
               },
-              "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj": {
-                "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj"
+              "D:\\F\\BookStore_project\\Service\\Service.csproj": {
+                "projectPath": "D:\\F\\BookStore_project\\Service\\Service.csproj"
               }
             }
           }
@@ -124,14 +124,14 @@
         }
       }
     },
-    "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+    "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\obj\\",
+        "outputPath": "D:\\F\\BookStore_project\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -148,8 +148,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
+              "D:\\F\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\BookStore_project\\Entity\\Entity.csproj"
               }
             }
           }
@@ -219,14 +219,14 @@
         }
       }
     },
-    "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
+    "D:\\F\\BookStore_project\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
+        "projectUniqueName": "D:\\F\\BookStore_project\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj",
+        "projectPath": "D:\\F\\BookStore_project\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\F\\C#\\BookStore_project\\Entity\\obj\\",
+        "outputPath": "D:\\F\\BookStore_project\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -306,14 +306,14 @@
         }
       }
     },
-    "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj": {
+    "D:\\F\\BookStore_project\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
+        "projectUniqueName": "D:\\F\\BookStore_project\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "D:\\F\\C#\\BookStore_project\\Service\\Service.csproj",
+        "projectPath": "D:\\F\\BookStore_project\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\F\\C#\\BookStore_project\\Service\\obj\\",
+        "outputPath": "D:\\F\\BookStore_project\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -330,11 +330,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\F\\C#\\BookStore_project\\DataAccess\\DataAccess.csproj"
+              "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\F\\BookStore_project\\DataAccess\\DataAccess.csproj"
               },
-              "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj": {
-                "projectPath": "D:\\F\\C#\\BookStore_project\\Entity\\Entity.csproj"
+              "D:\\F\\BookStore_project\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\F\\BookStore_project\\Entity\\Entity.csproj"
               }
             }
           }
