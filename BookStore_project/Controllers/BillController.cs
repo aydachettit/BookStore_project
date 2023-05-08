@@ -9,14 +9,20 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Authorization;
 using PagedList;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookStore_project.Controllers {
     public class BillController : Controller {
         private IBillService _billService;
         private IStatusService _StatusService;
+        private IShipmentService _shipmentservice;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public BillController(IBillService billService, IStatusService StatusService)
+        public BillController(IBillService billService, IStatusService StatusService, IShipmentService Shipmentservice, UserManager<IdentityUser> UserManager)
         {
+            _userManager = UserManager;
+
+            _shipmentservice = Shipmentservice;
             _StatusService = StatusService;
             _billService = billService;
         }
@@ -229,6 +235,17 @@ namespace BookStore_project.Controllers {
                 var bill = _billService.GetByID(model.id);
                 bill.Bill_status_ID++;
                 await _billService.UpdateAsSync(bill);
+                if (bill.Bill_status_ID == 2)
+                {
+                    var ship = new Shipment();
+                    ship.BillID = bill.ID;
+                    ship.Shipment_Status_ID = 2;
+                    var user = await _userManager.FindByNameAsync(bill.Customer_ID) as IdentityUser;
+                    ship.CustomerName = user.UserName;
+                    ship.CustomerID = user.Id;
+                    await _shipmentservice.CreateAsAsync(ship);
+                   
+                }
                 return RedirectToAction("Index");
             }
 
