@@ -12,9 +12,7 @@
      <li class="breadcrumb-item active" aria-current="page">Shipment List</li>
      </ol>
 </nav><br />
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <p>
     <a asp-action="SearchPage">Search Page</a>
 </p>
@@ -57,9 +55,7 @@
             </td>
             <td>
                <div class="btn-group" style="flex-direction: column;">
-                    <a class="text-primary" style="text-decoration: none" asp-action="Edit" asp-route-id="@item.ID">Edit <i class="fa-solid fa-pen-to-square"></i></a>
-                    <a class="text-success" style="text-decoration: none" asp-action="Detail" asp-route-id="@item.ID">Detail<i class="fa-solid fa-circle-info"></i></a>
-                    <a class="text-danger" style="text-decoration: none" asp-action="Delete" asp-route-id="@item.ID">Delete<i class="fa-solid fa-trash"></i></a>                  
+                        <a class="text-primary" style="text-decoration: none" asp-action="Process" asp-route-id="@item.ID">Process </a>
                 </div>  
             </td>
         </tr>
