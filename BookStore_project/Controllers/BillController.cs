@@ -26,8 +26,18 @@ namespace BookStore_project.Controllers {
             _StatusService = StatusService;
             _billService = billService;
         }
-        
-         public IActionResult Index(int ? page){
+        public async Task<IActionResult> CustomerDetailAsync(string name)
+        {
+            var user = await _userManager.FindByNameAsync(name) as IdentityUser;
+            var list = _billService.FindBillByUser(user.Id);
+            var model = new CustomerDetailViewModel();
+            model.Id = user.Id;
+            model.Name = user.UserName;
+            model.Phone = user.PhoneNumber;
+            model.Email = user.Email;
+            return View(model);
+        }
+        public IActionResult Index(int ? page){
             if (!User.IsInRole("Admin"))
             {
                 return RedirectToAction("Index", "Home");
