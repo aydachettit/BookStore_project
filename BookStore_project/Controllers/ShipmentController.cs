@@ -34,8 +34,18 @@ namespace BookStore_project.Controllers
             _customerService = customerService;
             _billService = billService;
         }
+        public async Task<IActionResult> CustomerDetailAsync(string name)
+        {
+            var user = await _userManager.FindByNameAsync(name) as IdentityUser;
+            var list = _billService.FindBillByUser(user.Id);
+            var model = new CustomerShipDetailViewModel();
+            model.Id = user.Id;
+            model.Name = user.UserName;
+            model.Phone = user.PhoneNumber;
+            model.Email = user.Email;
+            return View(model);
+        }
         [HttpGet]
-       
         public IActionResult Process(int id)
         {
             if (!User.IsInRole("Admin"))

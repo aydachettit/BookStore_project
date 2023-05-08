@@ -1,6 +1,6 @@
-﻿namespace BookStore_project.Models.Bill
+﻿namespace BookStore_project.Models.Shipment
 {
-    public class CustomerDetailViewModel
+    public class CustomerShipDetailViewModel
     {
         public string Id { get; set; }
         public string? Name { get; set; }

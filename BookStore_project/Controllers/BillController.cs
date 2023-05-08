@@ -30,7 +30,7 @@ namespace BookStore_project.Controllers {
         {
             var user = await _userManager.FindByNameAsync(name) as IdentityUser;
             var list = _billService.FindBillByUser(user.Id);
-            var model = new CustomerDetailViewModel();
+            var model = new CustomerBillDetailViewModel();
             model.Id = user.Id;
             model.Name = user.UserName;
             model.Phone = user.PhoneNumber;

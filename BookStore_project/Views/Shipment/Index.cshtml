@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.BillID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
+                <a asp-action="CustomerDetail" asp-route-name="@item.CustomerName">@item.CustomerName</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StatusName)
