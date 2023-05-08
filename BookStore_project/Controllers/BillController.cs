@@ -270,7 +270,7 @@ namespace BookStore_project.Controllers {
             model.Total = bill.Total_money;
             var statusName = _StatusService.GetByID(bill.Bill_status_ID).Name.ToString();
             model.status = statusName;
-            if (statusName.Equals("Canceled"))
+           if (statusName.Equals("Canceled") || statusName.Equals("Shipped"))
             {
                 return RedirectToAction("Index");
             }
