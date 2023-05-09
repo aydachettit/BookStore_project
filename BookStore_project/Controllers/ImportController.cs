@@ -111,14 +111,27 @@ namespace BookStore_project.Controllers
                 Document document = new Document();
                 PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
                 document.Open();
+                ///
+                Paragraph title = new Paragraph("Import File ID #" + import.id, new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD));
+                title.Alignment = Element.ALIGN_CENTER;
+                document.Add(title);
+                ///
                 document.Add(new Paragraph("IMPORT PRODUCT"));
                 document.Add(new Paragraph("Date: " + dateImport.ToShortDateString()));
                 PdfPTable table = new PdfPTable(3);
                 table.WidthPercentage = 100;
-                table.SetWidths(new float[] { 2f, 2f, 1f });
-                table.AddCell(new PdfPCell(new Phrase("Book Name")));
-                table.AddCell(new PdfPCell(new Phrase("Quantity")));
-                table.AddCell(new PdfPCell(new Phrase("Price")));
+                table.SpacingBefore = 20;
+                table.SpacingAfter = 20;
+                PdfPCell cell = new PdfPCell(new Phrase("Book Name", new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                cell.Border = Rectangle.BOTTOM_BORDER;
+                table.AddCell(cell);
+                cell = new PdfPCell(new Phrase("Quantity", new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                cell.Border = Rectangle.BOTTOM_BORDER;
+                table.AddCell(cell);
+                cell = new PdfPCell(new Phrase("Price$", new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                cell.Border = Rectangle.BOTTOM_BORDER;
+                table.AddCell(cell);
+
                 foreach(var detail in model.lod)
                 {
                     var book_id = Convert.ToInt32(detail.book_name);
@@ -128,7 +141,9 @@ namespace BookStore_project.Controllers
                     table.AddCell(new PdfPCell(new Phrase((detail.book_price).ToString())));
                 }
                 document.Add(table);
-                document.Add(new Paragraph("Total:"+total));
+                Paragraph totalcell = new Paragraph("Total: " + total.ToString("C"), new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD));
+                totalcell.Alignment = Element.ALIGN_RIGHT;
+                document.Add(totalcell);
                 document.Close();
                 
                 return RedirectToAction("Index");
