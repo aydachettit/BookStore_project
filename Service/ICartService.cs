@@ -6,7 +6,7 @@ namespace Service
     public interface ICartService
     {
         void AddToCart(CartItem item);
-        void RemoveFromCart(int productId);
+        Task RemoveFromCart(int productId);
         List<CartItem> GetCartItems();
     }
 }

@@ -33,7 +33,7 @@ namespace Service.Implementation
             SaveCart(cart);
         }
 
-        public void RemoveFromCart(int productId)
+        public async Task RemoveFromCart(int productId)
         {
             var cart = GetCart();
             var itemToRemove = cart.FirstOrDefault(i => i.Id == productId);

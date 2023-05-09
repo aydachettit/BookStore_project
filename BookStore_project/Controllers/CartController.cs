@@ -27,7 +27,7 @@ namespace BookStore_project.Controllers
         }
 
 
-        [CustomAuthorize]
+        //[CustomAuthorize]
 
         public IActionResult Index()
         {
@@ -53,8 +53,15 @@ namespace BookStore_project.Controllers
         }
 
         [HttpGet]
+        
         public IActionResult AddToCart(int ID, int number)
         {
+            if (!User.IsInRole("Admin") && !User.IsInRole("Customer"))
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+
             var book = _bookService.GetByID(ID);
             var item = new CartItem
             {
@@ -119,11 +126,15 @@ namespace BookStore_project.Controllers
         }
 
 
-        public IActionResult RemoveFromCart(int bookId)
+        public async  Task<IActionResult> RemoveFromCart(int bookId)
         {
-            _cartService.RemoveFromCart(bookId);
+           
 
-            return RedirectToAction("Index");
+                await _cartService.RemoveFromCart(bookId);
+                return RedirectToAction("Index", "Cart");
+            
+
+
         }
     }
 }

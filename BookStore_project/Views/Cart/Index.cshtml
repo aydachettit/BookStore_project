@@ -10,37 +10,43 @@
   <div class="single_grid">
     <div id="cartContent">
       <table class="table">
-        <thead>
-          <tr>
-            <td>STT</td>
-            <td>Tên sản phẩm</td>
-            <td>Hình ảnh</td>
-            <td>Giá</td>
-            <td>Số lượng</td>
-            <td>Thành tiền</td>
-            <td>#</td>
-          </tr>
+                <thead>
+                    <tr>
+                        <td>STT</td>
+                        <td>Tên sản phẩm</td>
+                        <td>Hình ảnh</td>
+                        <td>Giá</td>
+                        <td>Số lượng</td>
+                        <td>Thành tiền</td>
+                        <td>#</td>
+                        <td>Action</td>
+                    </tr>
                     @{
                         var sumPrice = 0;
                     }
-          @foreach (var item in Model)
-          {
+                    @foreach (var item in Model)
+                    {
                         sumPrice = sumPrice + item.TotalPrice;
                         <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td><img style="width: 200px; height: 200px;" src="@item.ImageURL" /></td>      
-                <td>@item.Price</td>
-                <td>@item.Quantity</td>
-                <td>@item.TotalPrice</td>
-                <td>#</td>
-              </tr>
-          }
-        </thead>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td><img style="width: 200px; height: 200px;" src="@item.ImageURL" /></td>
+                            <td>@item.Price</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.TotalPrice</td>
+                            <td>#</td>
+                            <form asp-controller="Cart" asp-action="RemoveFromCart" method="get">
+                                <input type="hidden" name="bookId" value="@item.Id" />
+
+                                <td><button type="submit" class="btn btn-danger"  >Delete Item</button></td>
+                            </form>
+                        </tr>
+                    }
+                </thead>
         <tbody id="cartBody"></tbody>
       </table>
       <button class="btn btn-success" id="btnContinue">Tiếp tục mua hàng</button>
-      <button class="btn btn-danger" id="btnDeleteAll">Xóa giỏ hàng</button>
+            <button class="btn btn-danger" id="btnDeleteAll" asp-controller="Cart" asp-action="RemoveFromCart" >Xóa giỏ hàng</button>
       <a class="btn btn-primary" id="btnCheckout" asp-action="Checkout" asp-route-id="">Thanh toán</a>
       <div class="pull-right">
         Tổng tiền: <span id="lblTotalOrder">@sumPrice</span>
