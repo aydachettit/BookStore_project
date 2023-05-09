@@ -1,6 +1,7 @@
 ﻿@model PagedList.IPagedList<BookStore_project.Models.Book.BookIndexViewModel>
 @using PagedList.Mvc
 
+    
 @{
     ViewData["Title"] = "Index Home";
     Layout = User.IsInRole("Admin") ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_layoutUser.cshtml";
@@ -9,12 +10,20 @@
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Filter by Category
     </a>
+    @*
     <ul class="dropdown-menu">
-        @foreach (var item in Model)
-        {
-            <li>@Html.ActionLink(@item.Category.ToString(), "FilterByCategory", new { categoryid = @item.CategoryID })</li>
-        }
-    </ul>                               
+    @foreach (var item in Model)
+    {
+    <li>@Html.ActionLink(@item.Category.ToString(), "FilterByCategory", new { categoryid = @item.CategoryID })</li>
+    }
+    </ul>
+    *@
+        <ul class="dropdown-menu">
+            @foreach (var item in Model.Select(x => x.Category).Distinct())
+            {
+                <li>@Html.ActionLink(@item.ToString(), "FilterByCategory", new { categoryid = Model.First(x => x.Category == item).CategoryID })</li>
+            }
+         </ul>
 </div>
 
 

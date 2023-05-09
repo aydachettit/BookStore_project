@@ -149,6 +149,10 @@ namespace BookStore_project.Controllers
             model.Amount = book.Amount;
             model.Price = book.Price;
             model.Description = book.Description;
+            //model.authorByid = _authorService.GetById(book.AuthorID).Name;
+            //model.categoryByid = _categoryService.GetByID(book.CategoryID).Name;
+            //model.publisherByid = _publisherService.GetById(book.PublisherID).Name;
+
 
             IEnumerable<SelectListItem> authorList = _authorService.GetAll().
                 Select(c => new SelectListItem

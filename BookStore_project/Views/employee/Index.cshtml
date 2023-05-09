@@ -15,10 +15,10 @@
     </div>
 
 </form>
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
 </p>
-
+*@
 <div class="card">
     <div class="card-body">
         <nav aria-label="breadcrumb">
@@ -54,7 +54,6 @@
                             <th>
                                 Action
                             </th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,9 +112,35 @@
 </div>
 
 
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+</style>
 
 
 
+@*
 <link href="~/css/productdetail.css" rel="stylesheet" />
 <div class="container">
     <div class="card">
@@ -178,28 +203,4 @@
 </div>
 
 
-<style>
-    .pagination {
-        display: inline-block;
-    }
-
-        .pagination a {
-            color: black;
-            float: left;
-            padding: 8px 16px;
-            text-decoration: none;
-            transition: background-color .3s;
-            border: 1px solid #ddd;
-            margin: 0 4px;
-        }
-
-            .pagination a.active {
-                background-color: #4CAF50;
-                color: white;
-                border: 1px solid #4CAF50;
-            }
-
-            .pagination a:hover:not(.active) {
-                background-color: #ddd;
-            }
-</style>
+*@

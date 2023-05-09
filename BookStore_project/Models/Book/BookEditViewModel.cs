@@ -24,6 +24,10 @@ namespace BookStore_project.Models.Book
 
         public int AuthorID { get; set; }
 
+        public string? authorByid { get; set; }
+        public string? categoryByid { get; set; }
+        public string? publisherByid { get; set; }
+
         public IEnumerable<SelectListItem> Authors;
 
         public int PublisherID { get; set; }
