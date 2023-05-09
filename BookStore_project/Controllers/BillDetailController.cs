@@ -1,10 +1,13 @@
 ﻿using BookStore_project.Models.BillDetail;
 using DataAccess;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 
 namespace BookStore_project.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
     public class BillDetailController :Controller
     {
         private IBillDetailService _billDetailService;

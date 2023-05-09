@@ -1,13 +1,18 @@
 ﻿using BookStore_project.Models.Employee;
 using DataAccess;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PagedList;
 using Service;
+using System.Data;
 
 namespace BookStore_project.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
+
     public class EmployeeController : Controller
     {
 

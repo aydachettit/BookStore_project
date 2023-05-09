@@ -76,7 +76,7 @@ namespace BookStore_project.Controllers
         public async Task<IActionResult> UserDetailAsync(string name)
         {
             var user = await _userManager.FindByNameAsync(name) as IdentityUser;
-            var list = _BillService.FindBillByUser(user.Id);
+            var list = _BillService.FindBillByUser(user.UserName);
             var model = new UserDetailViewModel();
             model.Id = user.Id;
             model.Name = user.UserName;

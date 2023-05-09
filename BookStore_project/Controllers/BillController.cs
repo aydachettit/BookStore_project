@@ -12,6 +12,9 @@ using PagedList;
 using Microsoft.AspNetCore.Identity;
 
 namespace BookStore_project.Controllers {
+
+    [Authorize(Roles = "Admin")]
+
     public class BillController : Controller {
         private IBillService _billService;
         private IStatusService _StatusService;

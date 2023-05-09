@@ -53,6 +53,10 @@ namespace BookStore_project.Controllers
             {
                 ViewBag.SuccessMessage = TempData["SuccessMessage"];
             }
+            else if (TempData.ContainsKey("ErrorMessage"))
+            {
+                ViewBag.ErrorMessage = TempData["ErrorMessage"];
+            }
 
             return View(cartItems);
         }
@@ -85,54 +89,70 @@ namespace BookStore_project.Controllers
 
         public async Task<IActionResult> Checkout()
         {
-            var cartItems = _cartService.GetCartItems().Select(c => new CartViewModel
-            {
-                Id = c.Id,
-                Name = c.Name,
-                ImageURL = c.ImageURL,
-                Price = c.Price,
-                Quantity = c.Quantity,
-                TotalPrice = c.TotalPrice
-                
-            }).ToList();
+
+            
+
+                var cartItems = _cartService.GetCartItems().Select(c => new CartViewModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    ImageURL = c.ImageURL,
+                    Price = c.Price,
+                    Quantity = c.Quantity,
+                    TotalPrice = c.TotalPrice
+
+                }).ToList();
+
+                if (cartItems.Count == 0)
+                {
+                    TempData["ErrorMessage"] = "Thanh toán không thành công";
+                    return RedirectToAction("Index", "Cart");
+
+                }
+
+
+
 
             var user = await _userManager.FindByNameAsync(User.Identity.Name) as IdentityUser;
-            var bill = new Bill();
-            DateTime currentDateTime = DateTime.Now;
-            bill.Date = currentDateTime;
-            bill.Employee_ID = 1;
-            bill.Customer_ID = user.UserName;
-            bill.Bill_status_ID = 1;
+                var bill = new Bill();
+                DateTime currentDateTime = DateTime.Now;
+                bill.Date = currentDateTime;
+                bill.Employee_ID = 1;
+                bill.Customer_ID = user.UserName;
+                bill.Bill_status_ID = 1;
+
+                var totalPrice = 0;
+                foreach (var item in cartItems)
+                {
+                    totalPrice = totalPrice + item.TotalPrice;
+                }
+                bill.Total_money = totalPrice;
+                await _billService.CreateAsSync(bill);
+
+
+                foreach (var item in cartItems)
+                {
+                    var billDetail = new BillDetail();
+                    billDetail.Bill_ID = bill.ID;
+                    billDetail.Book_ID = item.Id;
+                    billDetail.Amount = item.Quantity;
+                    billDetail.Price = item.Price;
+                    await _billDetailService.CreateAsAsync(billDetail);
+                }
+                foreach (var item in cartItems)
+                {
+                    _cartService.RemoveFromCart(item.Id);
+                }
+
+                //ModelState.AddModelError("", "Thanh toán  thành công");
+                //return RedirectToAction("Index");
+                //return View("Index");
+
+                TempData["SuccessMessage"] = "Thanh toán thành công";
+                return RedirectToAction("Index", "Cart");
+
             
-            var totalPrice = 0;
-            foreach (var item in cartItems)
-            {
-                totalPrice = totalPrice + item.TotalPrice;
-            }
-            bill.Total_money = totalPrice;
-            await _billService.CreateAsSync(bill);
 
-
-            foreach(var item in cartItems)
-            {
-                var billDetail = new BillDetail();
-                billDetail.Bill_ID = bill.ID;
-                billDetail.Book_ID = item.Id;
-                billDetail.Amount = item.Quantity;
-                billDetail.Price = item.Price;
-                await _billDetailService.CreateAsAsync(billDetail);
-            }
-            foreach (var item in cartItems)
-            {
-                _cartService.RemoveFromCart(item.Id);
-            }
-
-            //ModelState.AddModelError("", "Thanh toán  thành công");
-            //return RedirectToAction("Index");
-            //return View("Index");
-
-            TempData["SuccessMessage"] = "Thanh toán thành công";
-            return RedirectToAction("Index","Cart");
         }
 
 
