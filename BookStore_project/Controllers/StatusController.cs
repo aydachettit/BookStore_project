@@ -16,9 +16,12 @@ namespace BookStore_project.Controllers
             _statusService = statusService;
             _hostingEnvironment = hostingEnvironment;
         }
-        [CustomAuthorize]
+        
         public IActionResult Index()
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = _statusService.GetAll().Select(Status => new StatusIndexViewModel
             {
                 ID = Status.ID,
@@ -27,9 +30,12 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
-        [CustomAuthorize]
+       
         public IActionResult Detail(int id)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -41,9 +47,12 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpGet]
-        [CustomAuthorize]
+        
         public IActionResult Delete(int id)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -55,7 +64,7 @@ namespace BookStore_project.Controllers
             return View(model);
         }
         [HttpPost]
-        [CustomAuthorize]
+        
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(StatusDeleteViewModel model)
         {
@@ -68,15 +77,18 @@ namespace BookStore_project.Controllers
             return View();
         }
         [HttpGet]
-        [CustomAuthorize]
+        
         public IActionResult Create()
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new StatusCreateViewModel();
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomAuthorize]
+        
         public async Task<IActionResult> Create(StatusCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -95,7 +107,10 @@ namespace BookStore_project.Controllers
         [HttpGet]
         [CustomAuthorize]
         public IActionResult Edit(int id)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
