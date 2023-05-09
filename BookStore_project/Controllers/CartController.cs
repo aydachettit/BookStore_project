@@ -26,8 +26,16 @@ namespace BookStore_project.Controllers
             _userManager = userManager;
         }
 
+
+        [CustomAuthorize]
+
         public IActionResult Index()
         {
+
+            //if (!User.IsInRole("Admin"))
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
 
 
             var cartItems = _cartService.GetCartItems().Select(c => new CartViewModel

@@ -29,7 +29,7 @@ namespace BookStore_project.Controllers
         }
        
         public IActionResult Index(int? page)
-        { if (!User.IsInRole("Admin"))
+        { if (!User.IsInRole("Admin") )
             {
                 return RedirectToAction("Index", "Home");
             }
