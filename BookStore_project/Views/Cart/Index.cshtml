@@ -6,6 +6,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+
+
 <div class="single_top">
   <div class="single_grid">
     <div id="cartContent">
@@ -45,8 +52,7 @@
                 </thead>
         <tbody id="cartBody"></tbody>
       </table>
-      <button class="btn btn-success" id="btnContinue">Tiếp tục mua hàng</button>
-            <button class="btn btn-danger" id="btnDeleteAll" asp-controller="Cart" asp-action="RemoveFromCart" >Xóa giỏ hàng</button>
+      <a asp-controller="Home" asp-action="Index" class="btn btn-success" id="btnContinue">Tiếp tục mua hàng</a>
       <a class="btn btn-primary" id="btnCheckout" asp-action="Checkout" asp-route-id="">Thanh toán</a>
       <div class="pull-right">
         Tổng tiền: <span id="lblTotalOrder">@sumPrice</span>

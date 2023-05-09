@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ew+TIdlD5sD/uSDUNMFLo8FIwcOw8h3u781wTCqgA2Y=",
+  "Hash": "ED5EGo7ssnnckZTHzeioNq5moBbhQxpiQm/ObjZ7Oqk=",
   "Source": "BookStore_project",
   "BasePath": "_content/BookStore_project",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\exportpdf\\202355922.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_github\\BookStore_project\\BookStore_project\\wwwroot\\exportpdf\\2023592216.pdf",
+      "SourceId": "BookStore_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_github\\BookStore_project\\BookStore_project\\wwwroot\\",
+      "BasePath": "_content/BookStore_project",
+      "RelativePath": "exportpdf/2023592216.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exportpdf\\2023592216.pdf"
     },
     {
       "Identity": "C:\\Users\\DuyHuynh\\Documents\\Studying\\nam-3-ky-2\\xd-mo-hinh-phan-lop\\do-an\\pull_github\\BookStore_project\\BookStore_project\\wwwroot\\favicon.ico",

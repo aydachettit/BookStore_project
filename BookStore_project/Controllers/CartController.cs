@@ -48,7 +48,12 @@ namespace BookStore_project.Controllers
                 TotalPrice = c.TotalPrice
             }).ToList();
 
-            
+
+            if (TempData.ContainsKey("SuccessMessage"))
+            {
+                ViewBag.SuccessMessage = TempData["SuccessMessage"];
+            }
+
             return View(cartItems);
         }
 
@@ -122,7 +127,12 @@ namespace BookStore_project.Controllers
                 _cartService.RemoveFromCart(item.Id);
             }
 
-            return RedirectToAction("Index");
+            //ModelState.AddModelError("", "Thanh toán  thành công");
+            //return RedirectToAction("Index");
+            //return View("Index");
+
+            TempData["SuccessMessage"] = "Thanh toán thành công";
+            return RedirectToAction("Index","Cart");
         }
 
 
