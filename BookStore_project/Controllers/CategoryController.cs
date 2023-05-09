@@ -43,10 +43,13 @@ namespace BookStore_project.Controllers
             return View(model.ToPagedList(pagenumber, pagesize));
         }
 
-        [Authorize(Roles = "Admin")]
+       
         [HttpGet]
         public IActionResult Create()
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new CategoryCreateViewModel();
             return View(model);
         }
@@ -70,10 +73,13 @@ namespace BookStore_project.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet]
         public IActionResult Edit(int id)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -105,10 +111,13 @@ namespace BookStore_project.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet]
         public IActionResult Delete(int id)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var category = _categoryService.GetByID(id);
             if (category == null)
             {
@@ -137,10 +146,13 @@ namespace BookStore_project.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet]
         public IActionResult Detail(int id)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id.ToString() == null)
             {
                 return NotFound();
@@ -162,16 +174,22 @@ namespace BookStore_project.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet]
         public IActionResult SearchPage()
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = new CategorySearchViewModel();
             return View(model);
         }
-        [Authorize(Roles = "Admin")]
+        
         public IActionResult SearchByCategoryName(string name)
-        {
+        {if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var model = _categoryService.GetCategoryByName(name).Select(category => new CategoryIndexViewModel
             {
                 ID = category.ID,
